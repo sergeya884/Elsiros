@@ -34,7 +34,7 @@ from pathlib import Path
 
 # Uncomment one of 4 following lines to set proper logging level
 
-# LOGGING_LEVEL = logging.ERROR              # logging will be with fewest number of messages
+#LOGGING_LEVEL = logging.ERROR              # logging will be with fewest number of messages
 #LOGGING_LEVEL = logging.WARNING            # logging with low number of messages
 LOGGING_LEVEL = logging.INFO               # logging with moderate messaging level
 #LOGGING_LEVEL = logging.DEBUG              # logging with large number of messages. Simulation will be slow.
@@ -67,6 +67,8 @@ with open('../referee/' + game_data['red']['config'], "r") as f:
 with open('../referee/' + game_data['blue']['config'], "r") as f:
     team_2_data = json.loads(f.read())
 
+with open('../referee/' + game_data['grean']['config'], "r") as f:
+    team_3_data = json.loads(f.read())
 
 class Log:
     def __init__(self, filename):
@@ -94,7 +96,6 @@ class Log:
         logger.addHandler(self.get_file_handler())
         logger.addHandler(self.get_stream_handler())
         return logger
-
 
 
 class Falling:
@@ -144,10 +145,14 @@ def main_procedure():
     player = Player(logger, role, second_pressed_button, glob, motion, local)
     timer1 = robot.current_time
     logger.debug( 'start time: %i',timer1)
-    player.play_game()
+    player.play_game(sys.argv[8])
+
+    x, _ = robot.get_localization()['position']
+    print('dist = ', "%.4f" % x )
+    
+    # player.play_game()
     logger.debug( 'total time: %i', robot.current_time - timer1)
     sys.exit(0)
-
 
 class RedirectText(object):
     def __init__(self,aWxTextCtrl):
@@ -201,9 +206,11 @@ class Main_Panel(wx.Frame):
         self.SetTitle(title)
         width, height = wx.GetDisplaySize().Get()
         if robot_color == 'red':
-            x_position = width - 300 * (5- int(robot_number))
-        else:
-            x_position = width - 300 * (3- int(robot_number))
+            x_position = width - 300 * (3 - int(robot_number))
+        elif robot_color == 'blue':
+            x_position = width - 300 * (4 - int(robot_number))
+        elif robot_color == 'grean':
+            x_position = width - 300 * (5 - int(robot_number))
         self.SetPosition((x_position, height -225))
         #self.Centre()
 
@@ -220,7 +227,9 @@ class Main_Panel(wx.Frame):
             pause.Flag = False
         else:
             pause.Flag = True
+        logger.info(pause.flag)
         logger.info('Pause button pressed')
+        
 
 
 def main():

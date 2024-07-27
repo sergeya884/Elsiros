@@ -67,6 +67,8 @@ with open('../referee/' + game_data['red']['config'], "r") as f:
 with open('../referee/' + game_data['blue']['config'], "r") as f:
     team_2_data = json.loads(f.read())
 
+with open('../referee/' + game_data['grean']['config'], "r") as f:
+    team_3_data = json.loads(f.read())
 
 class Log:
     def __init__(self, filename):

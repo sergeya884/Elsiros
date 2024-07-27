@@ -125,16 +125,21 @@ class Motion_sim(Motion_real):
         if (self.body_euler_angle['pitch']) > 0.785:
             self.falling_Flag = 1                   # on stomach
             self.simulateMotion(name = 'Soccer_Get_UP_Stomach_N')
+            self.walk_Initial_Pose()
         if (self.body_euler_angle['pitch']) <  -0.785:
             self.falling_Flag = -1                  # face up
             self.simulateMotion(name = 'Soccer_Get_UP_Face_Up')
-        if (self.body_euler_angle['roll']) > 0.785:
-            self.falling_Flag = -2                  # on right side
-            self.simulateMotion(name = 'Get_Up_Right')
-        if -135< (self.body_euler_angle['roll']) < -0.785:
-            self.falling_Flag = 2                   # on left side
-            self.simulateMotion(name = 'Get_Up_Left')
+            self.walk_Initial_Pose()
+        # if (self.body_euler_angle['roll']) > 0.785:
+            # self.falling_Flag = -2                  # on right side
+            # self.simulateMotion(name = 'Get_Up_Right')
+        # if -135< (self.body_euler_angle['roll']) < -0.785:
+            # self.falling_Flag = 2                   # on left side
+            # self.simulateMotion(name = 'Get_Up_Left')
+
         if self.falling_Flag != 0: self.logger.info('FALLING!!!'+ str(self.falling_Flag))
+        self.falling_Flag = 0     # для продолжения ходьбы после падения 
+        # self.simulateMotion(name = 'Initial_Pose')
         return self.falling_Flag
 
     def send_angles_to_servos(self, angles, use_step_correction = False):
@@ -177,7 +182,7 @@ class Motion_sim(Motion_real):
         #   (35,'Get_Up_Right'), (36,'PenaltyDefenceR'), (37,'PenaltyDefenceL')]
         # start the simulation
         if number > 0 and name == '': name = self.MOTION_SLOT_DICT[number]
-        self.logger.info('simulate motion slot:'+ str(name))
+        self.logger.info('simulate motion slot: '+ str(name))
         self.chain_step_number = 0
         self.initial_time_for_chain = self.robot.current_time
         with open(self.glob.current_work_directory /"Soccer" / "Motion" / "motion_slots" / (name + ".json"), "r") as f:
@@ -251,6 +256,8 @@ class Motion_sim(Motion_real):
         self.logger.debug('Position: '+ str(Position) + ' yaw :' + str(self.body_euler_angle['yaw']))
         self.body_euler_angle['yaw'] -= self.direction_To_Attack
         return x, y, self.body_euler_angle['yaw']
+    
+    
 
     def sim_Start(self):
         for i in range(len(self.ACTIVEJOINTS)):

@@ -55,10 +55,11 @@ PROTO Robokit1 [
   field  SFBool      supervisor      TRUE       # Is `Robot.supervisor`.
   field  SFBool      synchronization TRUE        # Is `Robot.synchronization`.
   field  SFBool      selfCollision   TRUE       # Is `Robot.selfCollision`.
-  field SFString{"", "red", "blue"}      teamColor ""
+  field SFString{"", "red", "blue", "grean"}      teamColor ""
   field SFString{"", "1", "2", "3", "4", "5"}      playerNumber ""
   field SFColor     RED      1.0 0.0 0.0
   field SFColor     BLUE     0.0 0.0 1.0
+  field SFColor     GREAN    0.0 1.0 0.0
 
 
 ]
@@ -107,7 +108,10 @@ PROTO Robokit1 [
             %{end}%
             %{if jerseyColor == "blue" then}%
               color IS BLUE
-            %{end}%        
+            %{end}%
+            %{if jerseyColor == "grean" then}%
+              color IS GREAN
+            %{end}%
           }
           HingeJoint {
             jointParameters HingeJointParameters {
@@ -1168,7 +1172,7 @@ PROTO Robokit1 [
                         recognition            Recognition {
                                                             maxRange       100     # [0, inf)
                                                             maxObjects     -1      # {-1, [0, inf)}
-                                                            occlusion      1.0    # {TRUE, FALSE}
+                                                            occlusion      TRUE    # {TRUE, FALSE}
                                                             frameColor     0 1 0   # any color
                                                             frameThickness 1       # [0, inf)
                                                             segmentation   TRUE   # {TRUE, FALSE}
@@ -1253,7 +1257,10 @@ PROTO Robokit1 [
                 %{end}%
                 %{if jerseyColor == "blue" then}%
                   color IS BLUE
-                %{end}%            
+                %{end}%
+                %{if jerseyColor == "grean" then}%
+                  color IS GREAN
+                %{end}%
               }
             ]
             name "Backpack"
@@ -1296,7 +1303,7 @@ PROTO Robokit1 [
           }
           InertialUnit {
             translation 0 0.05 0
-            rotation 0 0 0 -1.5707
+            rotation 0 0 1 -1.5707960173459927
             name "imu_body"
           }
           %{ if number == "1" then }%

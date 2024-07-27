@@ -23,7 +23,7 @@ class Local():
         self.robot_moved = False
 
     def coordinate_fall_reset(self):
-        #self.call_Par_Filter.pf.fall_reset()
+        # self.call_Par_Filter.pf.fall_reset()
         pass
 
     def coordinate_trust_estimation(self):
@@ -98,12 +98,3 @@ class Local():
 
 if __name__=="__main__":
     print('This is not main module!')
-
-
-
-
-
-
-
-
-

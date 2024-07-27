@@ -214,11 +214,12 @@ class Motion1:
 
     def walk_Initial_Pose(self):
         self.robot_In_0_Pose = False
-        if not self.falling_Test() == 0:
-            self.local.quality =0
-            if self.falling_Flag == 3: self.logger.debug('STOP!')
-            else: self.logger.debug('FALLING!!!' + str(self.falling_Flag))
-            return[]
+        # if not self.falling_Test() == 0:
+        #     print('biba')
+        #     self.local.quality =0
+        #     if self.falling_Flag == 3: self.logger.debug('STOP!')
+        #     else: self.logger.debug('FALLING!!!' + str(self.falling_Flag))
+            # return[]
         self.xtr = self.xtl = 0
         framestep = self.simThreadCycleInMs//10
         for j in range (self.initPoses):
@@ -234,7 +235,7 @@ class Motion1:
             else:
                  self.send_angles_to_servos(angles)
 
-    def walk_Cycle(self, stepLength,sideLength, rotation,cycle, number_Of_Cycles):
+    def walk_Cycle(self, stepLength, sideLength, rotation, cycle, number_Of_Cycles):
         self.robot_In_0_Pose = False
         if not self.falling_Test() == 0:
             self.local.quality =0

@@ -1,77 +1,14 @@
-2024-07-27 20:17:06.331715
-2024-07-27 20:17:20,898 Socket timeout
-2024-07-27 20:17:21,402 Socket timeout
-2024-07-27 20:17:21,906 Socket timeout
-2024-07-27 20:17:22,921 Socket timeout
-2024-07-27 20:17:23,439 Socket timeout
-2024-07-27 20:17:23,951 Socket timeout
-2024-07-27 20:17:24,971 Socket timeout
-2024-07-27 20:17:25,486 Socket timeout
-2024-07-27 20:17:25,990 Socket timeout
-2024-07-27 20:17:26,497 Socket timeout
-2024-07-27 20:17:27,006 Socket timeout
-2024-07-27 20:17:27,512 Socket timeout
-2024-07-27 20:17:28,026 Socket timeout
-2024-07-27 20:17:28,530 Socket timeout
-2024-07-27 20:17:29,042 Socket timeout
-2024-07-27 20:17:29,551 Socket timeout
-2024-07-27 20:17:30,064 Socket timeout
-2024-07-27 20:17:30,580 Socket timeout
-2024-07-27 20:17:31,101 Socket timeout
-2024-07-27 20:17:31,606 Socket timeout
-2024-07-27 20:17:32,115 Socket timeout
-2024-07-27 20:17:32,631 Socket timeout
-2024-07-27 20:17:33,141 Socket timeout
-2024-07-27 20:17:34,663 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:17:35,167 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:17:36,178 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:17:36,682 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:17:37,195 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:17:37,723 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:17:49,428 Socket timeout
-WARNING:game_controller:Socket timeout
-INFO:__main__:simulate motion slot:Initial_Pose
-2024-07-27 20:17:50,451 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:17:51,444 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:17:51,957 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:17:52,980 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:17:54,001 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:17:54,516 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:17:55,028 Socket timeout
-WARNING:game_controller:Socket timeout
-INFO:__main__:simulate motion slot:Initial_Pose
-2024-07-27 20:18:05,741 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:18:06,737 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:18:07,241 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:18:07,753 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:18:08,271 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:18:08,791 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:18:09,301 Socket timeout
-WARNING:game_controller:Socket timeout
-2024-07-27 20:18:10,324 Socket timeout
-WARNING:game_controller:Socket timeout
-Exception in thread Thread-2:
+2024-07-20 17:51:44.160858
+Exception in thread Thread-1:
 Traceback (most recent call last):
-  File "C:\Users\Sergey\AppData\Local\Programs\Python\Python39\lib\threading.py", line 950, in _bootstrap_inner
+  File "C:\Program Files\Python39\lib\threading.py", line 973, in _bootstrap_inner
     self.run()
-  File "C:\Users\Sergey\AppData\Local\Programs\Python\Python39\lib\threading.py", line 888, in run
+  File "C:\Program Files\Python39\lib\threading.py", line 910, in run
     self._target(*self._args, **self._kwargs)
-  File "C:\Elsiros_2023b\controllers\player\communication_manager_robokit.py", line 250, in run
+  File "C:\Elsiros\controllers\Robofest_TEAM\main_pb.py", line 118, in main_procedure
+    robot = CommunicationManager(1, '127.0.0.1', int(Port), logarg, team_color=sys.argv[3].upper(), player_number = int(sys.argv[4]), time_step = 25)
+  File "C:\Elsiros\controllers\player\communication_manager_robokit.py", line 14, in __init__
+    self.__client.connect_client()
+  File "C:\Elsiros\controllers\player\robot_client.py", line 69, in connect_client
+    welcome_message = self.socket.recv(8)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение

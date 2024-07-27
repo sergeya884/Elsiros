@@ -29,10 +29,11 @@ robot_color = 'blue'
 robot_number = '1'
 team_id = '-1'          # value -1 means game will be playing without Game Controller
 port01 = '7001'
+params_name = "Marathon_params.json"
 filename01 = "output" + f"{port01}"+ ".txt"
 with open(filename01, "w") as f01:
     print(datetime.datetime.now(), file = f01)
-    p01 = subprocess.Popen(['python', 'main_pb.py', port01, team_id, robot_color, robot_number, role01, second_pressed_button, initial_coord], stderr=f01)
+    p01 = subprocess.Popen(['python', 'main_pb.py', port01, team_id, robot_color, robot_number, role01, second_pressed_button, initial_coord, params_name], stderr=f01)
 
 distance_count = 0
 checkpoints = [0.3, 0, -0.3, 0]

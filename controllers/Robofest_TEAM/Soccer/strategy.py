@@ -11,8 +11,6 @@ import time
 import logging
 from . import utility
 
-
-
 class GoalKeeper:
     """
     class GoalKeeper is designed to define goalkeeper's play according to style developed by 
@@ -384,7 +382,8 @@ class Player():
         self.g = None
         self.f = None
 
-    def play_game(self):
+    def play_game(self, params_name=None):
+    # def play_game(self):
         #success_Code, napravl, dist, speed = self.motion.seek_Ball_In_Pose(fast_Reaction_On = True)
         #self.motion.pause_in_ms(200)    # this is needed for camera renewal in simulation with streaming of camera data. pause have to be same langth as camera update time
         if self.role == 'goalkeeper': self.goalkeeper_main_cycle()
@@ -397,8 +396,9 @@ class Player():
         if self.role == 'rotation_test': self.rotation_test_main_cycle()
         if self.role == 'sidestep_test': self.sidestep_test_main_cycle()
         if self.role == 'dance': self.dance_main_cycle()
-        if self.role == 'sprint': self.sprint_main_cycle()
-        if self.role == 'marathon': self.marathon_main_cycle()
+        if self.role == 'sprint': self.sprint_main_cycle(params_name)
+        # if self.role == 'sprint': self.sprint_main_cycle()
+        if self.role == 'marathon': self.marathon_main_cycle(params_name)
 
 
     def rotation_test_main_cycle(self, pressed_button):
@@ -417,8 +417,8 @@ class Player():
         self.motion.refresh_Orientation()
         self.logger.debug('self.motion.imu_body_yaw() =' + str(self.motion.imu_body_yaw()))
 
-    def marathon_main_cycle(self):
-        with open(self.glob.current_work_directory / "Init_params" / "Marathon_params.json", "r") as f:
+    def marathon_main_cycle(self, params_name):
+        with open(self.glob.current_work_directory / "Init_params" / params_name, "r") as f:
             marathon_params = json.loads(f.read())
         proportional = marathon_params['proportional']
         differential = marathon_params['differential']
@@ -444,8 +444,10 @@ class Player():
             direction += rotation_increment
         self.motion.walk_Final_Pose()
 
-    def sprint_main_cycle(self):
-        with open(self.glob.current_work_directory / "Init_params" / "Sprint_params.json", "r") as f:
+    # def sprint_main_cycle(self):
+        # with open(self.glob.current_work_directory / "Init_params" / "Sprint_params1.json", "r") as f:
+    def sprint_main_cycle(self, params_name):
+        with open(self.glob.current_work_directory / "Init_params" / params_name, "r") as f:
             sprint_params = json.loads(f.read())
         proportional = sprint_params['proportional']
         differential = sprint_params['differential']
@@ -467,6 +469,7 @@ class Player():
             self.motion.walk_Cycle(stepLength1, sideLength, rotation, cycle, number_Of_Cycles)
             last_heading = heading
         self.motion.walk_Final_Pose()
+        print('finish')
 
     def run_test_main_cycle(self, pressed_button):
         """
@@ -510,6 +513,7 @@ class Player():
             rotation = self.motion.normalize_rotation(rotation)
             #rotation = 0
             self.motion.walk_Cycle(stepLength1,sideLength, rotation,cycle, number_Of_Cycles)
+            self.motion.localisation_Motion()
         self.motion.walk_Final_Pose()
 
     def sidestep_test_main_cycle(self, pressed_button):

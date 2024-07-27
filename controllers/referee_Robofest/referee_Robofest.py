@@ -46,7 +46,6 @@ time_count = 0
 
 log_file = open('log.txt', 'w')
 
-
 def distance2(v1, v2):
     return math.sqrt((v1[0] - v2[0]) ** 2 + (v1[1] - v2[1]) ** 2)
 
