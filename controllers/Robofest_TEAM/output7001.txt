@@ -1,0 +1,6 @@
+2024-07-27 17:36:34.641979
+2024-07-27 17:36:35,957 - [INFO] - __main__ - (main_pb.py).main_procedure(115) - port = 7001
+2024-07-27 17:36:35,970 - [INFO] - __main__ - (main_pb.py).main_procedure(123) - role = marathon
+2024-07-27 17:36:35,972 - [INFO] - __main__ - (main_pb.py).main_procedure(132) - Player is going to play without Game Controller
+2024-07-27 17:36:35,976 - [WARNING] - communication_manager - (communication_manager_robokit.py).__update_history(66) - WARNING! Large protobuf time rx delta = 1290
+2024-07-27 17:36:36,989 - [INFO] - __main__ - (class_Motion_Webots_PB.py).imu_activation(92) - imu_activation

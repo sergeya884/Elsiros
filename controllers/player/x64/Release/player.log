@@ -1,0 +1,24 @@
+﻿  "Building fresh messages.pb.cc messages.pb.h"
+  Brake.cpp
+  Motor.cpp
+  PositionSensor.cpp
+  Robot.cpp
+  Supervisor.cpp
+  messages.pb.cc
+C:\Elsiros_2023b\controllers\player\messages.pb.cc(1294,63): warning C4244: =: преобразование "uint64_t" в "google::protobuf::int32", возможна потеря данных
+C:\Elsiros_2023b\controllers\player\messages.pb.cc(1302,63): warning C4244: =: преобразование "uint64_t" в "google::protobuf::int32", возможна потеря данных
+  player.cpp
+C:\Elsiros_2023b\controllers\player\player.cpp(181,54): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Elsiros_2023b\controllers\player\player.cpp(216,21): warning C4244: =: преобразование "SOCKET" в "int", возможна потеря данных
+C:\Elsiros_2023b\controllers\player\player.cpp(420,46): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Elsiros_2023b\controllers\player\player.cpp(430,21): warning C4244: =: преобразование "SOCKET" в "int", возможна потеря данных
+C:\Elsiros_2023b\controllers\player\player.cpp(532,1): warning C4267: +=: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Elsiros_2023b\controllers\player\player.cpp(547,1): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Elsiros_2023b\controllers\player\player.cpp(1240,1): warning C4267: инициализация: преобразование из "size_t" в "uint32_t"; возможна потеря данных
+C:\Elsiros_2023b\controllers\player\player.cpp(1379,54): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Elsiros_2023b\controllers\player\player.cpp(1379,29): warning C4244: инициализация: преобразование "double" в "const int", возможна потеря данных
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 3119 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  player.vcxproj -> C:\Elsiros_2023b\controllers\player\player.exe
