@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d602b984-8fef-489f-8181-90db55ae02b4" name="Changes" comment="" />
+    <list default="true" id="d602b984-8fef-489f-8181-90db55ae02b4" name="Changes" comment="merge Sergey and Vadim">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worlds/.Robofest_2023_marathon.wbproj" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/.Robofest_2023_marathon.wbproj" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +48,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": ".invalid",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Elsiros_2023b/protos/Robokit1/Robokit1.proto",
     "two.files.diff.last.used.file": "C:/Elsiros_2023b/protos/Robokit1/Robokit1.proto"
@@ -67,6 +70,15 @@
       <option name="presentableId" value="Default" />
       <updated>1722173997763</updated>
     </task>
+    <task id="LOCAL-00001" summary="merge Sergey and Vadim">
+      <option name="closed" value="true" />
+      <created>1722178762821</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1722178762821</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -94,5 +106,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="merge Sergey and Vadim" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge Sergey and Vadim" />
   </component>
 </project>

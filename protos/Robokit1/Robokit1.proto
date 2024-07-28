@@ -55,6 +55,7 @@ PROTO Robokit1 [
   field  SFBool      supervisor      TRUE       # Is `Robot.supervisor`.
   field  SFBool      synchronization TRUE        # Is `Robot.synchronization`.
   field  SFBool      selfCollision   TRUE       # Is `Robot.selfCollision`.
+  field SFString{"", "red", "blue"}      teamColor ""
   field SFString{"", "1", "2", "3", "4", "5"}      playerNumber ""
   field SFColor     RED      1.0 0.0 0.0
   field SFColor     BLUE     0.0 0.0 1.0

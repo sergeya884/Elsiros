@@ -10,3 +10,5 @@ orthographicViewHeight: 1
 textFiles: -1
 consoles: Console:All:All
 renderingDevicePerspectives: blue player 1:camera;0;0.133333;0;0
+renderingDevicePerspectives: grean player 3:camera;1;1;0;0
+renderingDevicePerspectives: red player 2:camera;1;1;0;0
