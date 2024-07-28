@@ -1,0 +1,7 @@
+numpy>=1.21.1
+matplotlib>=3.4.2
+construct>=2.10.67
+wxpython>=4.1.1
+protobuf==3.17.3
+pywin32>=301
+starkit>=0.0.1

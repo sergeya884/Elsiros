@@ -1,0 +1,40 @@
+2024-06-06 21:00:54.642533 distance was NOT finished due to failure 
+2024-06-06 21:02:33.149304 distance was NOT finished due to failure 
+2024-06-06 21:05:03.073716 distance was NOT finished due to failure 
+2024-07-01 20:50:36.174045 distance was NOT finished due to failure 
+2024-07-02 00:10:13.139529 distance was NOT finished due to failure 
+2024-07-02 00:16:56.864537 distance was NOT finished due to failure 
+2024-07-02 00:17:26.319255 distance was NOT finished due to failure 
+2024-07-02 00:18:31.546103 distance was NOT finished due to failure 
+2024-07-02 00:20:57.184027 distance was NOT finished due to failure 
+2024-07-03 16:26:04.479436 distance was NOT finished due to failure 
+2024-07-03 17:20:25.695158 distance was NOT finished due to failure 
+2024-07-03 17:24:06.509727 distance was NOT finished due to failure 
+2024-07-03 17:24:59.776844 distance was NOT finished due to failure 
+2024-07-03 17:25:19.969451 distance was NOT finished due to failure 
+2024-07-03 17:29:27.667942 distance was NOT finished due to failure 
+2024-07-03 17:32:12.559320 distance was NOT finished due to failure 
+2024-07-03 17:32:49.184229 distance was NOT finished due to failure 
+2024-07-03 17:33:22.375268 distance was NOT finished due to failure 
+2024-07-04 17:05:20.378206 distance was NOT finished due to failure 
+2024-07-04 17:25:50.396430 distance was NOT finished due to failure 
+2024-07-04 17:45:50.210047 distance was NOT finished due to failure 
+2024-07-04 17:46:26.758136 distance was NOT finished due to failure 
+2024-07-04 17:46:50.424335 distance was NOT finished due to failure 
+2024-07-04 17:55:52.252576 distance was NOT finished due to failure 
+2024-07-04 18:04:29.683886 distance was NOT finished due to failure 
+2024-07-04 18:05:07.553728 distance was NOT finished due to failure 
+2024-07-04 18:10:23.147599 distance was NOT finished due to failure 
+2024-07-04 18:22:45.483241 distance was NOT finished due to failure 
+2024-07-04 18:28:48.646632 distance was NOT finished due to failure 
+2024-07-08 19:13:50.055637 distance was finished within timesteps:  176
+2024-07-08 19:14:32.020251 distance was finished within timesteps:  176
+2024-07-08 19:18:08.110653 distance was NOT finished due to failure 
+2024-07-12 22:56:24.471207 distance was NOT finished due to failure 
+2024-07-18 00:41:19.400613 distance was NOT finished due to failure 
+2024-07-18 00:43:44.968826 distance was NOT finished due to failure 
+2024-07-18 00:45:02.426300 distance was finished within timesteps:  5960
+2024-07-18 00:46:32.877026 distance was NOT finished due to failure 
+2024-07-18 00:48:51.598401 distance was NOT finished due to failure 
+2024-07-18 00:49:28.561392 distance was NOT finished due to failure 
+2024-07-20 17:38:20.096938 distance was NOT finished due to failure 
