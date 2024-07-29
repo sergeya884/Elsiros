@@ -63,9 +63,9 @@ params_name = ["Sprint_params1.json", "Sprint_params2.json", "Sprint_params3.jso
 p01 = [_ for _ in range(len(robot_translation))]
 p01_flag = [True for _ in range(len(robot_translation))]
 for i in range((len(robot_translation))):
-    filename01 = "output" + f"{port01[i]}"+ ".txt"
+    filename01 = "output" + f"{port01[i]}" + ".txt"
     with open(filename01, "w") as f01:
-        print(datetime.datetime.now(), file = f01)
+        print(datetime.datetime.now(), file=f01)
         # p01 = subprocess.Popen(['python', 'main_pb.py', port01[i], team_id, robot_color[i], robot_number[i], role01, second_pressed_button, initial_coord[i], params_name[i]], stderr=f01)
         p01[i] = subprocess.Popen(['python', 'main_pb.py', port01[i], team_id, robot_color[i], robot_number[i], role01, second_pressed_button, initial_coord[i], params_name[i]], stderr=f01)
 
@@ -90,7 +90,7 @@ while supervisor.step(time_step) != -1:
             text = ' robot ' + str(i+1) + ': distance was NOT finished due to failure'
             out_text_red(text)
             robot_translation[i].setSFVec3f(list_coord[i])   # в начало координат
-            robot_rotation[i].setSFRotation([1, 0, 0])       # вектор напрпавления
+            robot_rotation[i].setSFRotation([1, 0, 0, 0])       # вектор напрпавления
 
         if robot_translation[i].getSFVec3f()[0] > 3.05 and p01_flag[i]:
             text = ' robot ' + str(i+1) + ' distance was finished within timesteps: ' + str(distance_count)

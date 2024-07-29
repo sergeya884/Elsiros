@@ -1172,7 +1172,7 @@ PROTO Robokit1 [
                         recognition            Recognition {
                                                             maxRange       100     # [0, inf)
                                                             maxObjects     -1      # {-1, [0, inf)}
-                                                            occlusion      TRUE    # {TRUE, FALSE}
+                                                            occlusion      1.0    # {TRUE, FALSE}
                                                             frameColor     0 1 0   # any color
                                                             frameThickness 1       # [0, inf)
                                                             segmentation   TRUE   # {TRUE, FALSE}
