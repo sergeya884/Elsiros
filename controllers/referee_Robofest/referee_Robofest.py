@@ -858,7 +858,7 @@ def update_team_contacts(team):
 
 def update_ball_contacts():
     game.ball.contact_points = []
-    contact_points = game.ball.getContactPoints()
+    # contact_points = game.ball.getContactPoint()
     n = game.ball.getNumberOfContactPoints()
     for i in range(n):
         point = game.ball.getContactPoint(i)
@@ -879,7 +879,7 @@ def is_robot_near(position, min_dist):
     return False    
 
 def update_contacts():
-    valid_ball_contacts_number = update_ball_contacts()
+    valid_ball_contacts_number = 0 #update_ball_contacts()
     # Check robot contacts only if ball contacts numbers shows that there is some other contact than with ground exist
     if valid_ball_contacts_number > 0:
         update_team_contacts(red_team)

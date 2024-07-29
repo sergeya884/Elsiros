@@ -1,22 +1,98 @@
-2024-07-28 18:11:17.807490
---- Logging error ---
+2024-07-29 19:51:41.875962
+Exception in thread Thread-2:
 Traceback (most recent call last):
-  File "C:\Users\Sergey\AppData\Local\Programs\Python\Python39\lib\logging\__init__.py", line 1082, in emit
-    stream.write(msg + self.terminator)
-  File "C:\Elsiros_result\controllers\Robofest_TEAM\main_pb.py", line 162, in write
-    self.out.WriteText(string)
-wx._core.wxAssertionError: C++ assertion "m_count == -1 || m_count == -2" failed at ..\..\src\msw\textctrl.cpp(284) in UpdatesCountFilter::UpdatesCountFilter(): wrong initial m_updatesCount value
-Call stack:
-  File "C:\Users\Sergey\AppData\Local\Programs\Python\Python39\lib\threading.py", line 908, in _bootstrap
-    self._bootstrap_inner()
   File "C:\Users\Sergey\AppData\Local\Programs\Python\Python39\lib\threading.py", line 950, in _bootstrap_inner
     self.run()
   File "C:\Users\Sergey\AppData\Local\Programs\Python\Python39\lib\threading.py", line 888, in run
     self._target(*self._args, **self._kwargs)
-  File "C:\Elsiros_result\controllers\player\communication_manager_robokit.py", line 252, in run
-    self.__update_history(message)
-  File "C:\Elsiros_result\controllers\player\communication_manager_robokit.py", line 66, in __update_history
-    self.logger.warning(f"WARNING! Large protobuf time rx delta = {delta}")
-Message: 'WARNING! Large protobuf time rx delta = 1195'
-Arguments: ()
-2024-07-28 18:11:20,194 - [INFO] - __main__ - (class_Motion_Webots_PB.py).imu_activation(92) - imu_activation
+  File "C:\Elsiros_result\controllers\player\communication_manager_robokit.py", line 250, in run
+    messages_list = self.__client.receive2()
+  File "C:\Elsiros_result\controllers\player\robot_client.py", line 128, in receive2
+    chunk = self.socket.recv(1024)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+FO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,139 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,143 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,146 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,150 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,153 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,156 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,158 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,161 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,165 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,168 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,172 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,174 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,176 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,179 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,183 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,186 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,188 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,191 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,193 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,196 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,199 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,203 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,205 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,207 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,210 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,213 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,216 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,219 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,221 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,224 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,227 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,229 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,232 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,235 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,238 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,241 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,244 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,246 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,250 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,252 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,254 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,257 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,259 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,262 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,265 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,268 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,271 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,274 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,276 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,278 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,281 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,285 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,287 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,290 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,292 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,295 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,297 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,299 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,303 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,305 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,308 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,310 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,313 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,316 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,320 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,322 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,324 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,327 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,329 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,332 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,336 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,338 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,342 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,344 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,347 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,350 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,353 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,355 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,358 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,360 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,363 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,365 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,369 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,371 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1
+2024-07-29 19:52:03,374 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(131) - FALLING!!!1

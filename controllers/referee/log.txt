@@ -1,0 +1,5 @@
+Info: Spawned RED_PLAYER_1 Robokit1 on port 7001 at borderStartingPose: translation (0.9 -1.3 0.3), rotation (0 0 1 1.571592653589793).
+Info: Spawned RED_PLAYER_2 Robokit1 on port 7002 at borderStartingPose: translation (0.9 1.3 0.3), rotation (0 0 1 4.711592653589793).
+Info: Spawned BLUE_PLAYER_1 Robokit1 on port 7021 at borderStartingPose: translation (-0.9 -1.3 0.3), rotation (0 0 1 1.57).
+Info: Spawned BLUE_PLAYER_2 Robokit1 on port 7022 at borderStartingPose: translation (-0.9 1.3 0.3), rotation (0 0 1 -1.57).
+Info: Killing all Java instances

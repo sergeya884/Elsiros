@@ -90,7 +90,7 @@ while supervisor.step(time_step) != -1:
             text = ' robot ' + str(i+1) + ': distance was NOT finished due to failure'
             out_text_red(text)
             robot_translation[i].setSFVec3f(list_coord[i])   # в начало координат
-            robot_rotation[i].setSFRotation([1, 0, 0])       # вектор напрпавления
+            robot_rotation[i].setSFRotation([1, 0, 0, 0])       # вектор напрпавления
 
         if robot_translation[i].getSFVec3f()[0] > 3.05 and p01_flag[i]:
             text = ' robot ' + str(i+1) + ' distance was finished within timesteps: ' + str(distance_count)

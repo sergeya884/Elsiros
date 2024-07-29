@@ -1,14 +1,726 @@
-2024-07-20 17:51:44.148852
-Exception in thread Thread-1:
+2024-07-29 19:11:06.000759
+2024-07-29 19:11:23,260 Socket timeout
+2024-07-29 19:11:23,763 Socket timeout
+2024-07-29 19:11:24,769 Socket timeout
+2024-07-29 19:11:25,277 Socket timeout
+2024-07-29 19:11:25,779 Socket timeout
+2024-07-29 19:11:26,294 Socket timeout
+2024-07-29 19:11:26,796 Socket timeout
+2024-07-29 19:11:27,302 Socket timeout
+2024-07-29 19:11:27,805 Socket timeout
+2024-07-29 19:11:28,321 Socket timeout
+2024-07-29 19:11:29,339 Socket timeout
+2024-07-29 19:11:29,845 Socket timeout
+2024-07-29 19:11:30,349 Socket timeout
+2024-07-29 19:11:30,865 Socket timeout
+2024-07-29 19:11:31,883 Socket timeout
+2024-07-29 19:11:32,388 Socket timeout
+2024-07-29 19:11:32,894 Socket timeout
+2024-07-29 19:11:33,396 Socket timeout
+2024-07-29 19:11:33,901 Socket timeout
+2024-07-29 19:11:34,406 Socket timeout
+2024-07-29 19:11:36,450 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:11:38,983 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:11:39,498 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:11:40,014 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+2024-07-29 19:11:59,750 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:01,279 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:01,796 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:02,309 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:02,814 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:03,821 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:04,325 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:04,827 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:05,342 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:05,858 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:06,371 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:07,390 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:28,696 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:29,200 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+2024-07-29 19:12:29,714 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:31,247 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:32,250 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:32,765 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:33,268 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:33,782 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:34,296 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:35,312 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:35,814 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:36,329 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:36,836 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:37,343 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:38,364 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:38,886 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:39,428 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:39,981 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:41,571 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:42,087 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:42,590 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:12:53,283 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:05,514 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+2024-07-29 19:13:08,050 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:08,586 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:09,108 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:09,630 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:10,150 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:10,654 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:11,662 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:12,189 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:12,705 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:13,219 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:13,734 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:14,249 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:14,753 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:15,256 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:15,759 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:16,275 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:16,789 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:17,304 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:17,807 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:18,840 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+2024-07-29 19:13:35,748 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:
+ Game Controller STATE_SET. Waiting for PLAYING..
+2024-07-29 19:13:37,251 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:37,764 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:38,268 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:38,785 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:39,299 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:39,821 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:former_game_state == "STATE_SET"
+INFO:__main__:playing allowed
+INFO:__main__:current_game_state =STATE_PLAYING current_player_penalty =0
+INFO:__main__:former_game_state =STATE_SET former_player_penalty =0
+INFO:__main__:imu_activation
+2024-07-29 19:13:40,343 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:40,879 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:41,386 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:41,893 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:42,407 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+2024-07-29 19:13:42,920 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:44,451 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:44,968 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:45,480 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:45,985 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:46,487 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:46,988 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:47,495 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:13:48,515 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:07,434 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+2024-07-29 19:14:07,966 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:12,041 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:12,546 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:13,559 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:14,073 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:14,576 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:15,592 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:24,206 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:24,709 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:25,213 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:25,718 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:26,223 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+2024-07-29 19:14:29,255 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:29,761 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:30,266 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:30,780 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:31,295 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:31,800 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:32,305 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:32,808 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:33,311 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:33,826 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:34,342 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:34,845 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:36,361 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:50,589 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+2024-07-29 19:14:51,110 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:52,600 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:54,120 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:54,635 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:55,140 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:55,649 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:56,154 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:56,670 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:58,175 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:14:58,679 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+2024-07-29 19:15:04,748 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:05,768 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:06,280 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:06,795 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:07,310 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:08,815 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:09,821 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:10,827 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:11,343 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:11,859 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:12,374 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:13,387 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:13,889 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:14,404 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:14,919 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:15,432 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:15,936 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:16,438 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:16,951 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:24,125 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:24,689 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:
+ Game Controller STATE_SET. Waiting for PLAYING..
+2024-07-29 19:15:27,265 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:27,779 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:28,294 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:28,809 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:29,311 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:29,813 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:30,327 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:30,842 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:former_game_state == "STATE_SET"
+INFO:__main__:playing allowed
+INFO:__main__:current_game_state =STATE_PLAYING current_player_penalty =0
+INFO:__main__:former_game_state =STATE_SET former_player_penalty =0
+INFO:__main__:imu_activation
+2024-07-29 19:15:32,357 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:32,860 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+2024-07-29 19:15:33,375 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:34,903 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:35,406 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:35,921 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:36,436 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:36,950 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:15:37,986 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+2024-07-29 19:16:01,421 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:03,966 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:04,480 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:04,983 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:05,498 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:06,513 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:07,528 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:08,040 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:09,053 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:09,558 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:10,071 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:11,075 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:11,590 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:13,107 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:30,936 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+2024-07-29 19:16:31,927 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:33,433 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:33,937 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:34,451 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:34,967 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:35,973 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:36,478 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:36,980 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:37,496 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:39,004 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:39,508 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:40,519 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:41,027 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:42,032 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:42,545 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:16:43,592 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:15,237 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:15,743 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:16,249 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:16,770 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:17,273 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:
+ Game Controller STATE_SET. Waiting for PLAYING..
+2024-07-29 19:17:17,777 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:18,280 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:18,795 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:19,810 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:20,325 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:20,828 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:21,340 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:21,843 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:22,358 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:former_game_state == "STATE_SET"
+INFO:__main__:playing allowed
+INFO:__main__:current_game_state =STATE_PLAYING current_player_penalty =0
+INFO:__main__:former_game_state =STATE_SET former_player_penalty =0
+INFO:__main__:imu_activation
+2024-07-29 19:17:22,873 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:23,387 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:23,903 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:24,422 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:24,937 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:25,454 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:25,990 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+2024-07-29 19:17:26,527 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:29,151 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:29,655 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:30,670 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:31,174 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:31,694 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:51,019 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:51,536 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+2024-07-29 19:17:52,049 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:53,074 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:53,577 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:54,082 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:54,585 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:55,591 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:56,097 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:56,607 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:57,112 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:57,624 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:58,137 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:58,648 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:17:59,161 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:09,859 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+2024-07-29 19:18:13,361 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:14,455 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:15,485 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:16,082 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:16,633 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:17,189 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:17,763 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:18,294 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:18,811 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:19,327 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:19,842 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:20,358 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:20,873 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:21,389 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:21,903 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:STOP!
+2024-07-29 19:18:23,935 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:24,462 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:25,465 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:25,974 Socket timeout
+WARNING:game_controller:Socket timeout
+INFO:__main__:simulate motion slot:Initial_Pose
+INFO:__main__:FALLING!!!3
+2024-07-29 19:18:27,003 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:27,507 Socket timeout
+WARNING:game_controller:Socket timeout
+2024-07-29 19:18:28,043 Socket timeout
+WARNING:game_controller:Socket timeout
+Exception in thread Thread-2:
 Traceback (most recent call last):
-  File "C:\Program Files\Python39\lib\threading.py", line 973, in _bootstrap_inner
+  File "C:\Users\Sergey\AppData\Local\Programs\Python\Python39\lib\threading.py", line 950, in _bootstrap_inner
     self.run()
-  File "C:\Program Files\Python39\lib\threading.py", line 910, in run
+  File "C:\Users\Sergey\AppData\Local\Programs\Python\Python39\lib\threading.py", line 888, in run
     self._target(*self._args, **self._kwargs)
-  File "C:\Elsiros\controllers\SAMPLE_TEAM\main_pb.py", line 119, in main_procedure
-    robot = CommunicationManager(1, '127.0.0.1', int(Port), logarg, team_color=sys.argv[3].upper(), player_number = int(sys.argv[4]), time_step = 25)
-  File "C:\Elsiros\controllers\player\communication_manager_robokit.py", line 14, in __init__
-    self.__client.connect_client()
-  File "C:\Elsiros\controllers\player\robot_client.py", line 69, in connect_client
-    welcome_message = self.socket.recv(8)
+  File "C:\Elsiros_result\controllers\player\communication_manager_robokit.py", line 250, in run
+    messages_list = self.__client.receive2()
+  File "C:\Elsiros_result\controllers\player\robot_client.py", line 128, in receive2
+    chunk = self.socket.recv(1024)
 ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2024-07-29 19:18:28,571 Socket timeout
+WARNING:game_controller:Socket timeout
+_PB.py).falling_Test(123) - STOP!
+2024-07-29 19:18:23,598 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(180) - simulate motion slot:Initial_Pose
+2024-07-29 19:18:23,601 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(123) - STOP!
+2024-07-29 19:18:23,729 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(180) - simulate motion slot:Initial_Pose
+2024-07-29 19:18:23,731 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(123) - STOP!
+2024-07-29 19:18:23,734 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(180) - simulate motion slot:Initial_Pose
+2024-07-29 19:18:23,736 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(123) - STOP!
+2024-07-29 19:18:23,739 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(180) - simulate motion slot:Initial_Pose
+2024-07-29 19:18:23,741 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(123) - STOP!
+2024-07-29 19:18:23,743 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(180) - simulate motion slot:Initial_Pose
+2024-07-29 19:18:23,746 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(123) - STOP!
+2024-07-29 19:18:23,748 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(180) - simulate motion slot:Initial_Pose
+2024-07-29 19:18:23,751 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(123) - STOP!
+2024-07-29 19:18:23,754 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(180) - simulate motion slot:Initial_Pose
+2024-07-29 19:18:23,756 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(123) - STOP!
+2024-07-29 19:18:23,758 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(180) - simulate motion slot:Initial_Pose
+2024-07-29 19:18:23,760 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(123) - STOP!
+2024-07-29 19:18:23,762 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(180) - simulate motion slot:Initial_Pose
+2024-07-29 19:18:23,765 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(123) - STOP!
+2024-07-29 19:18:23,768 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(180) - simulate motion slot:Initial_Pose
+2024-07-29 19:18:23,771 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(123) - STOP!
+2024-07-29 19:18:23,773 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(180) - simulate motion slot:Initial_Pose
+2024-07-29 19:18:23,775 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(123) - STOP!
+2024-07-29 19:18:23,778 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(180) - simulate motion slot:Initial_Pose
+2024-07-29 19:18:23,780 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(123) - STOP!
+2024-07-29 19:18:23,782 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(180) - simulate motion slot:Initial_Pose
+2024-07-29 19:18:23,786 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(123) - STOP!
+2024-07-29 19:18:26,642 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(180) - simulate motion slot:Initial_Pose
+2024-07-29 19:18:26,644 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(137) - FALLING!!!3
