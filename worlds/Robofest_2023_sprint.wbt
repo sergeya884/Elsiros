@@ -4,6 +4,9 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "../protos/Robokit1/Robokit1.proto"
 EXTERNPROTO "../protos/SprintField.proto"
+EXTERNPROTO "../protos/custom_Pen.proto"
+EXTERNPROTO "../protos/custom_texture.proto"
+EXTERNPROTO "../protos/custom_texture1.proto"
 
 WorldInfo {
   info [
@@ -94,6 +97,14 @@ DEF GREAN_PLAYER_3 Robokit1 {
 Robot {
   controller "sprint"
   supervisor TRUE
+  children [
+    DEF PEN_1 custom_Pen {
+      translation 0 0 0
+      name "pen"
+    }
+    DEF CUST_TEXTURE1 custom_texture {}
+    DEF CUST_TEXTURE2 custom_texture1 {}
+  ]
 }
 SprintField {
 }

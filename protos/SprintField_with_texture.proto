@@ -12,9 +12,9 @@ PROTO SprintField [
   field SFRotation                  rotation    0 1 0 0
   field SFString                    name        "sprint_field" 
   field SFBool                      turfPhysics FALSE
+  field SFVec2f                     scale       1 1
 ]
 {
-
   %{
 
     LINE_WIDTH = 0.05 -- Line width
@@ -204,12 +204,48 @@ PROTO SprintField [
     end
 
   }%
-
   Solid {
     translation IS translation
     rotation IS rotation
     locked TRUE
     children [
+      Shape {
+        appearance Appearance {
+          texture ImageTexture {
+            url "textures/net.png"
+          }
+          textureTransform TextureTransform {
+            scale IS scale
+          }
+        }
+
+        geometry IndexedFaceSet {
+          coord Coordinate {
+            point [
+              -10 -10 0
+              28 -10 0
+              28 16 0
+              -10 16 0
+            ]
+          }
+          texCoord TextureCoordinate {
+            point [
+              -10 -10
+              28 -10
+              28 16
+              -10 16
+            ]
+          }
+          coordIndex [
+            0, 1, 2, 3, -1,
+            3, 2, 1, 0, -1,
+          ]
+          texCoordIndex [
+            0, 1, 2, 3, -1,
+            0, 1, 2, 3, -1,
+          ]
+        }
+      }
       %{ if fields.turfPhysics.value then }%
       DEF BLADES Solid {
         contactMaterial "grass"
