@@ -3,7 +3,12 @@
 # license url: https://cyberbotics.com/webots_assets_license
 PROTO custom_texture [
     field SFVec2f      scale             1 1
-#    field SFFloat      pointCoord       1
+    field MFVec3f POINTS [
+    0 -0.5 0.001
+    3 -0.5 0.001
+    3 0.5 0.001
+    0 0.5 0.001
+  ]
 #    field MFFloat      pointTexture     []
 ]
 {
@@ -19,12 +24,7 @@ PROTO custom_texture [
 
         geometry IndexedFaceSet {
           coord Coordinate {
-            point[
-              0 -0.5 0.001
-              3 -0.5 0.001
-              3 0.5 0.001
-              0 0.5 0.001
-            ]
+            point IS POINTS
           }
           #texCoord TextureCoordinate {
             #point[

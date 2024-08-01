@@ -5,69 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d602b984-8fef-489f-8181-90db55ae02b4" name="Changes" comment="delite update_ball_contacts() from refere_Robofest.py and penalty work">
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/accelerometer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/altimeter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/ansi_codes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/brake.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/camera.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/compass.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/connector.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/device.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/display.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/distance_sensor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/emitter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/field.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/gps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/gyro.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/inertial_unit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/joystick.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/keyboard.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/led.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/lidar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/lidar_point.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/light_sensor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/motion.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/motor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/mouse.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/node.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/pen.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/position_sensor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/radar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/radar_target.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/range_finder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/receiver.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/robot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/sensor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/skin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/speaker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/supervisor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/touch_sensor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/vacuum_gripper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/referee_Robofest/controller/wb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protos/SprintField_with_texture.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protos/custom_Pen.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protos/custom_texture.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protos/custom_texture1.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protos/textures/MIPT.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protos/textures/MIPT_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protos/textures/empty.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protos/textures/line.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protos/textures/resize_empty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Elsiros.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worlds/textures/MIPT_white.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7001.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7001.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7002.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7002.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7003.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7003.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7021.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7021.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7022.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7022.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/SAMPLE_TEAM/output7001.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SAMPLE_TEAM/output7001.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/SAMPLE_TEAM/output7002.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SAMPLE_TEAM/output7002.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/referee_Robofest/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/referee_Robofest/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/sprint/sprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/sprint/sprint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protos/SprintField.proto" beforeDir="false" afterPath="$PROJECT_DIR$/protos/SprintField.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worlds/.Robofest_2023_penalty.wbproj" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/.Robofest_2023_penalty.wbproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worlds/.Robofest_2023_sprint(original).wbproj" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/.Robofest_2023_sprint(original).wbproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/custom_Pen.proto" beforeDir="false" afterPath="$PROJECT_DIR$/protos/custom_Pen.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/custom_texture.proto" beforeDir="false" afterPath="$PROJECT_DIR$/protos/custom_texture.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worlds/.Robofest_2023_sprint.wbproj" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/.Robofest_2023_sprint.wbproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worlds/Robofest_2023_sprint.wbt" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/Robofest_2023_sprint.wbt" afterDir="false" />
     </list>
@@ -107,19 +54,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.referee_Robofest.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Elsiros_result/protos/textures&quot;,
-    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Elsiros/controllers/sprint/sprint.py&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.referee_Robofest.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Elsiros_result/worlds/textures",
+    "two.files.diff.last.used.file": "C:/Elsiros/controllers/sprint/sprint.py"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Elsiros_result\worlds\textures" />
       <recent name="C:\Elsiros_result\protos\textures" />
       <recent name="C:\Elsiros_result\protos" />
     </key>

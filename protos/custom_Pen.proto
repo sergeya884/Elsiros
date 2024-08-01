@@ -6,6 +6,8 @@ PROTO custom_Pen [
   field SFRotation rotation        0 0 1 0
   field SFString   name            "pen"
   field SFBool     write           TRUE
+  field SFFloat    leadSize        0.1
+
 ]
 {
   Pen {
@@ -28,9 +30,10 @@ PROTO custom_Pen [
           #  }
           #]
         }
+
       ]
     name IS name
     write IS write
-    leadSize 0.1
+    leadSize IS leadSize
   }
 }

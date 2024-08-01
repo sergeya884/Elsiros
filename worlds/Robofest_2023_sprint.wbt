@@ -6,7 +6,7 @@ EXTERNPROTO "../protos/Robokit1/Robokit1.proto"
 EXTERNPROTO "../protos/SprintField.proto"
 EXTERNPROTO "../protos/custom_Pen.proto"
 EXTERNPROTO "../protos/custom_texture.proto"
-EXTERNPROTO "../protos/custom_texture1.proto"
+# EXTERNPROTO "../protos/custom_texture1.proto"
 
 WorldInfo {
   info [
@@ -103,7 +103,7 @@ Robot {
       name "pen"
     }
     DEF CUST_TEXTURE1 custom_texture {}
-    DEF CUST_TEXTURE2 custom_texture1 {}
+
   ]
 }
 SprintField {
