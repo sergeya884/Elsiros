@@ -1,6 +1,6 @@
-2024-08-01 21:14:09.963201
-2024-08-01 21:14:11,382 - [INFO] - __main__ - (main_pb.py).main_procedure(116) - port = 7002
-2024-08-01 21:14:11,397 - [INFO] - __main__ - (main_pb.py).main_procedure(124) - role = sprint
-2024-08-01 21:14:11,401 - [INFO] - __main__ - (main_pb.py).main_procedure(133) - Player is going to play without Game Controller
-2024-08-01 21:14:11,407 - [WARNING] - communication_manager - (communication_manager_robokit.py).__update_history(66) - WARNING! Large protobuf time rx delta = 870
-2024-08-01 21:14:12,412 - [INFO] - __main__ - (class_Motion_Webots_PB.py).imu_activation(92) - imu_activation
+2024-08-01 23:49:11.492703
+2024-08-01 23:49:12,785 - [INFO] - __main__ - (main_pb.py).main_procedure(116) - port = 7002
+2024-08-01 23:49:12,799 - [INFO] - __main__ - (main_pb.py).main_procedure(124) - role = sprint
+2024-08-01 23:49:12,804 - [INFO] - __main__ - (main_pb.py).main_procedure(133) - Player is going to play without Game Controller
+2024-08-01 23:49:12,806 - [WARNING] - communication_manager - (communication_manager_robokit.py).__update_history(66) - WARNING! Large protobuf time rx delta = 1090
+2024-08-01 23:49:13,812 - [INFO] - __main__ - (class_Motion_Webots_PB.py).imu_activation(92) - imu_activation

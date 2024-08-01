@@ -102,7 +102,30 @@ Robot {
       translation 0 0 0
       name "pen"
     }
-    DEF CUST_TEXTURE1 custom_texture {}
+    DEF CUST_TEXTURE_1 custom_texture {
+      POINTS[
+        0 -0.5 0.001
+        0 -0.5 0.001
+        0.001 0.5 0.001
+        0.001 0.5 0.001
+      ]
+    }
+    DEF CUST_TEXTURE_2 custom_texture {
+      POINTS[
+        0 0.55 0.001
+        0 0.55 0.001
+        0.001 1.55 0.001
+        0.001 1.55 0.001
+      ]
+    }
+    DEF CUST_TEXTURE_3 custom_texture {
+      POINTS[
+        0 1.6 0.001
+        0 1.6 0.001
+        0.001 2.6 0.001
+        0.001 2.6 0.001
+      ]
+    }
 
   ]
 }

@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d602b984-8fef-489f-8181-90db55ae02b4" name="Changes" comment="delite update_ball_contacts() from refere_Robofest.py and penalty work">
-      <change afterPath="$PROJECT_DIR$/.idea/Elsiros.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worlds/textures/MIPT_white.png" afterDir="false" />
+    <list default="true" id="d602b984-8fef-489f-8181-90db55ae02b4" name="Changes" comment="ADD Pen and remove pen in sprint">
+      <change afterPath="$PROJECT_DIR$/protos/textures/grey.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7001.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7001.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7002.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7002.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7003.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7003.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/sprint/sprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/sprint/sprint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protos/custom_Pen.proto" beforeDir="false" afterPath="$PROJECT_DIR$/protos/custom_Pen.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/protos/custom_texture.proto" beforeDir="false" afterPath="$PROJECT_DIR$/protos/custom_texture.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worlds/.Robofest_2023_sprint.wbproj" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/.Robofest_2023_sprint.wbproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worlds/Robofest_2023_sprint.wbt" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/Robofest_2023_sprint.wbt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +59,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Elsiros_result/worlds/textures",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "two.files.diff.last.used.file": "C:/Elsiros/controllers/sprint/sprint.py"
   }
 }]]></component>
@@ -108,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722272029700</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ADD Pen and remove pen in sprint">
+      <option name="closed" value="true" />
+      <created>1722536210983</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1722536210983</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,7 +143,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="merge Sergey and Vadim" />
     <MESSAGE value="delite update_ball_contacts() from refere_Robofest.py and penalty work" />
-    <option name="LAST_COMMIT_MESSAGE" value="delite update_ball_contacts() from refere_Robofest.py and penalty work" />
+    <MESSAGE value="ADD Pen and remove pen in sprint" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD Pen and remove pen in sprint" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
