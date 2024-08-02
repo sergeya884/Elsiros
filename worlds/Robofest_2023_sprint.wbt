@@ -77,11 +77,109 @@ DEF RED_PLAYER_2 Robokit1 {
   ]
 }
 
-DEF GREAN_PLAYER_3 Robokit1 {
+DEF GREEN_PLAYER_3 Robokit1 {
   translation 0 2.1 0.288354
-  name "grean player 3"
+  name "green player 3"
   controllerArgs [
     "7003"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
+
+DEF BLACK_PLAYER_4 Robokit1 {
+  translation 0 3.15 0.288354
+  name "black player 4"
+  controllerArgs [
+    "7004"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
+
+DEF PURPLE_PLAYER_5 Robokit1 {
+  translation 0 4.2 0.288354
+  name "purple player 5"
+  controllerArgs [
+    "7005"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
+
+DEF ORANGE_PLAYER_6 Robokit1 {
+  translation 0 5.25 0.288354
+  name "orange player 6"
+  controllerArgs [
+    "7006"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
+
+DEF BROWN_PLAYER_7 Robokit1 {
+  translation 0 6.3 0.288354
+  name "brown player 7"
+  controllerArgs [
+    "7007"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
+
+DEF GREY_PLAYER_8 Robokit1 {
+  translation 0 7.35 0.288354
+  name "grey player 8"
+  controllerArgs [
+    "7008"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
+
+DEF PINK_PLAYER_9 Robokit1 {
+  translation 0 8.4 0.288354
+  name "pink player 9"
+  controllerArgs [
+    "7009"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
+
+DEF TURQUOISE_PLAYER_10 Robokit1 {
+  translation 0 9.45 0.288354
+  name "turquoise player 10"
+  controllerArgs [
+    "7010"
     "2"
     "127.0.0.1"
     "192.168.123.21"

@@ -1,20 +1,6 @@
-2024-07-29 18:15:37.147977
---- Logging error ---
-Traceback (most recent call last):
-  File "C:\Program Files\Python39\lib\logging\__init__.py", line 1086, in emit
-    stream.write(msg + self.terminator)
-  File "C:\Users\User\Downloads\GitHub\elsiros\Elsiros\controllers\Robofest_TEAM\main_pb.py", line 162, in write
-    self.out.WriteText(string)
-wx._core.wxAssertionError: C++ assertion "m_count == -1 || m_count == -2" failed at ..\..\src\msw\textctrl.cpp(304) in UpdatesCountFilter::UpdatesCountFilter(): wrong initial m_updatesCount value
-Call stack:
-  File "C:\Program Files\Python39\lib\threading.py", line 930, in _bootstrap
-    self._bootstrap_inner()
-  File "C:\Program Files\Python39\lib\threading.py", line 973, in _bootstrap_inner
-    self.run()
-  File "C:\Program Files\Python39\lib\threading.py", line 910, in run
-    self._target(*self._args, **self._kwargs)
-  File "C:\Users\User\Downloads\GitHub\elsiros\Elsiros\controllers\Robofest_TEAM\main_pb.py", line 133, in main_procedure
-    logger.info('Player is going to play without Game Controller')
-Message: 'Player is going to play without Game Controller'
-Arguments: ()
-2024-07-29 18:15:39,683 - [INFO] - __main__ - (class_Motion_Webots_PB.py).imu_activation(92) - imu_activation
+2024-08-02 20:58:39.048200
+2024-08-02 20:58:40,730 - [INFO] - __main__ - (main_pb.py).main_procedure(116) - port = 7001
+2024-08-02 20:58:40,793 - [INFO] - __main__ - (main_pb.py).main_procedure(124) - role = sprint
+2024-08-02 20:58:40,798 - [INFO] - __main__ - (main_pb.py).main_procedure(133) - Player is going to play without Game Controller
+2024-08-02 20:58:40,809 - [WARNING] - communication_manager - (communication_manager_robokit.py).__update_history(66) - WARNING! Large protobuf time rx delta = 1085
+2024-08-02 20:58:41,808 - [INFO] - __main__ - (class_Motion_Webots_PB.py).imu_activation(92) - imu_activation

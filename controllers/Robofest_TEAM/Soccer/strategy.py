@@ -459,8 +459,8 @@ class Player():
         number_Of_Cycles += 1
         for cycle in range(number_Of_Cycles):
             stepLength1 = stepLength
-            if cycle ==0 : stepLength1 = stepLength/3
-            if cycle ==1 : stepLength1 = stepLength/3 * 2
+            if cycle == 0: stepLength1 = stepLength/3
+            if cycle == 1: stepLength1 = stepLength/3 * 2
             self.motion.refresh_Orientation()
             heading = self.motion.imu_body_yaw()
             rotation = 0 + heading * proportional + (heading - last_heading) * differential 
@@ -741,7 +741,7 @@ class Player():
         """
         self.motion.near_distance_omni_motion(200, 0)                    # get out from goal line
         self.g = GoalKeeper(self.logger, self.motion, self.local, self.glob)
-        while (True):
+        while True:
             dist = -1.0
             if self.motion.falling_Flag != 0:                               # falling_Flag variable is used to with purpose to deliver
                                                                             # to strategy falling event or request to stop cycle. 

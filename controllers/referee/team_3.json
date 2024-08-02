@@ -1,5 +1,5 @@
 {
-    "name": "Grean Team",
+    "name": "Green Team",
     "robotStartCmd": "SAMPLE_TEAM/main_pb.py",
     "players": {
       "1": {

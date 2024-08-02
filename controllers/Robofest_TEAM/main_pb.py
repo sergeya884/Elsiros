@@ -67,7 +67,7 @@ with open('../referee/' + game_data['red']['config'], "r") as f:
 with open('../referee/' + game_data['blue']['config'], "r") as f:
     team_2_data = json.loads(f.read())
 
-with open('../referee/' + game_data['grean']['config'], "r") as f:
+with open('../referee/' + game_data['green']['config'], "r") as f:
     team_3_data = json.loads(f.read())
 
 class Log:
@@ -138,20 +138,20 @@ def main_procedure():
     motion.direction_To_Attack = -initial_coord[2]
     time.sleep(1)
     motion.activation()
-    local = Local(logger, motion, glob, coord_odometry = initial_coord)
+    local = Local(logger, motion, glob, coord_odometry=initial_coord)
     motion.local = local
     local.coordinate_record()
     motion.falling_Flag = 0
     player = Player(logger, role, second_pressed_button, glob, motion, local)
     timer1 = robot.current_time
-    logger.debug( 'start time: %i',timer1)
+    logger.debug('start time: %i', timer1)
     player.play_game(sys.argv[8])
 
     x, _ = robot.get_localization()['position']
     print('dist = ', "%.4f" % x )
     
     # player.play_game()
-    logger.debug( 'total time: %i', robot.current_time - timer1)
+    logger.debug('total time: %i', robot.current_time - timer1)
     sys.exit(0)
 
 class RedirectText(object):
@@ -178,7 +178,7 @@ class Main_Panel(wx.Frame):
         panel = wx.Panel(self.console_Panel)
         self.log = wx.TextCtrl(self.console_Panel, -1, style=wx.TE_MULTILINE) #|wx.TE_READONLY) #|wx.HSCROLL)
         log_box = wx.BoxSizer(wx.VERTICAL)
-        log_box.Add(panel,0,wx.TOP)
+        log_box.Add(panel, 0, wx.TOP)
         log_box.Add(self.log, proportion = 1, flag=wx.EXPAND|wx.BOTTOM|wx.TOP)
         self.console_Panel.SetSizer(log_box)
         redir = RedirectText(self.log)
@@ -195,24 +195,23 @@ class Main_Panel(wx.Frame):
         hbox.Add(sizer, 0, wx.TOP)
         panel.SetSizer(hbox)
 
-
         btn1.Bind(wx.EVT_BUTTON, self.ShowMessage1)
         btn2.Bind(wx.EVT_BUTTON, self.ShowMessage2)
 
         self.SetSize((300, 200))
         robot_color = sys.argv[3]
         robot_number = sys.argv[4]
-        title = 'Team ' + robot_color + ' player '+ robot_number
+        title = 'Team ' + robot_color + ' player ' + robot_number
         self.SetTitle(title)
         width, height = wx.GetDisplaySize().Get()
-        if robot_color == 'red':
-            x_position = width - 300 * (3 - int(robot_number))
-        elif robot_color == 'blue':
-            x_position = width - 300 * (4 - int(robot_number))
-        elif robot_color == 'grean':
-            x_position = width - 300 * (5 - int(robot_number))
-        self.SetPosition((x_position, height -225))
-        #self.Centre()
+        x_position, y_position = 0, 0
+        if int(robot_number) < 6:
+            x_position = width - 300 * int(robot_number)
+            y_position = height - 230
+        elif 5 < int(robot_number) < 11:
+            x_position = width - 300 * (int(robot_number) - 5)
+            y_position = height - 430
+        self.SetPosition((x_position, y_position))
 
     def ShowMessage1(self, event):
         global logger

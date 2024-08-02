@@ -34,7 +34,7 @@ PROTO SprintField [
     -- Points for a quarter field (except central circle)
     pts = {}
 
-    -- Прямоугольник 1
+    -- Рамка дорожки 1
     pts[1]  = {x = 0,                           y = 0,                                                  z = DEPTH}
     pts[2]  = {x = 0,                           y = B,                                                  z = DEPTH}
     pts[3]  = {x = A,                           y = 0,                                                  z = DEPTH}
@@ -56,7 +56,7 @@ PROTO SprintField [
     pts[19]  = {x = A + LINE_WIDTH,             y = -C-LINE_WIDTH,                                      z = DEPTH}
     pts[20]  = {x = A + D + LINE_WIDTH,         y = -C-LINE_WIDTH,                                      z = DEPTH}
 
-    -- Прямоугольник 2
+    -- Рамка дорожки 2
     pts[21]  = {x = 0,                          y = B + C + LINE_WIDTH - distance_between_slices + 0,                             z = DEPTH}
     pts[22]  = {x = 0,                          y = B + C + LINE_WIDTH - distance_between_slices + B,                             z = DEPTH}
     pts[23]  = {x = A,                          y = B + C + LINE_WIDTH - distance_between_slices + 0,                             z = DEPTH}
@@ -78,7 +78,7 @@ PROTO SprintField [
     pts[39] = {x = A + LINE_WIDTH,              y = B + C + LINE_WIDTH - C- distance_between_slices -LINE_WIDTH,                  z = DEPTH}
     pts[40] = {x = A + D + LINE_WIDTH,          y = B + C + LINE_WIDTH - C- distance_between_slices -LINE_WIDTH,                  z = DEPTH}
 
-    -- Прямоугольник 3
+    -- Рамка дорожки 3
     pts[41]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 2 + 0,                       z = DEPTH}
     pts[42]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 2   + B,                       z = DEPTH}
     pts[43]  = {x = A,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 2   + 0,                       z = DEPTH}
@@ -100,99 +100,300 @@ PROTO SprintField [
     pts[59] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 2 - C  -LINE_WIDTH,            z = DEPTH}
     pts[60] = {x = A + D + LINE_WIDTH,          y = (B + C + LINE_WIDTH - distance_between_slices) * 2 - C  -LINE_WIDTH,            z = DEPTH}
 
-    -- Прямоугольник 4
-    --pts[61]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 3 + 0,                       z = DEPTH}
-    --pts[62]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 3   + B,                       z = DEPTH}
-    --pts[63]  = {x = A,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 3   + 0,                       z = DEPTH}
-    --pts[64]  = {x = A,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 3   + B,                       z = DEPTH}
-    --pts[65]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 3   - LINE_WIDTH,              z = DEPTH}
-    --pts[66]  = {x = A ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 3   - LINE_WIDTH,              z = DEPTH}
-    --pts[67]  = {x = 0 ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 3 + B   + LINE_WIDTH,          z = DEPTH}
-    --pts[68]  = {x = A ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 3 + B   + LINE_WIDTH,          z = DEPTH}
-    --pts[69]  = {x = -LINE_WIDTH ,               y = (B + C + LINE_WIDTH - distance_between_slices) * 3 + B   + LINE_WIDTH,          z = DEPTH}
-    --pts[70] = {x = -LINE_WIDTH ,                y = (B + C + LINE_WIDTH - distance_between_slices) * 3   - LINE_WIDTH,              z = DEPTH}
-    --pts[71] = {x = A + LINE_WIDTH ,             y = (B + C + LINE_WIDTH - distance_between_slices) * 3 + B   + LINE_WIDTH,          z = DEPTH}
-    --pts[72] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 3   - LINE_WIDTH,              z = DEPTH}
-    --pts[73] = {x = -D - LINE_WIDTH,             y = (B + C + LINE_WIDTH - distance_between_slices) * 3 - C  -LINE_WIDTH,            z = DEPTH}
-    --pts[74] = {x = - LINE_WIDTH,                y = (B + C + LINE_WIDTH - distance_between_slices) * 3 - C   -LINE_WIDTH,           z = DEPTH}
-    --pts[75] = {x = -D - LINE_WIDTH,             y = (B + C + LINE_WIDTH - distance_between_slices) * 3 + C + B   + LINE_WIDTH,      z = DEPTH}
-    --pts[76] = {x = - LINE_WIDTH,                y = (B + C + LINE_WIDTH - distance_between_slices) * 3 + C + B   + LINE_WIDTH,      z = DEPTH}
-    --pts[77] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 3 + C+ B   + LINE_WIDTH,       z = DEPTH}
-    --pts[78] = {x = A + D + LINE_WIDTH,          y = (B + C + LINE_WIDTH - distance_between_slices) * 3 + C+ B   + LINE_WIDTH,       z = DEPTH}
-    --pts[79] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 3 - C  -LINE_WIDTH,            z = DEPTH}
-    --pts[80] = {x = A + D + LINE_WIDTH,          y = (B + C + LINE_WIDTH - distance_between_slices) * 3 - C  -LINE_WIDTH,            z = DEPTH}
+    -- Рамка дорожки 4
+    pts[61]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 3 + 0,                       z = DEPTH}
+    pts[62]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 3   + B,                       z = DEPTH}
+    pts[63]  = {x = A,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 3   + 0,                       z = DEPTH}
+    pts[64]  = {x = A,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 3   + B,                       z = DEPTH}
+    pts[65]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 3   - LINE_WIDTH,              z = DEPTH}
+    pts[66]  = {x = A ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 3   - LINE_WIDTH,              z = DEPTH}
+    pts[67]  = {x = 0 ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 3 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[68]  = {x = A ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 3 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[69]  = {x = -LINE_WIDTH ,               y = (B + C + LINE_WIDTH - distance_between_slices) * 3 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[70] = {x = -LINE_WIDTH ,                y = (B + C + LINE_WIDTH - distance_between_slices) * 3   - LINE_WIDTH,              z = DEPTH}
+    pts[71] = {x = A + LINE_WIDTH ,             y = (B + C + LINE_WIDTH - distance_between_slices) * 3 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[72] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 3   - LINE_WIDTH,              z = DEPTH}
+    pts[73] = {x = -D - LINE_WIDTH,             y = (B + C + LINE_WIDTH - distance_between_slices) * 3 - C  -LINE_WIDTH,            z = DEPTH}
+    pts[74] = {x = - LINE_WIDTH,                y = (B + C + LINE_WIDTH - distance_between_slices) * 3 - C   -LINE_WIDTH,           z = DEPTH}
+    pts[75] = {x = -D - LINE_WIDTH,             y = (B + C + LINE_WIDTH - distance_between_slices) * 3 + C + B   + LINE_WIDTH,      z = DEPTH}
+    pts[76] = {x = - LINE_WIDTH,                y = (B + C + LINE_WIDTH - distance_between_slices) * 3 + C + B   + LINE_WIDTH,      z = DEPTH}
+    pts[77] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 3 + C+ B   + LINE_WIDTH,       z = DEPTH}
+    pts[78] = {x = A + D + LINE_WIDTH,          y = (B + C + LINE_WIDTH - distance_between_slices) * 3 + C+ B   + LINE_WIDTH,       z = DEPTH}
+    pts[79] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 3 - C  -LINE_WIDTH,            z = DEPTH}
+    pts[80] = {x = A + D + LINE_WIDTH,          y = (B + C + LINE_WIDTH - distance_between_slices) * 3 - C  -LINE_WIDTH,            z = DEPTH}
+
+    -- Рамка дорожки 5
+    pts[81]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 4 + 0,                       z = DEPTH}
+    pts[82]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 4   + B,                       z = DEPTH}
+    pts[83]  = {x = A,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 4   + 0,                       z = DEPTH}
+    pts[84]  = {x = A,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 4   + B,                       z = DEPTH}
+    pts[85]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 4   - LINE_WIDTH,              z = DEPTH}
+    pts[86]  = {x = A ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 4   - LINE_WIDTH,              z = DEPTH}
+    pts[87]  = {x = 0 ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 4 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[88]  = {x = A ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 4 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[89]  = {x = -LINE_WIDTH ,               y = (B + C + LINE_WIDTH - distance_between_slices) * 4 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[90] = {x = -LINE_WIDTH ,                y = (B + C + LINE_WIDTH - distance_between_slices) * 4   - LINE_WIDTH,              z = DEPTH}
+    pts[91] = {x = A + LINE_WIDTH ,             y = (B + C + LINE_WIDTH - distance_between_slices) * 4 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[92] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 4   - LINE_WIDTH,              z = DEPTH}
+    pts[93] = {x = -D - LINE_WIDTH,             y = (B + C + LINE_WIDTH - distance_between_slices) * 4 - C  -LINE_WIDTH,            z = DEPTH}
+    pts[94] = {x = - LINE_WIDTH,                y = (B + C + LINE_WIDTH - distance_between_slices) * 4 - C   -LINE_WIDTH,           z = DEPTH}
+    pts[95] = {x = -D - LINE_WIDTH,             y = (B + C + LINE_WIDTH - distance_between_slices) * 4 + C + B   + LINE_WIDTH,      z = DEPTH}
+    pts[96] = {x = - LINE_WIDTH,                y = (B + C + LINE_WIDTH - distance_between_slices) * 4 + C + B   + LINE_WIDTH,      z = DEPTH}
+    pts[97] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 4 + C+ B   + LINE_WIDTH,       z = DEPTH}
+    pts[98] = {x = A + D + LINE_WIDTH,          y = (B + C + LINE_WIDTH - distance_between_slices) * 4 + C+ B   + LINE_WIDTH,       z = DEPTH}
+    pts[99] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 4 - C  -LINE_WIDTH,            z = DEPTH}
+    pts[100] = {x = A + D + LINE_WIDTH,          y = (B + C + LINE_WIDTH - distance_between_slices) * 4 - C  -LINE_WIDTH,            z = DEPTH}
+
+    -- Рамка дорожки 6
+    pts[101]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 5 + 0,                       z = DEPTH}
+    pts[102]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 5   + B,                       z = DEPTH}
+    pts[103]  = {x = A,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 5   + 0,                       z = DEPTH}
+    pts[104]  = {x = A,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 5   + B,                       z = DEPTH}
+    pts[105]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 5   - LINE_WIDTH,              z = DEPTH}
+    pts[106]  = {x = A ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 5   - LINE_WIDTH,              z = DEPTH}
+    pts[107]  = {x = 0 ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 5 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[108]  = {x = A ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 5 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[109]  = {x = -LINE_WIDTH ,               y = (B + C + LINE_WIDTH - distance_between_slices) * 5 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[110] = {x = -LINE_WIDTH ,                y = (B + C + LINE_WIDTH - distance_between_slices) * 5   - LINE_WIDTH,              z = DEPTH}
+    pts[111] = {x = A + LINE_WIDTH ,             y = (B + C + LINE_WIDTH - distance_between_slices) * 5 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[112] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 5   - LINE_WIDTH,              z = DEPTH}
+    pts[113] = {x = -D - LINE_WIDTH,             y = (B + C + LINE_WIDTH - distance_between_slices) * 5 - C  -LINE_WIDTH,            z = DEPTH}
+    pts[114] = {x = - LINE_WIDTH,                y = (B + C + LINE_WIDTH - distance_between_slices) * 5 - C   -LINE_WIDTH,           z = DEPTH}
+    pts[115] = {x = -D - LINE_WIDTH,             y = (B + C + LINE_WIDTH - distance_between_slices) * 5 + C + B   + LINE_WIDTH,      z = DEPTH}
+    pts[116] = {x = - LINE_WIDTH,                y = (B + C + LINE_WIDTH - distance_between_slices) * 5 + C + B   + LINE_WIDTH,      z = DEPTH}
+    pts[117] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 5 + C+ B   + LINE_WIDTH,       z = DEPTH}
+    pts[118] = {x = A + D + LINE_WIDTH,          y = (B + C + LINE_WIDTH - distance_between_slices) * 5 + C+ B   + LINE_WIDTH,       z = DEPTH}
+    pts[119] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 5 - C  -LINE_WIDTH,            z = DEPTH}
+    pts[120] = {x = A + D + LINE_WIDTH,          y = (B + C + LINE_WIDTH - distance_between_slices) * 5 - C  -LINE_WIDTH,            z = DEPTH}
+
+    -- Рамка дорожки 7
+    pts[121]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 6 + 0,                       z = DEPTH}
+    pts[122]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 6   + B,                       z = DEPTH}
+    pts[123]  = {x = A,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 6   + 0,                       z = DEPTH}
+    pts[124]  = {x = A,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 6   + B,                       z = DEPTH}
+    pts[125]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 6   - LINE_WIDTH,              z = DEPTH}
+    pts[126]  = {x = A ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 6   - LINE_WIDTH,              z = DEPTH}
+    pts[127]  = {x = 0 ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 6 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[128]  = {x = A ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 6 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[129]  = {x = -LINE_WIDTH ,               y = (B + C + LINE_WIDTH - distance_between_slices) * 6 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[130] = {x = -LINE_WIDTH ,                y = (B + C + LINE_WIDTH - distance_between_slices) * 6   - LINE_WIDTH,              z = DEPTH}
+    pts[131] = {x = A + LINE_WIDTH ,             y = (B + C + LINE_WIDTH - distance_between_slices) * 6 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[132] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 6   - LINE_WIDTH,              z = DEPTH}
+    pts[133] = {x = -D - LINE_WIDTH,             y = (B + C + LINE_WIDTH - distance_between_slices) * 6 - C  -LINE_WIDTH,            z = DEPTH}
+    pts[134] = {x = - LINE_WIDTH,                y = (B + C + LINE_WIDTH - distance_between_slices) * 6 - C   -LINE_WIDTH,           z = DEPTH}
+    pts[135] = {x = -D - LINE_WIDTH,             y = (B + C + LINE_WIDTH - distance_between_slices) * 6 + C + B   + LINE_WIDTH,      z = DEPTH}
+    pts[136] = {x = - LINE_WIDTH,                y = (B + C + LINE_WIDTH - distance_between_slices) * 6 + C + B   + LINE_WIDTH,      z = DEPTH}
+    pts[137] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 6 + C+ B   + LINE_WIDTH,       z = DEPTH}
+    pts[138] = {x = A + D + LINE_WIDTH,          y = (B + C + LINE_WIDTH - distance_between_slices) * 6 + C+ B   + LINE_WIDTH,       z = DEPTH}
+    pts[139] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 6 - C  -LINE_WIDTH,            z = DEPTH}
+    pts[140] = {x = A + D + LINE_WIDTH,          y = (B + C + LINE_WIDTH - distance_between_slices) * 6 - C  -LINE_WIDTH,            z = DEPTH}
+
+    -- Рамка дорожки 8
+    pts[141]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 7 + 0,                       z = DEPTH}
+    pts[142]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 7   + B,                       z = DEPTH}
+    pts[143]  = {x = A,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 7   + 0,                       z = DEPTH}
+    pts[144]  = {x = A,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 7   + B,                       z = DEPTH}
+    pts[145]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 7   - LINE_WIDTH,              z = DEPTH}
+    pts[146]  = {x = A ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 7   - LINE_WIDTH,              z = DEPTH}
+    pts[147]  = {x = 0 ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 7 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[148]  = {x = A ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 7 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[149]  = {x = -LINE_WIDTH ,               y = (B + C + LINE_WIDTH - distance_between_slices) * 7 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[150] = {x = -LINE_WIDTH ,                y = (B + C + LINE_WIDTH - distance_between_slices) * 7   - LINE_WIDTH,              z = DEPTH}
+    pts[151] = {x = A + LINE_WIDTH ,             y = (B + C + LINE_WIDTH - distance_between_slices) * 7 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[152] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 7   - LINE_WIDTH,              z = DEPTH}
+    pts[153] = {x = -D - LINE_WIDTH,             y = (B + C + LINE_WIDTH - distance_between_slices) * 7 - C  -LINE_WIDTH,            z = DEPTH}
+    pts[154] = {x = - LINE_WIDTH,                y = (B + C + LINE_WIDTH - distance_between_slices) * 7 - C   -LINE_WIDTH,           z = DEPTH}
+    pts[155] = {x = -D - LINE_WIDTH,             y = (B + C + LINE_WIDTH - distance_between_slices) * 7 + C + B   + LINE_WIDTH,      z = DEPTH}
+    pts[156] = {x = - LINE_WIDTH,                y = (B + C + LINE_WIDTH - distance_between_slices) * 7 + C + B   + LINE_WIDTH,      z = DEPTH}
+    pts[157] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 7 + C+ B   + LINE_WIDTH,       z = DEPTH}
+    pts[158] = {x = A + D + LINE_WIDTH,          y = (B + C + LINE_WIDTH - distance_between_slices) * 7 + C+ B   + LINE_WIDTH,       z = DEPTH}
+    pts[159] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 7 - C  -LINE_WIDTH,            z = DEPTH}
+    pts[160] = {x = A + D + LINE_WIDTH,          y = (B + C + LINE_WIDTH - distance_between_slices) * 7 - C  -LINE_WIDTH,            z = DEPTH}
+
+    -- Рамка дорожки 9
+    pts[161]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 8 + 0,                       z = DEPTH}
+    pts[162]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 8   + B,                       z = DEPTH}
+    pts[163]  = {x = A,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 8   + 0,                       z = DEPTH}
+    pts[164]  = {x = A,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 8   + B,                       z = DEPTH}
+    pts[165]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 8   - LINE_WIDTH,              z = DEPTH}
+    pts[166]  = {x = A ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 8   - LINE_WIDTH,              z = DEPTH}
+    pts[167]  = {x = 0 ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 8 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[168]  = {x = A ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 8 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[169]  = {x = -LINE_WIDTH ,               y = (B + C + LINE_WIDTH - distance_between_slices) * 8 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[170] = {x = -LINE_WIDTH ,                y = (B + C + LINE_WIDTH - distance_between_slices) * 8   - LINE_WIDTH,              z = DEPTH}
+    pts[171] = {x = A + LINE_WIDTH ,             y = (B + C + LINE_WIDTH - distance_between_slices) * 8 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[172] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 8   - LINE_WIDTH,              z = DEPTH}
+    pts[173] = {x = -D - LINE_WIDTH,             y = (B + C + LINE_WIDTH - distance_between_slices) * 8 - C  -LINE_WIDTH,            z = DEPTH}
+    pts[174] = {x = - LINE_WIDTH,                y = (B + C + LINE_WIDTH - distance_between_slices) * 8 - C   -LINE_WIDTH,           z = DEPTH}
+    pts[175] = {x = -D - LINE_WIDTH,             y = (B + C + LINE_WIDTH - distance_between_slices) * 8 + C + B   + LINE_WIDTH,      z = DEPTH}
+    pts[176] = {x = - LINE_WIDTH,                y = (B + C + LINE_WIDTH - distance_between_slices) * 8 + C + B   + LINE_WIDTH,      z = DEPTH}
+    pts[177] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 8 + C+ B   + LINE_WIDTH,       z = DEPTH}
+    pts[178] = {x = A + D + LINE_WIDTH,          y = (B + C + LINE_WIDTH - distance_between_slices) * 8 + C+ B   + LINE_WIDTH,       z = DEPTH}
+    pts[179] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 8 - C  -LINE_WIDTH,            z = DEPTH}
+    pts[180] = {x = A + D + LINE_WIDTH,          y = (B + C + LINE_WIDTH - distance_between_slices) * 8 - C  -LINE_WIDTH,            z = DEPTH}
+
+    -- Рамка дорожки 10
+    pts[181]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 9 + 0,                       z = DEPTH}
+    pts[182]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 9   + B,                       z = DEPTH}
+    pts[183]  = {x = A,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 9   + 0,                       z = DEPTH}
+    pts[184]  = {x = A,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 9   + B,                       z = DEPTH}
+    pts[185]  = {x = 0,                          y = (B + C + LINE_WIDTH - distance_between_slices) * 9   - LINE_WIDTH,              z = DEPTH}
+    pts[186]  = {x = A ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 9   - LINE_WIDTH,              z = DEPTH}
+    pts[187]  = {x = 0 ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 9 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[188]  = {x = A ,                         y = (B + C + LINE_WIDTH - distance_between_slices) * 9 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[189]  = {x = -LINE_WIDTH ,               y = (B + C + LINE_WIDTH - distance_between_slices) * 9 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[190] = {x = -LINE_WIDTH ,                y = (B + C + LINE_WIDTH - distance_between_slices) * 9   - LINE_WIDTH,              z = DEPTH}
+    pts[191] = {x = A + LINE_WIDTH ,             y = (B + C + LINE_WIDTH - distance_between_slices) * 9 + B   + LINE_WIDTH,          z = DEPTH}
+    pts[192] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 9   - LINE_WIDTH,              z = DEPTH}
+    pts[193] = {x = -D - LINE_WIDTH,             y = (B + C + LINE_WIDTH - distance_between_slices) * 9 - C  -LINE_WIDTH,            z = DEPTH}
+    pts[194] = {x = - LINE_WIDTH,                y = (B + C + LINE_WIDTH - distance_between_slices) * 9 - C   -LINE_WIDTH,           z = DEPTH}
+    pts[195] = {x = -D - LINE_WIDTH,             y = (B + C + LINE_WIDTH - distance_between_slices) * 9 + C + B   + LINE_WIDTH,      z = DEPTH}
+    pts[196] = {x = - LINE_WIDTH,                y = (B + C + LINE_WIDTH - distance_between_slices) * 9 + C + B   + LINE_WIDTH,      z = DEPTH}
+    pts[197] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 9 + C+ B   + LINE_WIDTH,       z = DEPTH}
+    pts[198] = {x = A + D + LINE_WIDTH,          y = (B + C + LINE_WIDTH - distance_between_slices) * 9 + C+ B   + LINE_WIDTH,       z = DEPTH}
+    pts[199] = {x = A + LINE_WIDTH,              y = (B + C + LINE_WIDTH - distance_between_slices) * 9 - C  -LINE_WIDTH,            z = DEPTH}
+    pts[200] = {x = A + D + LINE_WIDTH,          y = (B + C + LINE_WIDTH - distance_between_slices) * 9 - C  -LINE_WIDTH,            z = DEPTH}
 
     -- Triangles for a quarter field (except central circle)
 
     -- Triangles for Grass
     tg = {}
 
-    tg[1]  = {a = 1,  b = 2, c = 4}
-    tg[2]  = {a = 1,  b = 4,  c = 3}
-    tg[3]  = {a = 16,  b = 13,  c = 15}
-    tg[4]  = {a = 13,  b = 16,  c = 14}
+    -- Закрашиваем внутри дорожки
+    tg[1] = {a = 1,  b = 2, c = 4}
+    tg[2] = {a = 1,  b = 4,  c = 3}
+    tg[3] = {a = 21,  b = 22, c = 24}
+    tg[4] = {a = 21,  b = 24,  c = 23}
+    tg[5] = {a = 41,  b = 42, c = 44}
+    tg[6] = {a = 41,  b = 44,  c = 43}
+    tg[7] = {a = 61, b = 62, c = 64}
+    tg[8] = {a = 61, b = 64, c = 63}
+    tg[9] = {a = 81, b = 82, c = 84}
+    tg[10] = {a = 81, b = 84, c = 83}
+    tg[11] = {a = 101, b = 102, c = 104}
+    tg[12] = {a = 101, b = 104, c = 103}
+    tg[13] = {a = 121, b = 122, c = 124}
+    tg[14] = {a = 121, b = 124, c = 123}
+    tg[15] = {a = 141, b = 142, c = 144}
+    tg[16] = {a = 141, b = 144, c = 143}
+    tg[17] = {a = 161, b = 162, c = 164}
+    tg[18] = {a = 161, b = 164, c = 163}
+    tg[19] = {a = 181, b = 182, c = 184}
+    tg[20] = {a = 181, b = 184, c = 183}
+    -- По бокам по два треугольника
+    tg[21] = {a = 12,  b = 14, c = 10}
+    tg[22] = {a = 14,  b = 12, c = 19}
+    tg[23] = {a = 197, b = 189, c = 196}
+    tg[24] = {a = 189, b = 197, c = 191}
+    -- Верхнюю часть покрываем двумя треугольниками
+    tg[25] = {a = 13, b = 196, c = 14}
+    tg[26] = {a = 196, b = 13, c = 195}
+    -- Нижнюю часть покрываем двумя треугольниками
+    tg[27]  = {a = 198, b = 20, c = 19}
+    tg[28] = {a = 19, b = 197, c = 198}
 
-    tg[5]  = {a = 21,  b = 22, c = 24}
-    tg[6]  = {a = 21,  b = 24,  c = 23}
-    tg[7]  = {a = 12,  b = 14, c = 10}
-    tg[8]  = {a = 14,  b = 12, c = 19}
-    tg[9]  = {a = 57, b = 20, c = 19}
-    tg[10] = {a = 20, b = 57, c = 58}
-
-    tg[21] = {a = 41,  b = 42, c = 44}
-    tg[22] = {a = 41,  b = 44,  c = 43}
-    tg[23] = {a = 56,  b = 15,  c = 55}
-    tg[24] = {a = 15,  b = 56,  c = 16}
-    tg[25] = {a = 57,  b = 49, c = 56}
-    tg[26] = {a = 49,  b = 57,  c = 51}
-
-    -- beetwen slices
-    tg[27] = {a = 9, b = 30, c = 11}
-    tg[28] = {a = 32, b = 11, c = 30}
-    tg[29] = {a = 29, b = 50, c = 31}
-    tg[30] = {a = 52, b = 31, c = 50}
 
     -- Triangles for Lines
     tl = {}
-    -- Прямоугольник 1
-    tl[1]  = {a = 1,  b = 3, c = 5}
+    -- Рамка дорожки 1
+    tl[1]  = {a = 1,  b = 3,  c = 5}
     tl[2]  = {a = 5,  b = 3,  c = 6}
-    tl[3]  = {a = 2,  b = 7, c = 8}
+    tl[3]  = {a = 2,  b = 7,  c = 8}
     tl[4]  = {a = 2,  b = 8,  c = 4}
-    tl[5]  = {a = 5, b = 10, c = 9}
-    tl[6]  = {a = 7, b = 5, c = 9}
+    tl[5]  = {a = 5,  b = 10, c = 9}
+    tl[6]  = {a = 7,  b = 5,  c = 9}
     tl[7]  = {a = 8,  b = 12, c = 6}
-    tl[8]  = {a = 12,  b = 8,  c = 11}
+    tl[8]  = {a = 12, b = 8,  c = 11}
 
-    -- Прямоугольник 2
-    tl[9]  = {a = 21,  b = 23, c = 25}
+    -- Рамка дорожки 2
+    tl[9]  = { a = 21,  b = 23,  c = 25}
     tl[10]  = {a = 25,  b = 23,  c = 26}
-    tl[11]  = {a = 22,  b = 27, c = 28}
+    tl[11]  = {a = 22,  b = 27,  c = 28}
     tl[12]  = {a = 22,  b = 28,  c = 24}
-    tl[13]  = {a = 25, b = 30, c = 29}
-    tl[14]  = {a = 27, b = 25, c = 29}
-    tl[15]  = {a = 28,  b = 32, c = 26}
+    tl[13]  = {a = 25,  b = 30,  c = 29}
+    tl[14]  = {a = 27,  b = 25,  c = 29}
+    tl[15]  = {a = 28,  b = 32,  c = 26}
     tl[16]  = {a = 32,  b = 28,  c = 31}
 
-    -- Прямоугольник 3
-    tl[17]  = {a = 41,  b = 43, c = 45}
+    -- Рамка дорожки 3
+    tl[17]  = {a = 41,  b = 43,  c = 45}
     tl[18]  = {a = 45,  b = 43,  c = 46}
-    tl[19]  = {a = 42,  b = 47, c = 48}
+    tl[19]  = {a = 42,  b = 47,  c = 48}
     tl[20]  = {a = 42,  b = 48,  c = 44}
-    tl[21]  = {a = 45, b = 50, c = 49}
-    tl[22]  = {a = 47, b = 45, c = 49}
-    tl[23]  = {a = 48,  b = 52, c = 46}
+    tl[21]  = {a = 45,  b = 50,  c = 49}
+    tl[22]  = {a = 47,  b = 45,  c = 49}
+    tl[23]  = {a = 48,  b = 52,  c = 46}
     tl[24]  = {a = 52,  b = 48,  c = 51}
 
-    -- Прямоугольник 4
-    --tl[25]  = {a = 61,  b = 63, c = 65}
-    --tl[26]  = {a = 65,  b = 63,  c = 66}
-    --tl[27]  = {a = 62,  b = 67, c = 68}
-    --tl[28]  = {a = 62,  b = 68,  c = 64}
-    --tl[29]  = {a = 65, b = 70, c = 69}
-    --tl[30]  = {a = 67, b = 65, c = 69}
-    --tl[31]  = {a = 68,  b = 72, c = 66}
-    --tl[32]  = {a = 72,  b = 68,  c = 71}
+    -- Рамка дорожки 4
+    tl[25]  = {a = 61,  b = 63,  c = 65}
+    tl[26]  = {a = 65,  b = 63,  c = 66}
+    tl[27]  = {a = 62,  b = 67,  c = 68}
+    tl[28]  = {a = 62,  b = 68,  c = 64}
+    tl[29]  = {a = 65,  b = 70,  c = 69}
+    tl[30]  = {a = 67,  b = 65,  c = 69}
+    tl[31]  = {a = 68,  b = 72,  c = 66}
+    tl[32]  = {a = 72,  b = 68,  c = 71}
+
+    -- Рамка дорожки 5
+    tl[33]  = {a = 81,  b = 83,  c = 85}
+    tl[34]  = {a = 85,  b = 83,  c = 86}
+    tl[35]  = {a = 82,  b = 87,  c = 88}
+    tl[36]  = {a = 82,  b = 88,  c = 84}
+    tl[37]  = {a = 85,  b = 90,  c = 89}
+    tl[38]  = {a = 87,  b = 85,  c = 89}
+    tl[39]  = {a = 88,  b = 92,  c = 86}
+    tl[40]  = {a = 92,  b = 88,  c = 91}
+
+    -- Рамка дорожки 6
+    tl[41]  = {a = 101,  b = 103,  c = 105}
+    tl[42]  = {a = 105,  b = 103,  c = 106}
+    tl[43]  = {a = 102,  b = 107,  c = 108}
+    tl[44]  = {a = 102,  b = 108,  c = 104}
+    tl[45]  = {a = 105,  b = 110,  c = 109}
+    tl[46]  = {a = 107,  b = 105,  c = 109}
+    tl[47]  = {a = 108,  b = 112,  c = 106}
+    tl[48]  = {a = 112,  b = 108,  c = 111}
+
+    -- Рамка дорожки 7
+    tl[49]  = {a = 121,  b = 123,  c = 125}
+    tl[50]  = {a = 125,  b = 123,  c = 126}
+    tl[51]  = {a = 122,  b = 127,  c = 128}
+    tl[52]  = {a = 122,  b = 128,  c = 124}
+    tl[53]  = {a = 125,  b = 130,  c = 129}
+    tl[54]  = {a = 127,  b = 125,  c = 129}
+    tl[55]  = {a = 128,  b = 132,  c = 126}
+    tl[56]  = {a = 132,  b = 128,  c = 131}
+
+    -- Рамка дорожки 8
+    tl[57]  = {a = 141,  b = 143,  c = 145}
+    tl[58]  = {a = 145,  b = 143,  c = 146}
+    tl[59]  = {a = 142,  b = 147,  c = 148}
+    tl[60]  = {a = 142,  b = 148,  c = 144}
+    tl[61]  = {a = 145,  b = 150,  c = 149}
+    tl[62]  = {a = 147,  b = 145,  c = 149}
+    tl[63]  = {a = 148,  b = 152,  c = 146}
+    tl[64]  = {a = 152,  b = 148,  c = 151}
+
+    -- Рамка дорожки 9
+    tl[65]  = {a = 161,  b = 163,  c = 165}
+    tl[66]  = {a = 165,  b = 163,  c = 166}
+    tl[67]  = {a = 162,  b = 167,  c = 168}
+    tl[68]  = {a = 162,  b = 168,  c = 164}
+    tl[69]  = {a = 165,  b = 170,  c = 169}
+    tl[70]  = {a = 167,  b = 165,  c = 169}
+    tl[71]  = {a = 168,  b = 172,  c = 166}
+    tl[72]  = {a = 172,  b = 168,  c = 171}
+
+    -- Рамка дорожки 10
+    tl[73]  = {a = 181,  b = 183,  c = 185}
+    tl[74]  = {a = 185,  b = 183,  c = 186}
+    tl[75]  = {a = 182,  b = 187,  c = 188}
+    tl[76]  = {a = 182,  b = 188,  c = 184}
+    tl[77]  = {a = 185,  b = 190,  c = 189}
+    tl[78]  = {a = 187,  b = 185,  c = 189}
+    tl[79]  = {a = 188,  b = 192,  c = 186}
+    tl[80]  = {a = 192,  b = 188,  c = 191}
 
     -- Offset to have origin on the center of the field
     OFFSET_X = 0

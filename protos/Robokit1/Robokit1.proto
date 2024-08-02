@@ -55,14 +55,20 @@ PROTO Robokit1 [
   field  SFBool      supervisor      TRUE       # Is `Robot.supervisor`.
   field  SFBool      synchronization TRUE        # Is `Robot.synchronization`.
   field  SFBool      selfCollision   TRUE       # Is `Robot.selfCollision`.
-  field SFString{"", "red", "blue", "grean"}      teamColor ""
-  field SFString{"", "1", "2", "3", "4", "5"}      playerNumber ""
-  field SFColor     RED      1.0 0.0 0.0
-  field SFColor     BLUE     0.0 0.0 1.0
-  field SFColor     GREAN    0.0 1.0 0.0
-
-
+  field SFString{"", "red", "blue", "green", "black", "purple", "orange", "brown", "grey", "pink", "turquoise"}   teamColor ""
+  field SFString{"", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"}   playerNumber ""
+  field SFColor     RED          1.0 0.0 0.0
+  field SFColor     BLUE         0.0 0.0 1.0
+  field SFColor     GREEN        0.0 0.8 0.0
+  field SFColor     BLACK        0.0 0.0 0.0
+  field SFColor     PURPLE       0.5 0.0 0.5
+  field SFColor     ORANGE       1.0 0.6 0.0
+  field SFColor     BROWN        0.5 0.2 0.0
+  field SFColor     GREY         0.5 0.5 0.5
+  field SFColor     PINK         1.0 0.0 1.0
+  field SFColor     TURQUOISE    0.2 0.8 0.8
 ]
+
 {
   %{
     jerseyColor = ""
@@ -109,8 +115,29 @@ PROTO Robokit1 [
             %{if jerseyColor == "blue" then}%
               color IS BLUE
             %{end}%
-            %{if jerseyColor == "grean" then}%
-              color IS GREAN
+            %{if jerseyColor == "green" then}%
+              color IS GREEN
+            %{end}%
+            %{if jerseyColor == "black" then}%
+              color IS BLACK
+            %{end}%
+            %{if jerseyColor == "purple" then}%
+              color IS PURPLE
+            %{end}%
+            %{if jerseyColor == "orange" then}%
+              color IS ORANGE
+            %{end}%
+            %{if jerseyColor == "brown" then}%
+              color IS BROWN
+            %{end}%
+            %{if jerseyColor == "grey" then}%
+              color IS GREY
+            %{end}%
+            %{if jerseyColor == "pink" then}%
+              color IS PINK
+            %{end}%
+            %{if jerseyColor == "turquoise" then}%
+              color IS TURQUOISE
             %{end}%
           }
           HingeJoint {
@@ -1258,8 +1285,29 @@ PROTO Robokit1 [
                 %{if jerseyColor == "blue" then}%
                   color IS BLUE
                 %{end}%
-                %{if jerseyColor == "grean" then}%
-                  color IS GREAN
+                %{if jerseyColor == "green" then}%
+                  color IS GREEN
+                %{end}%
+                %{if jerseyColor == "black" then}%
+                  color IS BLACK
+                %{end}%
+                %{if jerseyColor == "purple" then}%
+                  color IS PURPLE
+                %{end}%
+                %{if jerseyColor == "orange" then}%
+                  color IS ORANGE
+                %{end}%
+                %{if jerseyColor == "brown" then}%
+                  color IS BROWN
+                %{end}%
+                %{if jerseyColor == "grey" then}%
+                  color IS GREY
+                %{end}%
+                %{if jerseyColor == "pink" then}%
+                  color IS PINK
+                %{end}%
+                %{if jerseyColor == "turquoise" then}%
+                  color IS TURQUOISE
                 %{end}%
               }
             ]

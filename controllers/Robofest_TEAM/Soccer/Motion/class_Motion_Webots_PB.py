@@ -257,7 +257,9 @@ class Motion_sim(Motion_real):
         self.body_euler_angle['yaw'] -= self.direction_To_Attack
         return x, y, self.body_euler_angle['yaw']
     
-    
+    def find_coord(self):
+        x, _ = self.robot.get_localization()['position']
+        return x
 
     def sim_Start(self):
         for i in range(len(self.ACTIVEJOINTS)):
