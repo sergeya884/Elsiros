@@ -6,7 +6,7 @@ EXTERNPROTO "../protos/Robokit1/Robokit1.proto"
 EXTERNPROTO "../protos/SprintField.proto"
 EXTERNPROTO "../protos/custom_Pen.proto"
 EXTERNPROTO "../protos/custom_texture.proto"
-# EXTERNPROTO "../protos/custom_texture1.proto"
+EXTERNPROTO "../protos/command_name_texture.proto"
 
 WorldInfo {
   info [
@@ -102,19 +102,47 @@ Robot {
       translation 0 0 0
       name "pen"
     }
-    DEF CUST_TEXTURE_1 custom_texture {
+    # Текстуры имен комманд и пути робота
+    DEF COMMAND_TEXTURE_1 command_name_texture {
+      textureUrl ["textures/empty_starkit.png"]
+      POINTS [
+              0 -0.5 0.002
+              3 -0.5 0.002
+              3 0.5 0.002
+              0 0.5 0.002
+            ]
+    }
+    DEF COMMAND_TEXTURE_2 command_name_texture {
+      textureUrl ["textures/empty_spl.png"]
       POINTS[
-        0 -0.5 0.001
-        0 -0.5 0.001
-        0.001 0.5 0.001
-        0.001 0.5 0.001
+             0 0.55 0.002
+             3 0.55 0.002
+             3 1.55 0.002
+             0 1.55 0.002
+            ]
+    }
+    DEF COMMAND_TEXTURE_3 command_name_texture {
+      textureUrl ["textures/empty_hl.png"]
+      POINTS[
+        0 1.6 0.002
+        3 1.6 0.002
+        3 2.6 0.002
+        0 2.6 0.002
+      ]
+    }
+    DEF CUST_TEXTURE_1 custom_texture {
+      POINTS [
+        0 -0.5 0.001,
+        0 -0.5 0.001,
+        0.001 0.5 0.001,
+        0.001 0.5 0.001,
       ]
     }
     DEF CUST_TEXTURE_2 custom_texture {
       POINTS[
-        0 0.55 0.001
-        0 0.55 0.001
-        0.001 1.55 0.001
+        0 0.55 0.001,
+        0 0.55 0.001,
+        0.001 1.55 0.001,
         0.001 1.55 0.001
       ]
     }

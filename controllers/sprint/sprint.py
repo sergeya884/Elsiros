@@ -57,7 +57,7 @@ current_working_directory = Path.cwd()
 def uprint(*text):
     with open(str(current_working_directory) + "\Sprint_log.txt",'a') as f:
         print(*text, file = f)
-    print(*text )
+    print(*text)
 
 
 os.chdir(current_working_directory.parent/'Robofest_TEAM')
@@ -119,7 +119,7 @@ while supervisor.step(time_step) != -1:
     for i in range(len(robot_translation)):
         # Отрисовка дорожки за роботом
         robot_coord_x = robot_translation[i].getSFVec3f()[0] - 0.1
-        if 0.001 <= robot_coord_x <= 3.0 and p01_flag[i]:
+        if robot_coord_x <= 3.0 and p01_flag[i]:
             texture_points[i].setMFVec3f(1, (robot_coord_x, center_of_rows[i]-0.5, 0.001))
             texture_points[i].setMFVec3f(2, (robot_coord_x, center_of_rows[i]+0.5, 0.001))
 
