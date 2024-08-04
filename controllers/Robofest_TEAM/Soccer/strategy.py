@@ -10,7 +10,10 @@ import json
 import time
 import logging
 from . import utility
-
+from Soccer.marafon_found_blobs import RectangleAnalyzer
+import threading
+# event = threading.Event()
+import numpy as np
 class GoalKeeper:
     """
     class GoalKeeper is designed to define goalkeeper's play according to style developed by 
@@ -382,6 +385,15 @@ class Player():
         self.g = None
         self.f = None
 
+    def test_thread(self):
+        while True:
+            cords_meters = self.motion.sim_Get_Robot_Position()
+            self.rectangle_anayzer.robot_coords = [abs(round(100*(cords_meters[0]))), abs(round(100*(cords_meters[1]))), cords_meters[2]]
+            self.mean_coordinates_line = self.rectangle_anayzer.found_black_centers()
+            print(self.mean_coordinates_line)
+            # event.wait(timeout=1)
+
+
     def play_game(self, params_name=None):
     # def play_game(self):
         #success_Code, napravl, dist, speed = self.motion.seek_Ball_In_Pose(fast_Reaction_On = True)
@@ -423,6 +435,9 @@ class Player():
         proportional = marathon_params['proportional']
         differential = marathon_params['differential']
         rotation_increment = marathon_params['rotation_increment']
+        self.rectangle_anayzer = RectangleAnalyzer(image_path='Soccer/map_marathon.png', width=30, height=20, draw=False)
+        thr = threading.Thread(target=self.test_thread, args=())
+        thr.start()
         direction = 0
         last_heading = 0
         stepLength = 64
@@ -431,6 +446,7 @@ class Player():
         self.motion.walk_Initial_Pose()
         number_Of_Cycles += 1
         for cycle in range(number_Of_Cycles):
+            # self.test_thread()
             stepLength1 = stepLength
             if cycle ==0 : stepLength1 = stepLength/3
             if cycle ==1 : stepLength1 = stepLength/3 * 2
@@ -442,6 +458,8 @@ class Player():
             self.motion.walk_Cycle(stepLength1, sideLength, rotation, cycle, number_Of_Cycles)
             last_heading = heading
             direction += rotation_increment
+
+            # print(os.getcwd())
         self.motion.walk_Final_Pose()
 
     # def sprint_main_cycle(self):

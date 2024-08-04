@@ -70,6 +70,7 @@ class Model():
         robot_orientation = self.robot_imu["position"]
         angle = -math.atan2(robot_pos[1] - y, -(robot_pos[0] - x)) - robot_orientation[2]
         angle = self.norm_yaw(angle)
+        print(distance, angle)
         return (distance, angle)
 
     def proccess_data(self, x, y):

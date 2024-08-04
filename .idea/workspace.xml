@@ -4,29 +4,60 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d602b984-8fef-489f-8181-90db55ae02b4" name="Changes" comment="add texture trek to sprint">
-      <change afterPath="$PROJECT_DIR$/protos/textures/MIPT_white — копия.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protos/textures/empty_starkit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protos/textures/grey.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protos/textures/translucent_grey.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worlds/textures/empty_hl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worlds/textures/empty_spl.png" afterDir="false" />
+    <list default="true" id="d602b984-8fef-489f-8181-90db55ae02b4" name="Changes" comment="Add name command with trek to sprint">
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/map_marathon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/marafon_found_blobs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/Marathon_log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/black_circle_on_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/img_result.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/letter_F.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/make_map.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/make_map2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/map.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/output.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/output_video.avi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/smoothed_contour_image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/white_circle_on_transparent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/marafon_found_blobs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/marathon_new.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/protos/MarathonField_old.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/protos/textures/white_circle_on_transparent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worlds/.marathon_new.wbproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worlds/marathon_new.wbt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worlds/textures/white_circle_on_transparent.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7001.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7001.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7002.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7002.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7003.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7003.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/sprint/sprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/sprint/sprint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protos/custom_texture.proto" beforeDir="false" afterPath="$PROJECT_DIR$/protos/custom_texture.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protos/custom_texture1.proto" beforeDir="false" afterPath="$PROJECT_DIR$/protos/command_name_texture.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protos/textures/MIPT_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/protos/textures/MIPT_white.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protos/textures/grey.png" beforeDir="false" afterPath="$PROJECT_DIR$/protos/textures/grey.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worlds/Robofest_2023_sprint.wbt" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/Robofest_2023_sprint.wbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worlds/textures/MIPT_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/textures/MIPT_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/Motion/class_Motion.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/Motion/class_Motion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/Motion/class_Motion_Webots_PB.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/Motion/class_Motion_Webots_PB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/strategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/strategy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/main_pb.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/main_pb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7001.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7002.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7003.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7021.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7022.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/SAMPLE_TEAM/output7001.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SAMPLE_TEAM/output7001.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/SAMPLE_TEAM/output7002.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SAMPLE_TEAM/output7002.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/marathon/Marathon_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/marathon/Marathon_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/player/communication_manager_robokit.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/player/communication_manager_robokit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/player/model_robokit.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/player/model_robokit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/referee_Robofest/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/referee_Robofest/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/MarathonField.proto" beforeDir="false" afterPath="$PROJECT_DIR$/protos/MarathonField.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/command_name_texture.proto" beforeDir="false" afterPath="$PROJECT_DIR$/protos/command_name_texture.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worlds/.Robofest_2023_penalty.wbproj" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/.Robofest_2023_penalty.wbproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -62,23 +93,31 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.make_map.executor": "Run",
+    "Python.make_map2.executor": "Run",
+    "Python.marafon_found_blobs.executor": "Run",
     "Python.referee_Robofest.executor": "Run",
+    "Python.strategy.executor": "Run",
+    "Python.test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Elsiros_result/worlds/textures",
+    "last_opened_file_path": "C:/Elsiros_result/controllers/Robofest_TEAM/Soccer",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "two.files.diff.last.used.file": "C:/Elsiros/controllers/sprint/sprint.py"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Elsiros_result\worlds\textures" />
-      <recent name="C:\Elsiros_result\protos\textures" />
+      <recent name="C:\Elsiros_result\controllers\Robofest_TEAM\Soccer" />
       <recent name="C:\Elsiros_result\protos" />
+      <recent name="C:\Elsiros_result\protos\textures" />
+      <recent name="C:\Elsiros_result\worlds\textures" />
+      <recent name="C:\Elsiros_result\controllers\marathon_new" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Elsiros_result\controllers\marathon_new\images" />
       <recent name="C:\Elsiros_result\protos\textures" />
       <recent name="C:\Elsiros_result\worlds\textures" />
       <recent name="C:\Elsiros_result\protos" />
@@ -132,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722545588508</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add name command with trek to sprint">
+      <option name="closed" value="true" />
+      <created>1722630610499</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1722630610499</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,7 +211,8 @@
     <MESSAGE value="delite update_ball_contacts() from refere_Robofest.py and penalty work" />
     <MESSAGE value="ADD Pen and remove pen in sprint" />
     <MESSAGE value="add texture trek to sprint" />
-    <option name="LAST_COMMIT_MESSAGE" value="add texture trek to sprint" />
+    <MESSAGE value="Add name command with trek to sprint" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add name command with trek to sprint" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

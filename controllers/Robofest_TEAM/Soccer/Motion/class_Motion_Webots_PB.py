@@ -125,10 +125,13 @@ class Motion_sim(Motion_real):
         if (self.body_euler_angle['pitch']) > 0.785:
             self.falling_Flag = 1                   # on stomach
             self.simulateMotion(name = 'Soccer_Get_UP_Stomach_N')
+            self.walk_Initial_Pose()
         if (self.body_euler_angle['pitch']) <  -0.785:
             self.falling_Flag = -1                  # face up
             self.simulateMotion(name = 'Soccer_Get_UP_Face_Up')
+            self.walk_Initial_Pose()
         if self.falling_Flag != 0: self.logger.info('FALLING!!!'+ str(self.falling_Flag))
+        self.falling_Flag = 0
         return self.falling_Flag
 
     def send_angles_to_servos(self, angles, use_step_correction = False):
@@ -236,6 +239,8 @@ class Motion_sim(Motion_real):
             self.glob.obstacles.append([x, y, 0.2])
         return
 
+    def Get_Robot_coords_test(self):
+        return self.robot.get_localization()
     def sim_Get_Robot_Position(self):
         self.sim_Trigger(self.timestep)
         Position = self.robot.get_localization()
