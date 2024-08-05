@@ -138,7 +138,7 @@ class Motion_sim(Motion_real):
             # self.simulateMotion(name = 'Get_Up_Left')
 
         if self.falling_Flag != 0: self.logger.info('FALLING!!!'+ str(self.falling_Flag))
-        self.falling_Flag = 0     # для продолжения ходьбы после падения 
+        self.falling_Flag = 0     # для продолжения ходьбы после падения
         # self.simulateMotion(name = 'Initial_Pose')
         return self.falling_Flag
 
@@ -256,10 +256,6 @@ class Motion_sim(Motion_real):
         self.logger.debug('Position: '+ str(Position) + ' yaw :' + str(self.body_euler_angle['yaw']))
         self.body_euler_angle['yaw'] -= self.direction_To_Attack
         return x, y, self.body_euler_angle['yaw']
-    
-    def find_coord(self):
-        x, _ = self.robot.get_localization()['position']
-        return x
 
     def sim_Start(self):
         for i in range(len(self.ACTIVEJOINTS)):
