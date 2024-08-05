@@ -130,7 +130,7 @@ class CommunicationManager():
             dict: {"position": [x, y, consistency], "time": time} 
         """
         res = {}
-        self.time_sleep(0.5)
+        #self.time_sleep(0.5)
         res = self.__get_sensor("gps_body").copy()
         if res:
             pos = res["position"]

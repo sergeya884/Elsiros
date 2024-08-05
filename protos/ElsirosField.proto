@@ -17,7 +17,6 @@ PROTO ElsirosField [
   field SFBool                      coloredPosts TRUE  
 ]
 {
-
   %{
     -- Soccer field for Elsiros (Humanoid Junior)
 
@@ -328,7 +327,7 @@ PROTO ElsirosField [
         size IS size
         %{if fields.coloredPosts.value then}%
           frameColor 0.9 0.8 0.2
-        %{end}%         
+        %{end}%
         name "goal_home"
       }
       RobocupGoal {
@@ -337,7 +336,7 @@ PROTO ElsirosField [
         size IS size
         %{if fields.coloredPosts.value then}%
           frameColor 0.2 0.4 0.8
-        %{end}%        
+        %{end}%
         name "goal_away"
       }
     ]

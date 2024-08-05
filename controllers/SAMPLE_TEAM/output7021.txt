@@ -1,0 +1,104 @@
+2024-07-29 15:50:37.697874
+2024-07-29 15:50:52,628 Socket timeout
+2024-07-29 15:50:53,140 Socket timeout
+2024-07-29 15:50:53,648 Socket timeout
+2024-07-29 15:50:54,163 Socket timeout
+2024-07-29 15:50:54,668 Socket timeout
+2024-07-29 15:50:55,178 Socket timeout
+2024-07-29 15:50:55,678 Socket timeout
+2024-07-29 15:50:56,198 Socket timeout
+2024-07-29 15:50:56,718 Socket timeout
+2024-07-29 15:50:57,228 Socket timeout
+2024-07-29 15:50:57,748 Socket timeout
+2024-07-29 15:50:58,255 Socket timeout
+2024-07-29 15:50:58,768 Socket timeout
+2024-07-29 15:50:59,283 Socket timeout
+2024-07-29 15:50:59,788 Socket timeout
+2024-07-29 15:51:00,308 Socket timeout
+2024-07-29 15:51:00,808 Socket timeout
+2024-07-29 15:51:01,318 Socket timeout
+2024-07-29 15:51:01,828 Socket timeout
+2024-07-29 15:51:02,328 Socket timeout
+2024-07-29 15:51:02,838 Socket timeout
+2024-07-29 15:51:03,348 Socket timeout
+2024-07-29 15:51:03,868 Socket timeout
+2024-07-29 15:51:04,378 Socket timeout
+2024-07-29 15:51:04,888 Socket timeout
+2024-07-29 15:51:05,408 Socket timeout
+2024-07-29 15:51:05,928 Socket timeout
+2024-07-29 15:51:06,448 Socket timeout
+2024-07-29 15:51:06,963 Socket timeout
+2024-07-29 15:51:07,478 Socket timeout
+2024-07-29 15:51:07,988 Socket timeout
+2024-07-29 15:51:08,503 Socket timeout
+2024-07-29 15:51:09,008 Socket timeout
+2024-07-29 15:51:09,518 Socket timeout
+2024-07-29 15:51:10,038 Socket timeout
+2024-07-29 15:51:10,548 Socket timeout
+2024-07-29 15:51:11,064 Socket timeout
+2024-07-29 15:51:11,578 Socket timeout
+2024-07-29 15:51:18,193 Socket timeout
+2024-07-29 15:51:18,698 Socket timeout
+2024-07-29 15:51:19,728 Socket timeout
+2024-07-29 15:51:20,242 Socket timeout
+2024-07-29 15:51:20,748 Socket timeout
+2024-07-29 15:51:21,263 Socket timeout
+2024-07-29 15:51:21,778 Socket timeout
+2024-07-29 15:51:22,279 Socket timeout
+2024-07-29 15:51:22,798 Socket timeout
+2024-07-29 15:51:23,314 Socket timeout
+2024-07-29 15:51:23,816 Socket timeout
+2024-07-29 15:51:24,337 Socket timeout
+2024-07-29 15:51:24,858 Socket timeout
+2024-07-29 15:51:25,358 Socket timeout
+2024-07-29 15:51:25,868 Socket timeout
+2024-07-29 15:51:26,378 Socket timeout
+2024-07-29 15:51:26,888 Socket timeout
+2024-07-29 15:51:27,408 Socket timeout
+2024-07-29 15:51:27,913 Socket timeout
+2024-07-29 15:51:28,418 Socket timeout
+2024-07-29 15:51:28,928 Socket timeout
+2024-07-29 15:51:29,438 Socket timeout
+2024-07-29 15:51:29,938 Socket timeout
+2024-07-29 15:51:30,448 Socket timeout
+2024-07-29 15:51:30,958 Socket timeout
+2024-07-29 15:51:31,478 Socket timeout
+2024-07-29 15:51:31,998 Socket timeout
+2024-07-29 15:51:32,503 Socket timeout
+2024-07-29 15:51:33,008 Socket timeout
+2024-07-29 15:51:36,098 Socket timeout
+2024-07-29 15:51:36,598 Socket timeout
+2024-07-29 15:51:37,098 Socket timeout
+2024-07-29 15:51:37,618 Socket timeout
+2024-07-29 15:51:38,123 Socket timeout
+2024-07-29 15:51:38,638 Socket timeout
+2024-07-29 15:51:39,148 Socket timeout
+2024-07-29 15:51:39,652 Socket timeout
+2024-07-29 15:51:42,738 Socket timeout
+2024-07-29 15:51:52,453 Socket timeout
+2024-07-29 15:51:52,965 Socket timeout
+2024-07-29 15:51:53,488 Socket timeout
+2024-07-29 15:51:57,598 Socket timeout
+2024-07-29 15:51:58,110 Socket timeout
+2024-07-29 15:51:59,658 Socket timeout
+2024-07-29 15:52:00,178 Socket timeout
+2024-07-29 15:52:00,678 Socket timeout
+2024-07-29 15:52:01,178 Socket timeout
+2024-07-29 15:52:01,678 Socket timeout
+2024-07-29 15:52:02,198 Socket timeout
+2024-07-29 15:52:02,708 Socket timeout
+2024-07-29 15:52:03,218 Socket timeout
+2024-07-29 15:52:03,738 Socket timeout
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "C:\Users\Sergey\AppData\Local\Programs\Python\Python39\lib\threading.py", line 950, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Sergey\AppData\Local\Programs\Python\Python39\lib\threading.py", line 888, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Elsiros_result\controllers\player\communication_manager_robokit.py", line 250, in run
+    messages_list = self.__client.receive2()
+  File "C:\Elsiros_result\controllers\player\robot_client.py", line 128, in receive2
+    chunk = self.socket.recv(1024)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+ain__ - (class_Motion_Webots_PB.py).simulateMotion(180) - simulate motion slot:Initial_Pose
+2024-07-29 15:52:02,548 - [INFO] - __main__ - (strategy.py).goto_Center(78) - Function for reterning to center position

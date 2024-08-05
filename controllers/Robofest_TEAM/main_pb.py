@@ -40,8 +40,8 @@ LOGGING_LEVEL = logging.INFO               # logging with moderate messaging lev
 #LOGGING_LEVEL = logging.DEBUG              # logging with large number of messages. Simulation will be slow.
 
 
-SIMULATION = 4                       # 0 - Simulation without physics in Coppelia, 
-                                     # 1 - Simulation synchronous with physics in Coppelia, 
+SIMULATION = 4                       # 0 - Simulation without physics in Coppelia,
+                                     # 1 - Simulation synchronous with physics in Coppelia,
                                      # 2 - used for real robot
                                      # 3 - Simulation streaming with physics in Coppelia
                                      # 4 - Simulation in Webots
@@ -149,7 +149,7 @@ def main_procedure():
 
     x, _ = robot.get_localization()['position']
     print('dist = ', "%.4f" % x )
-    
+
     # player.play_game()
     logger.debug('total time: %i', robot.current_time - timer1)
     sys.exit(0)
@@ -228,7 +228,7 @@ class Main_Panel(wx.Frame):
             pause.Flag = True
         logger.info(pause.flag)
         logger.info('Pause button pressed')
-        
+
 
 
 def main():
@@ -243,6 +243,3 @@ def main():
     app.MainLoop()
 
 main()
-
-
-

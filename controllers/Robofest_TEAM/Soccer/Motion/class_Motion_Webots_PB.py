@@ -247,6 +247,8 @@ class Motion_sim(Motion_real):
             self.glob.obstacles.append([x, y, 0.2])
         return
 
+    def Get_Robot_coords_test(self):
+        return self.robot.get_localization()
     def sim_Get_Robot_Position(self):
         self.sim_Trigger(self.timestep)
         Position = self.robot.get_localization()
@@ -256,7 +258,7 @@ class Motion_sim(Motion_real):
         self.logger.debug('Position: '+ str(Position) + ' yaw :' + str(self.body_euler_angle['yaw']))
         self.body_euler_angle['yaw'] -= self.direction_To_Attack
         return x, y, self.body_euler_angle['yaw']
-
+    
     def sim_Start(self):
         for i in range(len(self.ACTIVEJOINTS)):
             position = 0

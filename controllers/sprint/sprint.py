@@ -5,14 +5,8 @@ from pathlib import Path
 import json
 from controller import Supervisor, AnsiCodes, Node
 
-# import sys
-# sys.path.append('C:\Elsiros\controllers\Robofest_TEAM\Soccer\Motion')
-# from class_Motion import Motion1
-# Path1 = os.chdir('../Soccer/Motion')
-# print(sys.path)
-# print(Path.cwd())
-# from class_Motion import Motion1 
-
+is_pen = False
+center_of_rows = (0.0, 1.05, 2.1)
 
 # C:\Elsiros\controllers\Robofest_TEAM\Soccer\Motion\class_Motion.py
 
@@ -21,6 +15,20 @@ from controller import Supervisor, AnsiCodes, Node
 # motion = Motion1()
 supervisor = Supervisor()
 time_step = int(supervisor.getBasicTimeStep())
+if is_pen:
+    pen1 = supervisor.getFromDef('PEN_1')
+
+    pen1_pen = supervisor.getDevice('pen')
+    pen1_translation = pen1.getField('translation')
+    pen1_leadSize = pen1.getField('leadSize')
+    pen1_pen.write(True)
+    pen1_translation.setSFVec3f([1.0, 0.0, 0.001])
+
+texture_points = []
+texture_points.append(supervisor.getFromDef('CUST_TEXTURE_1').getField('POINTS'))
+texture_points.append(supervisor.getFromDef('CUST_TEXTURE_2').getField('POINTS'))
+texture_points.append(supervisor.getFromDef('CUST_TEXTURE_3').getField('POINTS'))
+
 
 robot_translation = [supervisor.getFromDef('BLUE_PLAYER_1').getField('translation'),
                      supervisor.getFromDef('RED_PLAYER_2').getField('translation'),
@@ -68,7 +76,7 @@ current_working_directory = Path.cwd()
 os.chdir(current_working_directory.parent/'Robofest_TEAM')
 
 quantity_robots = 3
-role01 = 'sprint' 
+role01 = 'sprint'
 second_pressed_button = '4'
 robot_color = ['blue', 'red', 'green', 'black', 'purple', 'orange', 'brown', 'grey', 'pink', 'turquoise']
 team_id = '-1'          # value -1 means game will be playing without Game Controller
@@ -100,10 +108,33 @@ distance_count = 0
 
 print("\033[1;34m" + 'start_time: ' + str(datetime.datetime.now()) + "\033[0;0m")
 
+if is_pen:
+    color = 0xe0ffff
+    ink_intensity = 0.8
+    _ = 0
 while supervisor.step(time_step) != -1:
+    if is_pen:
+        _ += 1
+        if _ == 1:
+            pen1_pen.setInkColor(0x006411, 1.0)
+            pen1_leadSize.setSFFloat(2.0)
+        if _ < 7:
+            pen1_translation.setSFVec3f([1.5, 0.0, 0.002])
+            continue
+
+        pen1_leadSize.setSFFloat(0.1)
+        pen1_pen.setInkColor(color, ink_intensity)
+        pen1_translation.setSFVec3f([-0.1 + robot_translation[0].getSFVec3f()[0], 0.0, 0.002])
+
     distance_count += 1
     y_coordinate = []
     for i in range(quantity_robots):
+        # Отрисовка дорожки за роботом
+        robot_coord_x = robot_translation[i].getSFVec3f()[0] - 0.1
+        if robot_coord_x <= 3.0 and p01_flag[i]:
+            texture_points[i].setMFVec3f(1, (robot_coord_x, center_of_rows[i]-0.5, 0.001))
+            texture_points[i].setMFVec3f(2, (robot_coord_x, center_of_rows[i]+0.5, 0.001))
+
         y_coordinate.append(robot_translation[i].getSFVec3f()[1])
         edge_1 = -0.5 + 1.05 * i
         edge_2 = 0.5 + 1.05 * i
@@ -114,6 +145,8 @@ while supervisor.step(time_step) != -1:
             robot_rotation[i].setSFRotation([1, 0, 0, 0])       # вектор напрпавления
 
         if robot_translation[i].getSFVec3f()[0] > 3.05 and p01_flag[i]:
+            texture_points[i].setMFVec3f(1, (3.0, center_of_rows[i]-0.5, 0.001))
+            texture_points[i].setMFVec3f(2, (3.0, center_of_rows[i]+0.5, 0.001))
             text = ' robot ' + str(i+1) + ' distance was finished within timesteps: ' + str(distance_count)
             out_text_green(text)
             p01[i].terminate()
