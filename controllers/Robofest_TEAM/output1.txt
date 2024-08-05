@@ -1,0 +1,4 @@
+2024-08-01 20:45:20.062276
+2024-08-01 20:45:21,607 - [INFO] - __main__ - (main_pb.py).main_procedure(116) - port = 1
+2024-08-01 20:45:23,655 - [WARNING] - communication_manager - (robot_client.py).connect_client(56) - Failed to connect to 127.0.0.1:1 0                                 attempt  of 20.
+2024-08-01 20:45:23,660 - [WARNING] - communication_manager - (robot_client.py).connect_client(59) - Caught exception socket.error : [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение

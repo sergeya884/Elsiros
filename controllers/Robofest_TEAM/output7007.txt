@@ -1,0 +1,8 @@
+2024-08-02 18:56:31.857513
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "C:\Program Files\Python39\lib\threading.py", line 973, in _bootstrap_inner
+).main_procedure(124) - role = sprint
+2024-08-02 18:56:33,592 - [INFO] - __main__ - (main_pb.py).main_procedure(133) - Player is going to play without Game Controller
+2024-08-02 18:56:33,613 - [WARNING] - communication_manager - (communication_manager_robokit.py).__update_history(66) - WARNING! Large protobuf time rx delta = 390
+2024-08-02 18:56:34,599 - [INFO] - __main__ - (class_Motion_Webots_PB.py).imu_activation(92) - imu_activation
