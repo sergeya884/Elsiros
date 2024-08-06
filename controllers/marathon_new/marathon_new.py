@@ -10,6 +10,10 @@ import math
 import cv2
 import numpy as np
 
+def out_text_grean(text):
+    start = "\033[1;32m"
+    end = "\033[0;0m"
+    print(start + str(datetime.datetime.now()) + text + end)
 
 def uprint(*text):
     with open(str(current_working_directory) + "\Marathon_log.txt",'a') as f:
@@ -48,6 +52,7 @@ def main():
         p01 = subprocess.Popen(['python', 'main_pb.py', port01, team_id, robot_color, robot_number, role01, second_pressed_button, initial_coord, params_name], stderr=f01)
 
     distance_count = 0
+    finish_coords = [4, 17.6]
     robot_coords = robot_translation.getSFVec3f()
     robot_angle = robot_rotation.getSFRotation()
     robot_coords_old = np.array([robot_coords[0], robot_coords[1]])
@@ -58,37 +63,50 @@ def main():
     respawn_result = robot_coords
     respawn_result_angle = robot_angle
     out_flag = 201
+    end_flag = False
     while supervisor.step(time_step) != -1:
-        if out_flag < 200:
-            out_flag += 1
-            continue
-        elif out_flag == 200:
-            out_flag += 1
-            delta = delta_result
-            robot_translation.setSFVec3f(respawn_result)
-            robot_rotation.setSFRotation(respawn_result_angle)
-            robot_coords_old = np.array([respawn_result[0], respawn_result[1]])
+        if not end_flag:
+            if out_flag < 200:
+                out_flag += 1
+                continue
+            elif out_flag == 200:
+                out_flag += 1
+                delta = delta_result
+                robot_translation.setSFVec3f(respawn_result)
+                robot_rotation.setSFRotation(respawn_result_angle)
+                robot_coords_old = np.array([respawn_result[0], respawn_result[1]])
 
-        distance_count += 1
-        robot_coords = robot_translation.getSFVec3f()
-        robot_angle = robot_rotation.getSFRotation()
-        robot_coords_np = np.array([robot_coords[0], robot_coords[1]])
-        if distance_count % 1000 == 0:
-            delta += np.linalg.norm(robot_coords_np - robot_coords_old)
-            robot_coords_old = robot_coords_np
-            print(delta)
-            respawn_points.append([delta, robot_coords, robot_angle])
-            for respawn_point in respawn_points:
-                if delta - respawn_point[0] >= 5:
-                    respawn_result = respawn_point[1]
-                    respawn_result_angle = respawn_point[2]
-                    # respawn_points.remove(respawn_point)
-                    delta_result = respawn_point[0]
-                else:
-                    break
+            distance_count += 1
+            robot_coords = robot_translation.getSFVec3f()
+            robot_angle = robot_rotation.getSFRotation()
+            robot_coords_np = np.array([robot_coords[0], robot_coords[1]])
+            if distance_count % 1000 == 0:
+                delta += np.linalg.norm(robot_coords_np - robot_coords_old)
+                robot_coords_old = robot_coords_np
+                print(delta)
+                respawn_points.append([delta, robot_coords, robot_angle])
+                for respawn_point in respawn_points:
+                    if delta - respawn_point[0] >= 5:
+                        respawn_result = respawn_point[1]
+                        respawn_result_angle = respawn_point[2]
+                        # respawn_points.remove(respawn_point)
+                        delta_result = respawn_point[0]
+                    else:
+                        break
 
-        if is_out_of_distance(image, np.abs(np.round(100*(robot_coords_np)))):
-            out_flag = 0
+            if is_out_of_distance(image, np.abs(np.round(100*(robot_coords_np)))):
+                out_flag = 0
+
+            # Проверка на конец дистанции
+            if np.linalg.norm(robot_coords_np - finish_coords) < 0.5 and delta > 50:
+                text = ' robot distance was finished within timesteps: ' + str(distance_count)
+                out_text_grean(text)
+                p01.terminate()
+                robot_translation.setSFVec3f([1, 1, 0.3])
+                end_flag = True
+
+
+
 
 
     p01.terminate()
