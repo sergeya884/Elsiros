@@ -2,6 +2,7 @@
 Класс строит перед роботом три прямоугольника заданного размера и вычисляет среднюю координату всех пикселей линии
 марафона в этих прямоугольниках
 '''
+import time
 
 import cv2
 import numpy as np
@@ -35,13 +36,37 @@ class RectangleAnalyzer:
         translated_corners = [(x + B[0], y + B[1]) for x, y in rotated_corners]
         return translated_corners
 
+    import numpy as np
+    import cv2
+
     def get_black_pixel_mean(self, corners, B):
-        mask = np.zeros(self.image.shape, dtype=np.uint8)
-        cv2.fillPoly(mask, [np.array(corners, dtype=np.int32)], 255)
-        black_pixels = np.where((self.image == 0) & (mask == 255))
+        # Создаем ограничивающий прямоугольник
+        x_min = int(min([p[0] for p in corners]))
+        x_max = int(max([p[0] for p in corners]))
+        y_min = int(min([p[1] for p in corners]))
+        y_max = int(max([p[1] for p in corners]))
+
+        # Проверяем, что координаты не выходят за границы изображения
+        x_min = max(x_min, 0)
+        x_max = min(x_max, self.image.shape[1] - 1)
+        y_min = max(y_min, 0)
+        y_max = min(y_max, self.image.shape[0] - 1)
+
+        # Извлекаем подизображение, содержащее только область ограничивающего прямоугольника
+        sub_image = self.image[y_min:y_max + 1, x_min:x_max + 1]
+
+        # Создаем маску только для подизображения
+        sub_corners = [(p[0] - x_min, p[1] - y_min) for p in corners]
+        sub_mask = np.zeros(sub_image.shape, dtype=np.uint8)
+        cv2.fillPoly(sub_mask, [np.array(sub_corners, dtype=np.int32)], 255)
+
+        # Находим черные пиксели только в подизображении
+        black_pixels = np.where((sub_image == 0) & (sub_mask == 255))
+
         if len(black_pixels[0]) > 0:
-            mean_y = np.mean(black_pixels[0])
-            mean_x = np.mean(black_pixels[1])
+            mean_y = np.mean(black_pixels[0]) + y_min
+            mean_x = np.mean(black_pixels[1]) + x_min
+
             # ВАЖНО. Тут координаты поменены местами, так как в cv и в webots зеркальные
             x = mean_x - B[0]
             y = mean_y - B[1]
@@ -52,7 +77,7 @@ class RectangleAnalyzer:
             return None
 
     def is_out_of_distance(self, grey_range=(100, 200)):
-        pixel_value = self.image[self.robot_coords[0], self.robot_coords[1]]
+        pixel_value = self.image[self.robot_coords[1], self.robot_coords[0]]
         return grey_range[0] <= pixel_value <= grey_range[1]
 
     def get_next_B(self, prev_corners):
@@ -95,8 +120,10 @@ class RectangleAnalyzer:
 def main():
     image_path = 'map_marathon.png'
     analyzer = RectangleAnalyzer(image_path=image_path, width=30, height=20, draw=True)
-    analyzer.robot_coords = [75, 500, 3.14]  #[600, 600, 1.57]  # Начальная позиция и угол
+    analyzer.robot_coords = [500, 1760, 3.14]  # Начальная позиция и угол
+    time1 = time.time()
     mean_coordinates_list = analyzer.found_black_centers()
+    print(f'Время выполнения:{time.time()-time1}')
     print("Средние координаты всех черных пикселей внутри прямоугольников:", mean_coordinates_list)
     print(analyzer.is_out_of_distance())
 

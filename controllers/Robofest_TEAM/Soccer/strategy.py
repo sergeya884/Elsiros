@@ -415,7 +415,7 @@ class Player():
         else: invert = 1
         self.motion.walk_Initial_Pose()
         for cycle in range(number_Of_Cycles):
-            self.motion.walk_Cycle(stepLength,sideLength, rotation, cycle, number_Of_Cycles)
+            self.motion.walk_Cycle(stepLength, sideLength, rotation, cycle, number_Of_Cycles)
         self.motion.walk_Final_Pose()
         self.motion.refresh_Orientation()
         self.logger.debug('self.motion.imu_body_yaw() =' + str(self.motion.imu_body_yaw()))
@@ -429,7 +429,8 @@ class Player():
             self.mean_coordinates_line = self.rectangle_anayzer.found_black_centers()
             # print(self.mean_coordinates_line)
             self.is_out_of_distance = self.rectangle_anayzer.is_out_of_distance()
-            # event.wait(timeout=1)
+            time.sleep(0.1)
+            # event.wait(timeout=0.1)
 
     def marathon_main_cycle(self, params_name):
         with open(self.glob.current_work_directory / "Init_params" / params_name, "r") as f:
@@ -444,7 +445,7 @@ class Player():
         thr.start()
         direction = 0
         last_heading = 0
-        stepLength = 30
+        stepLength = 40
         number_Of_Cycles = 500
         sideLength = 0
         self.motion.walk_Initial_Pose()

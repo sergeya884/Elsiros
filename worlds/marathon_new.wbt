@@ -50,7 +50,7 @@ TexturedBackgroundLight {
   texture "stadium_dry"
 }
 DEF BLUE_PLAYER_1 Robokit1 {
-  translation 5 0.75 0.3
+  translation 5 17.6 0.3
   name "blue player 1"
   controllerArgs [
     "7001"
@@ -64,16 +64,40 @@ DEF BLUE_PLAYER_1 Robokit1 {
 }
 Robot {
   children [
-    DEF COMMAND_TEXTURE command_name_texture {
-      scale 1 1
+    DEF COMMAND_TEXTURE1 command_name_texture {
+      scale 1 1.28
       textureUrl [
-        "textures/white_circle_on_transparent.png"
+        "textures/F_letter_marathon.png"
       ]
       POINTS [
         0 0 0.001
-        10 0 0.001
-        10 10 0.001
-        0 10 0.001
+        32 0 0.001
+        32 25 0.001
+        0 25 0.001
+      ]
+    }
+    DEF COMMAND_TEXTURE2 command_name_texture {
+      scale 1 1.28
+      textureUrl [
+        "textures/F_letter_marathon.png"
+      ]
+      POINTS [
+        0 0 0.002
+        32 0 0.002
+        32 25 0.002
+        0 25 0.002
+      ]
+    }
+    DEF COMMAND_TEXTURE3 command_name_texture {
+      scale 1 1.28
+      textureUrl [
+        "textures/F_letter_marathon.png"
+      ]
+      POINTS [
+        0 0 0.003
+        32 0 0.003
+        32 25 0.003
+        0 25 0.003
       ]
     }
   ]

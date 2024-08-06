@@ -32,9 +32,9 @@ PROTO MarathonField [
     pts = {}
 
     pts[1] = {x = 0,          y = 0,      z = DEPTH}
-    pts[2] = {x = 10,         y = 0,      z = DEPTH}
-    pts[3] = {x = 0,          y = 10,     z = DEPTH}
-    pts[4] = {x = 10,         y = 10,     z = DEPTH}
+    pts[2] = {x = 32,         y = 0,      z = DEPTH}
+    pts[3] = {x = 0,          y = 25,     z = DEPTH}
+    pts[4] = {x = 32,         y = 25,     z = DEPTH}
 
 
     -- Triangles for Grass

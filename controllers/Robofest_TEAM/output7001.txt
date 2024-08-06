@@ -1,23 +1,22 @@
-2024-08-06 14:46:04.357992
---- Logging error ---
-Traceback (most recent call last):
-  File "C:\Users\Sergey\AppData\Local\Programs\Python\Python39\lib\logging\__init__.py", line 1082, in emit
-    stream.write(msg + self.terminator)
-  File "C:\Elsiros_result\controllers\Robofest_TEAM\main_pb.py", line 162, in write
-    self.out.WriteText(string)
-wx._core.wxAssertionError: C++ assertion "m_count == -1 || m_count == -2" failed at ..\..\src\msw\textctrl.cpp(284) in UpdatesCountFilter::UpdatesCountFilter(): wrong initial m_updatesCount value
-Call stack:
-  File "C:\Users\Sergey\AppData\Local\Programs\Python\Python39\lib\threading.py", line 908, in _bootstrap
-    self._bootstrap_inner()
-  File "C:\Users\Sergey\AppData\Local\Programs\Python\Python39\lib\threading.py", line 950, in _bootstrap_inner
-    self.run()
-  File "C:\Users\Sergey\AppData\Local\Programs\Python\Python39\lib\threading.py", line 888, in run
-    self._target(*self._args, **self._kwargs)
-  File "C:\Elsiros_result\controllers\player\communication_manager_robokit.py", line 269, in run
-    self.__update_history(message)
-  File "C:\Elsiros_result\controllers\player\communication_manager_robokit.py", line 66, in __update_history
-    self.logger.warning(f"WARNING! Large protobuf time rx delta = {delta}")
-Message: 'WARNING! Large protobuf time rx delta = 540'
-Arguments: ()
-2024-08-06 14:46:27,037 - [INFO] - __main__ - (class_Motion_Webots_PB.py).imu_activation(92) - imu_activation
-2024-08-06 14:48:03,432 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(186) - simulate motion slot: Soccer_Get_UP_Face_Up
+2024-08-07 01:08:20.304006
+2024-08-07 01:08:21,707 - [INFO] - __main__ - (main_pb.py).main_procedure(116) - port = 7001
+2024-08-07 01:08:21,723 - [INFO] - __main__ - (main_pb.py).main_procedure(124) - role = marathon
+2024-08-07 01:08:21,724 - [INFO] - __main__ - (main_pb.py).main_procedure(133) - Player is going to play without Game Controller
+2024-08-07 01:08:21,727 - [WARNING] - communication_manager - (communication_manager_robokit.py).__update_history(66) - WARNING! Large protobuf time rx delta = 1265
+2024-08-07 01:08:22,731 - [INFO] - __main__ - (class_Motion_Webots_PB.py).imu_activation(92) - imu_activation
+2024-08-07 01:09:19,416 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(186) - simulate motion slot: Get_Up_Left
+2024-08-07 01:09:24,523 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(142) - FALLING!!!2
+2024-08-07 01:09:25,103 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(186) - simulate motion slot: Soccer_Get_UP_Stomach_N
+2024-08-07 01:09:32,688 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(142) - FALLING!!!1
+2024-08-07 01:10:32,866 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(186) - simulate motion slot: Soccer_Get_UP_Face_Up
+2024-08-07 01:10:40,956 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(142) - FALLING!!!-1
+2024-08-07 01:15:35,161 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(186) - simulate motion slot: Soccer_Get_UP_Face_Up
+2024-08-07 01:15:43,352 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(142) - FALLING!!!-1
+2024-08-07 01:17:02,164 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(186) - simulate motion slot: Soccer_Get_UP_Face_Up
+2024-08-07 01:17:10,456 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(142) - FALLING!!!-1
+2024-08-07 01:17:11,151 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(186) - simulate motion slot: Soccer_Get_UP_Face_Up
+2024-08-07 01:17:19,631 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(142) - FALLING!!!-1
+2024-08-07 01:17:33,574 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(186) - simulate motion slot: Get_Up_Left
+2024-08-07 01:17:38,555 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(142) - FALLING!!!2
+2024-08-07 01:17:39,106 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(186) - simulate motion slot: Soccer_Get_UP_Face_Up
+2024-08-07 01:17:47,577 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(142) - FALLING!!!-1

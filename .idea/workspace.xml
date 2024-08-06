@@ -4,23 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d602b984-8fef-489f-8181-90db55ae02b4" name="Changes" comment="Add name command with trek to sprint">
-      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/map_marathon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/worlds/.marathon_new.jpg" afterDir="false" />
+    <list default="true" id="d602b984-8fef-489f-8181-90db55ae02b4" name="Changes" comment="New marathon with circle">
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/black_circle_on_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/letter_F_circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/letter_F_circle_grey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/letter_F_grey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/letter_F_grey_tink.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/make_map_webots.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/output_image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/output_with_gray_lines.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worlds/textures/F_letter_marathon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/Motion/class_Motion_Webots_PB.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/Motion/class_Motion_Webots_PB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/map_marathon.png" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/map_marathon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/marafon_found_blobs.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/marathon_found_blobs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/marathon_found_blobs.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/marathon_found_blobs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/strategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/strategy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/marathon_new/images/black_circle_on_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/marathon_new/images/black_circle_on_white.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/marathon_new/images/make_map2.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/marathon_new/images/make_map2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/marathon_new/images/white_circle_on_transparent.png" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/marathon_new/images/white_circle_on_transparent.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/marathon_new/marafon_found_blobs.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/marathon_new/marathon_found_blobs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7001.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7001.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/marathon_new/images/letter_F.png" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/marathon_new/images/letter_F.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/marathon_new/images/make_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/marathon_new/images/make_map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/marathon_new/images/output.png" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/marathon_new/images/output.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/marathon_new/map_marathon.png" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/marathon_new/map_marathon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/marathon_new/marathon_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/marathon_new/marathon_new.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/player/communication_manager_robokit.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/player/communication_manager_robokit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/MarathonField.proto" beforeDir="false" afterPath="$PROJECT_DIR$/protos/MarathonField.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worlds/.marathon_new.wbproj" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/.marathon_new.wbproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worlds/marathon_new.wbt" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/marathon_new.wbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worlds/textures/white_circle_on_transparent.png" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/textures/white_circle_on_transparent.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,25 +71,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.make_map.executor&quot;: &quot;Run&quot;,
-    &quot;Python.make_map2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.marafon_found_blobs.executor&quot;: &quot;Run&quot;,
-    &quot;Python.marathon_found_blobs.executor&quot;: &quot;Run&quot;,
-    &quot;Python.referee_Robofest.executor&quot;: &quot;Run&quot;,
-    &quot;Python.strategy.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Elsiros_result/controllers/marathon_new&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Elsiros/controllers/sprint/sprint.py&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.make_map.executor": "Run",
+    "Python.make_map2.executor": "Run",
+    "Python.make_map_webots.executor": "Run",
+    "Python.marafon_found_blobs.executor": "Run",
+    "Python.marathon_found_blobs.executor": "Run",
+    "Python.marathon_new.executor": "Run",
+    "Python.referee_Robofest.executor": "Run",
+    "Python.strategy.executor": "Run",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Elsiros_result/controllers/marathon_new",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "two.files.diff.last.used.file": "C:/Elsiros/controllers/sprint/sprint.py"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Elsiros_result\controllers\marathon_new" />
@@ -155,7 +163,23 @@
       <option name="project" value="LOCAL" />
       <updated>1722630610499</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add name command with trek to sprint">
+      <option name="closed" value="true" />
+      <created>1722944959005</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1722944959005</updated>
+    </task>
+    <task id="LOCAL-00007" summary="New marathon with circle">
+      <option name="closed" value="true" />
+      <created>1722945138575</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1722945138575</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,7 +212,8 @@
     <MESSAGE value="ADD Pen and remove pen in sprint" />
     <MESSAGE value="add texture trek to sprint" />
     <MESSAGE value="Add name command with trek to sprint" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add name command with trek to sprint" />
+    <MESSAGE value="New marathon with circle" />
+    <option name="LAST_COMMIT_MESSAGE" value="New marathon with circle" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
