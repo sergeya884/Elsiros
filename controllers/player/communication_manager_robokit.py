@@ -120,6 +120,23 @@ class CommunicationManager():
         self.logger.debug(res)
         return res
 
+    def get_localization_without_sleep(self) -> dict:
+        """Provide blurred position of the robot on the field and confidence in
+        this position ('consistency' - where 1 fully confident and 0 - have no confidence).
+        Can be empty if 'gps_body' sensor is not enabled or webots does not
+        send us any measurement. Also contains simulation time of measurement.
+
+        Returns:
+            dict: {"position": [x, y, consistency], "time": time}
+        """
+        res = {}
+        res = self.__get_sensor("gps_body").copy()
+        if res:
+            pos = res["position"]
+            res["position"] = self.__blurrer.loc(pos[0], pos[1])
+        self.logger.debug(res)
+        return res
+
     def get_localization(self) -> dict:
         """Provide blurred position of the robot on the field and confidence in
         this position ('consistency' - where 1 fully confident and 0 - have no confidence).
@@ -130,7 +147,7 @@ class CommunicationManager():
             dict: {"position": [x, y, consistency], "time": time} 
         """
         res = {}
-        #self.time_sleep(0.5)
+        self.time_sleep(0.5)
         res = self.__get_sensor("gps_body").copy()
         if res:
             pos = res["position"]

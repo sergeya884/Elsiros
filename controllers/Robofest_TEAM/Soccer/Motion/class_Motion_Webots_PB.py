@@ -130,6 +130,15 @@ class Motion_sim(Motion_real):
             self.falling_Flag = -1                  # face up
             self.simulateMotion(name = 'Soccer_Get_UP_Face_Up')
             self.walk_Initial_Pose()
+        if (self.body_euler_angle['roll']) > 0.785:
+            self.falling_Flag = -2                  # right
+            self.simulateMotion(name='Get_Up_Right')
+            self.walk_Initial_Pose()
+        if -135 < (self.body_euler_angle['roll']) < - 0.785:
+            self.falling_Flag = 2                  # left
+            self.simulateMotion(name='Get_Up_Left')
+            self.walk_Initial_Pose()
+
         if self.falling_Flag != 0: self.logger.info('FALLING!!!'+ str(self.falling_Flag))
         self.falling_Flag = 0
         return self.falling_Flag
@@ -241,6 +250,17 @@ class Motion_sim(Motion_real):
 
     def Get_Robot_coords_test(self):
         return self.robot.get_localization()
+
+    def sim_Get_Robot_Position_without_sleep(self):
+        self.sim_Trigger(self.timestep)
+        Position = self.robot.get_localization_without_sleep()
+        x, y  = Position['position']
+        #self.body_euler_angle['roll'], self.body_euler_angle['pitch'], self.body_euler_angle['yaw'] = self.robot.get_sensor("imu_body")['position']
+        self.body_euler_angle['roll'], self.body_euler_angle['pitch'], self.body_euler_angle['yaw'] = self.robot.get_imu_body()['position']
+        self.logger.debug('Position: '+ str(Position) + ' yaw :' + str(self.body_euler_angle['yaw']))
+        self.body_euler_angle['yaw'] -= self.direction_To_Attack
+        return x, y, self.body_euler_angle['yaw']
+
     def sim_Get_Robot_Position(self):
         self.sim_Trigger(self.timestep)
         Position = self.robot.get_localization()

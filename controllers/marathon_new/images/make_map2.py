@@ -12,6 +12,12 @@ thickness = 5
 
 cv2.circle(image, center_coordinates, radius, color, thickness)
 
+cv2.circle(image, center_coordinates, radius+200, (100, 100, 100), 300)
+cv2.circle(image, center_coordinates, radius-250, (100, 100, 100), 400)
+
+# cv2.circle(image, center_coordinates, radius, color, thickness)
+
+
 # Сохраняем изображение
 cv2.imwrite('black_circle_on_white.png', image)
 
@@ -21,6 +27,7 @@ image_with_alpha = np.zeros((1000, 1000, 4), dtype=np.uint8)
 # Рисуем белую окружность на прозрачном фоне
 color_with_alpha = (255, 255, 255, 255)  # Белый цвет с непрозрачным альфа-каналом
 cv2.circle(image_with_alpha, center_coordinates, radius, color_with_alpha, thickness)
-
+cv2.circle(image_with_alpha, center_coordinates, 375, color_with_alpha, 2)
+cv2.circle(image_with_alpha, center_coordinates, 475, color_with_alpha, 2)
 # Сохраняем изображение с альфа-каналом
 cv2.imwrite('white_circle_on_transparent.png', image_with_alpha)

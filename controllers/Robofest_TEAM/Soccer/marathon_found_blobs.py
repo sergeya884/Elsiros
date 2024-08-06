@@ -35,19 +35,24 @@ class RectangleAnalyzer:
         translated_corners = [(x + B[0], y + B[1]) for x, y in rotated_corners]
         return translated_corners
 
-    def get_black_pixel_mean(self, corners):
+    def get_black_pixel_mean(self, corners, B):
         mask = np.zeros(self.image.shape, dtype=np.uint8)
         cv2.fillPoly(mask, [np.array(corners, dtype=np.int32)], 255)
         black_pixels = np.where((self.image == 0) & (mask == 255))
         if len(black_pixels[0]) > 0:
             mean_y = np.mean(black_pixels[0])
             mean_x = np.mean(black_pixels[1])
-            return mean_x - self.robot_coords[0], mean_y - self.robot_coords[1]
+            # ВАЖНО. Тут координаты поменены местами, так как в cv и в webots зеркальные
+            x = mean_x - B[0]
+            y = mean_y - B[1]
+
+            x, y = self.rotate_point(y, x, 0, 0, self.robot_coords[2])
+            return x, y
         else:
             return None
 
-    def is_out_of_distance(self, x, y, grey_range=(100, 200)):
-        pixel_value = self.image[y, x]
+    def is_out_of_distance(self, grey_range=(100, 200)):
+        pixel_value = self.image[self.robot_coords[0], self.robot_coords[1]]
         return grey_range[0] <= pixel_value <= grey_range[1]
 
     def get_next_B(self, prev_corners):
@@ -55,20 +60,20 @@ class RectangleAnalyzer:
 
     def found_black_centers(self):
         mean_coordinates_list = []
+        B = (self.robot_coords[0], self.robot_coords[1])
         if self.draw:
             image_color = cv2.cvtColor(self.image, cv2.COLOR_GRAY2BGR)
             colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)]  # Красный, зеленый, синий
-        B = (self.robot_coords[0], self.robot_coords[1])
+            cv2.circle(image_color, B, 10, (0, 0, 255), thickness=-1)
         for i in range(3):
             rectangle_corners = self.get_rectangle_points(B)
-            mean_coordinates = self.get_black_pixel_mean(rectangle_corners)
+            mean_coordinates = self.get_black_pixel_mean(rectangle_corners, B)
             mean_coordinates_list.append(mean_coordinates)
 
             if self.draw:
                 rectangle_corners_int = [(int(x), int(y)) for x, y in rectangle_corners]
                 cv2.polylines(image_color, [np.array(rectangle_corners_int)], isClosed=True, color=colors[i],
-                              thickness=40)
-                cv2.circle(image_color, B, 20, (0, 0, 255), thickness=-1)
+                              thickness=2)
 
             B = self.get_next_B(rectangle_corners)
 
@@ -87,8 +92,14 @@ class RectangleAnalyzer:
 
 
 # Пример использования
-# image_path = 'map_marathon.png'
-# analyzer = RectangleAnalyzer(image_path=image_path, width=100, height=200, draw=False)
-# analyzer.robot_coords = [6, 81, 0.07119096425944703]  # Начальная позиция и угол
-# mean_coordinates_list = analyzer.found_black_centers()
-# print("Средние координаты всех черных пикселей внутри прямоугольников:", mean_coordinates_list)
+def main():
+    image_path = 'map_marathon.png'
+    analyzer = RectangleAnalyzer(image_path=image_path, width=30, height=20, draw=True)
+    analyzer.robot_coords = [75, 500, 3.14]  #[600, 600, 1.57]  # Начальная позиция и угол
+    mean_coordinates_list = analyzer.found_black_centers()
+    print("Средние координаты всех черных пикселей внутри прямоугольников:", mean_coordinates_list)
+    print(analyzer.is_out_of_distance())
+
+
+if __name__ == '__main__':
+    main()

@@ -40,8 +40,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation -0.18842243885888985 0.09344851284544718 0.9776320166511744 2.2386849416247294
-  position 3.0204745439689464 -4.163273454033706 2.221909248242677
+  orientation 0.228483328509067 -0.5422241472960685 -0.808571791916135 5.322335440422851
+  position 1.4668797651941685 -3.7473231315481086 4.3316273796294595
 }
 TexturedBackground {
   texture "stadium_dry"
@@ -50,7 +50,7 @@ TexturedBackgroundLight {
   texture "stadium_dry"
 }
 DEF BLUE_PLAYER_1 Robokit1 {
-  translation 5.0 0.75 0.3
+  translation 5 0.75 0.3
   name "blue player 1"
   controllerArgs [
     "7001"
@@ -63,20 +63,22 @@ DEF BLUE_PLAYER_1 Robokit1 {
   ]
 }
 Robot {
-  controller "marathon_new"
-  supervisor TRUE
-  children[
-  DEF COMMAND_TEXTURE command_name_texture {
-      textureUrl ["textures/white_circle_on_transparent.png"]
+  children [
+    DEF COMMAND_TEXTURE command_name_texture {
       scale 1 1
-      POINTS[
-             0 0 0.001
-             10 0 0.001
-             10 10 0.001
-             0 10 0.001
-            ]
+      textureUrl [
+        "textures/white_circle_on_transparent.png"
+      ]
+      POINTS [
+        0 0 0.001
+        10 0 0.001
+        10 10 0.001
+        0 10 0.001
+      ]
     }
   ]
+  controller "marathon_new"
+  supervisor TRUE
 }
 MarathonField {
 }

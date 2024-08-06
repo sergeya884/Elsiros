@@ -10,7 +10,7 @@ import json
 import time
 import logging
 from . import utility
-from Soccer.marafon_found_blobs import RectangleAnalyzer
+from Soccer.marathon_found_blobs import RectangleAnalyzer
 import threading
 # event = threading.Event()
 import numpy as np
@@ -384,15 +384,7 @@ class Player():
         self.local = local
         self.g = None
         self.f = None
-
-    def test_thread(self):
-        while True:
-            cords_meters = self.motion.sim_Get_Robot_Position()
-            self.rectangle_anayzer.robot_coords = [abs(round(100*(cords_meters[0]))), abs(round(100*(cords_meters[1]))), cords_meters[2]]
-            self.mean_coordinates_line = self.rectangle_anayzer.found_black_centers()
-            print(self.mean_coordinates_line)
-            # event.wait(timeout=1)
-
+        self.is_out_of_distance = False
 
     def play_game(self, params_name=None):
     # def play_game(self):
@@ -412,7 +404,6 @@ class Player():
         # if self.role == 'sprint': self.sprint_main_cycle()
         if self.role == 'marathon': self.marathon_main_cycle(params_name)
 
-
     def rotation_test_main_cycle(self, pressed_button):
         number_Of_Cycles = 20
         stepLength = 0
@@ -429,37 +420,70 @@ class Player():
         self.motion.refresh_Orientation()
         self.logger.debug('self.motion.imu_body_yaw() =' + str(self.motion.imu_body_yaw()))
 
+    def marathon_thread(self):
+        while True:
+            cords_meters = self.motion.sim_Get_Robot_Position_without_sleep()
+            # ВАЖНО. Тут координаты поменены местами, так как в cv и в webots зеркальные оси
+            self.rectangle_anayzer.robot_coords = [abs(round(100*(cords_meters[1]))), abs(round(100*(cords_meters[0]))),
+                                                   - cords_meters[2]]
+            self.mean_coordinates_line = self.rectangle_anayzer.found_black_centers()
+            # print(self.mean_coordinates_line)
+            self.is_out_of_distance = self.rectangle_anayzer.is_out_of_distance()
+            # event.wait(timeout=1)
+
     def marathon_main_cycle(self, params_name):
         with open(self.glob.current_work_directory / "Init_params" / params_name, "r") as f:
             marathon_params = json.loads(f.read())
         proportional = marathon_params['proportional']
         differential = marathon_params['differential']
         rotation_increment = marathon_params['rotation_increment']
-        self.rectangle_anayzer = RectangleAnalyzer(image_path='Soccer/map_marathon.png', width=30, height=20, draw=False)
-        thr = threading.Thread(target=self.test_thread, args=())
+        window_x_size = 20
+        window_y_size = 30
+        self.rectangle_anayzer = RectangleAnalyzer(image_path='Soccer/map_marathon.png', width=window_y_size, height=window_x_size, draw=False)
+        thr = threading.Thread(target=self.marathon_thread, args=())
         thr.start()
         direction = 0
         last_heading = 0
-        stepLength = 64
+        stepLength = 30
         number_Of_Cycles = 500
         sideLength = 0
         self.motion.walk_Initial_Pose()
         number_Of_Cycles += 1
-        for cycle in range(number_Of_Cycles):
-            # self.test_thread()
-            stepLength1 = stepLength
-            if cycle ==0 : stepLength1 = stepLength/3
-            if cycle ==1 : stepLength1 = stepLength/3 * 2
-            self.motion.refresh_Orientation()
-            heading = self.motion.imu_body_yaw()
-            rotation = direction + heading * proportional + (heading - last_heading) * differential 
-            rotation = self.motion.normalize_rotation(rotation)
-            #rotation = 0
-            self.motion.walk_Cycle(stepLength1, sideLength, rotation, cycle, number_Of_Cycles)
-            last_heading = heading
-            direction += rotation_increment
+        # for cycle in range(number_Of_Cycles):
+        cycle = 0
+        while True:
+            if self.is_out_of_distance:
+                if cycle != -1:
+                    self.motion.walk_Initial_Pose()
+                    cycle = -1
+            else:
+                cycle += 1
+                stepLength1 = stepLength
+                if cycle <=0: stepLength1 = stepLength/3
+                if cycle ==1: stepLength1 = stepLength/3 * 2
+                self.motion.refresh_Orientation()
+                k = 3
+                for i in range(3):
+                    if self.mean_coordinates_line[i] is None:
+                        k -= 1
+                        self.mean_coordinates_line[i] = [0, 0]
+                if k != 0:
+                    mean_x = (self.mean_coordinates_line[0][0] + self.mean_coordinates_line[1][0] +
+                              self.mean_coordinates_line[2][0])/k
+                    mean_y = (self.mean_coordinates_line[0][1] + self.mean_coordinates_line[1][1] +
+                              self.mean_coordinates_line[2][1])/k
+                    if mean_x != 0:
+                        rotation = math.atan(mean_y/mean_x)/3.14
+                    #print(rotation)
+                else:
+                    rotation = np.sign(rotation) * 0.3
+                    stepLength1 = 0
+                    sideLength = 0
 
-            # print(os.getcwd())
+
+                # print(stepLength1, sideLength, rotation)
+                self.motion.walk_Cycle(stepLength1, sideLength, rotation, cycle, number_Of_Cycles)
+
         self.motion.walk_Final_Pose()
 
     # def sprint_main_cycle(self):
