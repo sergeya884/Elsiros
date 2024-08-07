@@ -37,3 +37,29 @@ Arguments: ()
 2024-08-07 21:03:30,614 - [INFO] - __main__ - (class_Motion_Webots_PB.py).imu_activation(92) - imu_activation
 2024-08-07 21:03:51,257 - [INFO] - __main__ - (class_Motion_Webots_PB.py).simulateMotion(186) - simulate motion slot: Get_Up_Left
 2024-08-07 21:03:56,241 - [INFO] - __main__ - (class_Motion_Webots_PB.py).falling_Test(142) - FALLING!!!2
+2024-08-07 21:15:53,601 - [INFO] - __main__ - (main_pb.py).main_procedure(116) - port = 7001
+2024-08-07 21:15:53,615 - [INFO] - __main__ - (main_pb.py).main_procedure(124) - role = marathon
+2024-08-07 21:15:53,617 - [INFO] - __main__ - (main_pb.py).main_procedure(133) - Player is going to play without Game Controller
+2024-08-07 21:15:53,618 - [WARNING] - communication_manager - (communication_manager_robokit.py).__update_history(66) - WARNING! Large protobuf time rx delta = 1320
+2024-08-07 21:15:54,625 - [INFO] - __main__ - (class_Motion_Webots_PB.py).imu_activation(92) - imu_activation
+2024-08-07 21:16:11,905 - [ERROR] - communication_manager - (robot_client.py).send_request(110) - Can't send request with error: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2024-08-07 21:16:13,820 - [INFO] - __main__ - (main_pb.py).main_procedure(116) - port = 7001
+2024-08-07 21:16:13,831 - [INFO] - __main__ - (main_pb.py).main_procedure(124) - role = marathon
+2024-08-07 21:16:13,832 - [INFO] - __main__ - (main_pb.py).main_procedure(133) - Player is going to play without Game Controller
+2024-08-07 21:16:13,835 - [WARNING] - communication_manager - (communication_manager_robokit.py).__update_history(66) - WARNING! Large protobuf time rx delta = 1280
+2024-08-07 21:16:14,850 - [INFO] - __main__ - (class_Motion_Webots_PB.py).imu_activation(92) - imu_activation
+2024-08-07 21:16:25,442 - [INFO] - __main__ - (main_pb.py).main_procedure(116) - port = 7001
+2024-08-07 21:16:25,460 - [INFO] - __main__ - (main_pb.py).main_procedure(124) - role = marathon
+2024-08-07 21:16:25,462 - [INFO] - __main__ - (main_pb.py).main_procedure(133) - Player is going to play without Game Controller
+2024-08-07 21:16:25,464 - [WARNING] - communication_manager - (communication_manager_robokit.py).__update_history(66) - WARNING! Large protobuf time rx delta = 1210
+2024-08-07 21:16:26,483 - [INFO] - __main__ - (class_Motion_Webots_PB.py).imu_activation(92) - imu_activation
+2024-08-07 21:18:00,644 - [INFO] - __main__ - (main_pb.py).main_procedure(116) - port = 7001
+2024-08-07 21:18:00,657 - [INFO] - __main__ - (main_pb.py).main_procedure(124) - role = marathon
+2024-08-07 21:18:00,659 - [INFO] - __main__ - (main_pb.py).main_procedure(133) - Player is going to play without Game Controller
+2024-08-07 21:18:00,660 - [WARNING] - communication_manager - (communication_manager_robokit.py).__update_history(66) - WARNING! Large protobuf time rx delta = 1465
+2024-08-07 21:18:01,672 - [INFO] - __main__ - (class_Motion_Webots_PB.py).imu_activation(92) - imu_activation
+2024-08-07 21:18:29,365 - [INFO] - __main__ - (main_pb.py).main_procedure(116) - port = 7001
+2024-08-07 21:18:29,375 - [INFO] - __main__ - (main_pb.py).main_procedure(124) - role = marathon
+2024-08-07 21:18:29,376 - [INFO] - __main__ - (main_pb.py).main_procedure(133) - Player is going to play without Game Controller
+2024-08-07 21:18:29,381 - [WARNING] - communication_manager - (communication_manager_robokit.py).__update_history(66) - WARNING! Large protobuf time rx delta = 1250
+2024-08-07 21:18:30,394 - [INFO] - __main__ - (class_Motion_Webots_PB.py).imu_activation(92) - imu_activation

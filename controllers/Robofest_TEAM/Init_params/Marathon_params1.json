@@ -1,5 +1,5 @@
 {
-  "proportional": 0,
-  "differential": 0,
+  "proportional": 0.5,
+  "differential": 0.3,
   "rotation_increment": 0
 }

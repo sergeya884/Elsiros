@@ -462,7 +462,6 @@ class Player():
                 stepLength1 = stepLength
                 if cycle <=0: stepLength1 = stepLength/3
                 if cycle ==1: stepLength1 = stepLength/3 * 2
-                self.motion.refresh_Orientation()
                 k = 3
                 for i in range(3):
                     if self.mean_coordinates_line[i] is None:
@@ -474,17 +473,21 @@ class Player():
                     mean_y = (self.mean_coordinates_line[0][1] + self.mean_coordinates_line[1][1] +
                               self.mean_coordinates_line[2][1])/k
                     if mean_x != 0:
-                        rotation = math.atan(mean_y/mean_x)/3.14
+                        direction = math.atan(mean_y/mean_x)#/3.14
                     #print(rotation)
                 else:
-                    rotation = np.sign(rotation) * 0.3
+                    direction = np.sign(direction)# * 1.0
                     stepLength1 = 0
                     sideLength = 0
 
+                self.motion.refresh_Orientation()
+                heading = self.motion.imu_body_yaw()
+                rotation = direction + heading * proportional + (heading - last_heading) * differential
+                rotation = self.motion.normalize_rotation(rotation)
 
                 # print(stepLength1, sideLength, rotation)
                 self.motion.walk_Cycle(stepLength1, sideLength, rotation, cycle, number_Of_Cycles)
-
+                last_heading = heading
         self.motion.walk_Final_Pose()
 
     # def sprint_main_cycle(self):

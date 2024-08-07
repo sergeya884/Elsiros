@@ -4,20 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d602b984-8fef-489f-8181-90db55ae02b4" name="Changes" comment="Make F map to marathon. ADD 5 meters punish">
-      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Marathon_params1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Marathon_params2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Marathon_params3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7002.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_marathon7001.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_marathon7002.txt" afterDir="false" />
+    <list default="true" id="d602b984-8fef-489f-8181-90db55ae02b4" name="Changes" comment="Rename 'grean' to 'green'). Add 3 robots to marathon.">
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7003.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_marathon7003.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/main_pb.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/main_pb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Marathon_params1.json" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Marathon_params1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/strategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/strategy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7001.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7001.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/marathon_new/marathon_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/marathon_new/marathon_new.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/referee/team_3.json" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/referee/team_3.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worlds/.marathon_new.wbproj" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/.marathon_new.wbproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worlds/marathon_new.wbt" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/marathon_new.wbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7002.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7002.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_marathon7001.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_marathon7001.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_marathon7002.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_marathon7002.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723028903523</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Rename 'grean' to 'green'). Add 3 robots to marathon.">
+      <option name="closed" value="true" />
+      <created>1723053984969</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1723053984969</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -222,7 +226,8 @@
     <MESSAGE value="Add name command with trek to sprint" />
     <MESSAGE value="New marathon with circle" />
     <MESSAGE value="Make F map to marathon. ADD 5 meters punish" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make F map to marathon. ADD 5 meters punish" />
+    <MESSAGE value="Rename 'grean' to 'green'). Add 3 robots to marathon." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename 'grean' to 'green'). Add 3 robots to marathon." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
