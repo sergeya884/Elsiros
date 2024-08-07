@@ -390,7 +390,7 @@ class Player():
             cords_meters = self.motion.sim_Get_Robot_Position()
             self.rectangle_anayzer.robot_coords = [abs(round(100*(cords_meters[0]))), abs(round(100*(cords_meters[1]))), cords_meters[2]]
             self.mean_coordinates_line = self.rectangle_anayzer.found_black_centers()
-            print(self.mean_coordinates_line)
+            # print(self.mean_coordinates_line)
             # event.wait(timeout=1)
 
 
@@ -448,18 +448,15 @@ class Player():
         for cycle in range(number_Of_Cycles):
             # self.test_thread()
             stepLength1 = stepLength
-            if cycle ==0 : stepLength1 = stepLength/3
-            if cycle ==1 : stepLength1 = stepLength/3 * 2
+            if cycle == 0: stepLength1 = stepLength/3
+            if cycle == 1: stepLength1 = stepLength/3 * 2
             self.motion.refresh_Orientation()
             heading = self.motion.imu_body_yaw()
             rotation = direction + heading * proportional + (heading - last_heading) * differential 
             rotation = self.motion.normalize_rotation(rotation)
-            #rotation = 0
             self.motion.walk_Cycle(stepLength1, sideLength, rotation, cycle, number_Of_Cycles)
             last_heading = heading
             direction += rotation_increment
-
-            # print(os.getcwd())
         self.motion.walk_Final_Pose()
 
     # def sprint_main_cycle(self):

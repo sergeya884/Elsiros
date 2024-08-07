@@ -119,25 +119,25 @@ class Motion_sim(Motion_real):
             if self.gcreceiver.team_state != None:
                 if self.gcreceiver.state.game_state != 'STATE_PLAYING' or self.gcreceiver.player_state.penalty != 0:
                     self.falling_Flag = 3
-                    self.simulateMotion(name = 'Initial_Pose')
+                    self.simulateMotion(name='Initial_Pose')
                     self.logger.info('STOP!')
                     return self.falling_Flag
         if (self.body_euler_angle['pitch']) > 0.785:
             self.falling_Flag = 1                   # on stomach
-            self.simulateMotion(name = 'Soccer_Get_UP_Stomach_N')
+            self.simulateMotion(name='Soccer_Get_UP_Stomach_N')
             self.walk_Initial_Pose()
-        if (self.body_euler_angle['pitch']) <  -0.785:
+        if (self.body_euler_angle['pitch']) < -0.785:
             self.falling_Flag = -1                  # face up
-            self.simulateMotion(name = 'Soccer_Get_UP_Face_Up')
+            self.simulateMotion(name='Soccer_Get_UP_Face_Up')
             self.walk_Initial_Pose()
-        # if (self.body_euler_angle['roll']) > 0.785:
-            # self.falling_Flag = -2                  # on right side
-            # self.simulateMotion(name = 'Get_Up_Right')
-        # if -135< (self.body_euler_angle['roll']) < -0.785:
-            # self.falling_Flag = 2                   # on left side
-            # self.simulateMotion(name = 'Get_Up_Left')
+        if (self.body_euler_angle['roll']) > 0.785:
+            self.falling_Flag = -2                  # on right side
+            self.simulateMotion(name='Get_Up_Right')
+        if -135 < (self.body_euler_angle['roll']) < -0.785:
+            self.falling_Flag = 2                   # on left side
+            self.simulateMotion(name='Get_Up_Left')
 
-        if self.falling_Flag != 0: self.logger.info('FALLING!!!'+ str(self.falling_Flag))
+        if self.falling_Flag != 0: self.logger.info('FALLING!!!' + str(self.falling_Flag))
         self.falling_Flag = 0     # для продолжения ходьбы после падения
         # self.simulateMotion(name = 'Initial_Pose')
         return self.falling_Flag
@@ -255,7 +255,7 @@ class Motion_sim(Motion_real):
         x, y  = Position['position']
         #self.body_euler_angle['roll'], self.body_euler_angle['pitch'], self.body_euler_angle['yaw'] = self.robot.get_sensor("imu_body")['position']
         self.body_euler_angle['roll'], self.body_euler_angle['pitch'], self.body_euler_angle['yaw'] = self.robot.get_imu_body()['position']
-        self.logger.debug('Position: '+ str(Position) + ' yaw :' + str(self.body_euler_angle['yaw']))
+        self.logger.debug('Position: ' + str(Position) + ' yaw :' + str(self.body_euler_angle['yaw']))
         self.body_euler_angle['yaw'] -= self.direction_To_Attack
         return x, y, self.body_euler_angle['yaw']
     

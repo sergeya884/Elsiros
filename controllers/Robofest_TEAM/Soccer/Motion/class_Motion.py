@@ -215,18 +215,18 @@ class Motion1:
     def walk_Initial_Pose(self):
         self.robot_In_0_Pose = False
         # if not self.falling_Test() == 0:
-        #     self.local.quality =0
+        #     self.local.quality = 0
         #     if self.falling_Flag == 3: self.logger.debug('STOP!')
         #     else: self.logger.debug('FALLING!!!' + str(self.falling_Flag))
-        #     return[]
+        #     return []
         self.xtr = self.xtl = 0
         framestep = self.simThreadCycleInMs//10
-        for j in range (self.initPoses):
+        for j in range(self.initPoses):
             if self.glob.SIMULATION == 2: start1 = self.pyb.millis()
             self.ztr = -223.0 + j*(223.0-self.gaitHeight)/self.initPoses
             self.ztl = -223.0 + j*(223.0-self.gaitHeight)/self.initPoses
-            self.ytr = -self.d10 - j*self.amplitude/2 /self.initPoses
-            self.ytl =  self.d10 - j*self.amplitude/2 /self.initPoses
+            self.ytr = -self.d10 - j*self.amplitude/2/self.initPoses
+            self.ytl = self.d10 - j*self.amplitude/2/self.initPoses
             angles = self.computeAlphaForWalk(self.SIZES, self.limAlpha1 )
             #if not self.falling_Flag ==0: return
             if len(angles)==0:
@@ -237,10 +237,10 @@ class Motion1:
     def walk_Cycle(self, stepLength, sideLength, rotation, cycle, number_Of_Cycles):
         self.robot_In_0_Pose = False
         if not self.falling_Test() == 0:
-            self.local.quality =0
+            self.local.quality = 0
             if self.falling_Flag == 3: self.logger.debug('STOP!')
             else: self.logger.debug('FALLING!!!' + str(self.falling_Flag))
-            return[]
+            return []
         self.stepLength = stepLength + self.motion_shift_correction_x
         self.sideLength = sideLength - self.motion_shift_correction_y
         self.rotation = math.degrees(rotation)
@@ -248,22 +248,23 @@ class Motion1:
         #if rotation>0 or sideLength<0:  self.first_Leg_Is_Right_Leg = False
         #else: self.first_Leg_Is_Right_Leg = True
         rotation = -self.rotation/222 * 0.23 / self.params['ROTATION_YIELD']
+        # rotation = -0.05
         alpha = 0
         alpha01 = math.pi/self.fr1*2
         frameNumberPerCycle = 2*self.fr1+2*self.fr2
         framestep = self.simThreadCycleInMs//10
         xtl0 = self.stepLength * (1 - (self.fr1 + self.fr2 + 2 * framestep) / (2*self.fr1+self.fr2+ 2 * framestep)) * 1.5     # 1.5 - podgon
-        xtr0 = self.stepLength * (1/2 - (self.fr1 + self.fr2 + 2 * framestep ) / (2*self.fr1+self.fr2+ 2 * framestep))
-        dx0_typical = self.stepLength/(2*self.fr1+self.fr2+ 2 * framestep)*framestep        # CoM propulsion forward per framestep
-        dy0_typical = self.sideLength/(2*self.fr1+self.fr2+ 2 * framestep)*framestep        # CoM propulsion sideways per framestep
+        xtr0 = self.stepLength * (1/2 - (self.fr1 + self.fr2 + 2 * framestep) / (2*self.fr1+self.fr2+ 2 * framestep))
+        dx0_typical = self.stepLength/(2*self.fr1+self.fr2 + 2 * framestep)*framestep        # CoM propulsion forward per framestep
+        dy0_typical = self.sideLength/(2*self.fr1+self.fr2 + 2 * framestep)*framestep        # CoM propulsion sideways per framestep
         xr_old, xl_old, yr_old, yl_old = self.xr, self.xl, self.yr, self.yl
         # correction of body tilt forward
         self.xr, self.xl = self.params['BODY_TILT_AT_WALK'], self.params['BODY_TILT_AT_WALK']   #
         # correction of sole skew depending on side angle of body when step pushes land
         self.yr, self.yl = - self.params['SOLE_LANDING_SKEW'], self.params['SOLE_LANDING_SKEW']
-        for iii in range(0,frameNumberPerCycle,framestep):
+        for iii in range(0, frameNumberPerCycle, framestep):
             if self.glob.SIMULATION == 2: start1 = self.pyb.millis()
-            if 0<= iii <self.fr1 :                                              # FASA 1
+            if 0 <= iii < self.fr1:                                              # FASA 1
                 alpha = alpha01 * (iii/2+0.5*framestep)
                 #alpha = alpha01 * iii/2
                 S = (self.amplitude/2 + self.sideLength/2 )*math.cos(alpha)

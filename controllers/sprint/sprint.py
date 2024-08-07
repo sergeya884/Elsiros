@@ -98,11 +98,11 @@ p01 = [_ for _ in range(quantity_robots)]
 p01_flag = [True for _ in range(quantity_robots)]
 
 for i in range(quantity_robots):
-    filename01 = "output" + f"{ports[i]}" + ".txt"
+    filename01 = "output_sprint" + f"{ports[i]}" + ".txt"
     with open(filename01, "w") as f01:
         print(datetime.datetime.now(), file=f01)
         p01[i] = subprocess.Popen(['python', 'main_pb.py', ports[i], team_id, robot_color[i], robot_number[i],
-                                   role01, second_pressed_button, initial_coords[i], parameter_names[i]], stderr=f01)
+                                   role01, second_pressed_button, initial_coords[0], parameter_names[i]], stderr=f01)
 
 distance_count = 0
 
@@ -152,7 +152,7 @@ while supervisor.step(time_step) != -1:
             p01[i].terminate()
             p01_flag[i] = False  # чтобы не писать больше одного раза
 
-for i in range(len(p01)):
+for i in range(quantity_robots):
     p01[i].terminate()
 
 supervisor.simulationReset()

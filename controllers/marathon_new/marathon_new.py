@@ -1,4 +1,3 @@
-
 import datetime
 import os
 import subprocess
@@ -11,53 +10,88 @@ import math
 supervisor = Supervisor()
 time_step = int(supervisor.getBasicTimeStep())
 
-robot_translation = supervisor.getFromDef('BLUE_PLAYER_1').getField('translation')
+robot_translation = [supervisor.getFromDef('BLUE_PLAYER_1').getField('translation'),
+                     supervisor.getFromDef('RED_PLAYER_2').getField('translation'),
+                     supervisor.getFromDef('GREEN_PLAYER_3').getField('translation')]
+
+robot_rotation = [supervisor.getFromDef('BLUE_PLAYER_1').getField('rotation'),
+                  supervisor.getFromDef('RED_PLAYER_2').getField('rotation'),
+                  supervisor.getFromDef('GREEN_PLAYER_3').getField('rotation')]
 
 current_working_directory = Path.cwd()
 
+
+def compute_distance(pos1, pos2):
+    return math.sqrt((pos1[0] - pos2[0]) ** 2 + (pos1[1] - pos2[1]) ** 2)
+
+
 def uprint(*text):
     with open(str(current_working_directory) + "\Marathon_log.txt",'a') as f:
-        print(*text, file = f)
-    print(*text )
+        print(*text, file=f)
+    print(*text)
 
 os.chdir(current_working_directory.parent/'Robofest_TEAM')
 
+quantity_robots = 3
 role01 = 'marathon'
 second_pressed_button = '4'
 initial_coord = '[0.0, 0.0, 0.0]'
-robot_color = 'blue'
-robot_number = '1'
+robot_color = ['blue', 'red', 'green']
 team_id = '-1'          # value -1 means game will be playing without Game Controller
-port01 = '7001'
-params_name = "Marathon_params.json"
-filename01 = "output" + f"{port01}"+ ".txt"
-with open(filename01, "w") as f01:
-    print(datetime.datetime.now(), file = f01)
-    p01 = subprocess.Popen(['python', 'main_pb.py', port01, team_id, robot_color, robot_number, role01, second_pressed_button, initial_coord, params_name], stderr=f01)
+
+ports, robot_number, parameter_names, filenames = [], [], [], []
+p01 = [_ for _ in range(quantity_robots)]
+for i in range(1, quantity_robots+1):
+    robot_number.append(str(i))
+
+    port = str(7000 + i)
+    ports.append(port)
+
+    params_name = "Marathon_params" + str(i) + ".json"
+    parameter_names.append(params_name)
+
+    filename = "output_marathon" + f"{port}" + ".txt"
+    filenames.append(filename)
+
+j = 0   # запускаем первого робота
+with open(filenames[0], "w") as f01:
+    p01[j] = subprocess.Popen(['python', 'main_pb.py', ports[j], team_id, robot_color[j], robot_number[j], role01,
+                               second_pressed_button, initial_coord, parameter_names[j]], stderr=f01)
+    t0 = time.time()
 
 distance_count = 0
-checkpoints = [0.3, 0, -0.3, 0]
-checkpoint_pass = [False, False, False, False]
-
-while supervisor.step(time_step) != -1 :
-    #message = 'robot position: ' + str(robot_translation.getSFVec3f()) + 'step: ' + str(supervisor.step(time_step))
-    #print(message)
+robot_sequence = [j+1]
+flag_one_step_time = True
+while supervisor.step(time_step) != -1:
     distance_count += 1
-    x_coordinate = robot_translation.getSFVec3f()[0]
-    y_coordinate = robot_translation.getSFVec3f()[1]
-    path_radius = math.sqrt(x_coordinate**2 + y_coordinate**2)
-    # if path_radius > 1.3 or path_radius < 0.3 :
-    #     uprint(datetime.datetime.now(), 'distance was NOT finished due to failure ')
-    #     break
-    # if math.prod(checkpoint_pass):
-    #     uprint(datetime.datetime.now(), 'distance was finished within timesteps: ', distance_count)
-    #     break
-    if x_coordinate >= checkpoints[0] and not checkpoint_pass[0] : checkpoint_pass[0] = True
-    if x_coordinate <= checkpoints[1] and checkpoint_pass[0] : checkpoint_pass[1] = True
-    if x_coordinate <= checkpoints[2] and checkpoint_pass[1] : checkpoint_pass[2] = True
-    if x_coordinate >= checkpoints[3] and checkpoint_pass[2] : checkpoint_pass[3] = True
+    t1 = time.time()
+    if j < quantity_robots-1 and abs(t1 - t0) >= 20:     # запускаем остальных роботов
+        j += 1
+        robot_sequence.append(j+1)
+        with open(filenames[j], "w") as f01:
+            p01[j] = subprocess.Popen(
+                ['python', 'main_pb.py', ports[j], team_id, robot_color[j], robot_number[j], role01,
+                 second_pressed_button, initial_coord, parameter_names[j]], stderr=f01)
+            t0 = time.time()
+            robot_translation[j].setSFVec3f([5.0, 0.75, 0.288354])     # в начало координат
+            robot_rotation[j].setSFRotation([1, 0, 0, 0])              # вектор напрпавления
 
-p01.terminate()
+    if len(robot_sequence) > 1 and distance_count % 1000 == 0:
+        for i in range(len(robot_sequence)):
+            for j in range(i + 1, len(robot_sequence)):
+                distance = compute_distance(robot_translation[i].getSFVec3f(), robot_translation[j].getSFVec3f())
+
+                if distance < 0.55:
+                    print(f'Расстояние между роботами {i+1} и {j+1}: {distance}')
+                    print('before:', robot_sequence)
+                    index1 = robot_sequence.index(i+1)
+                    index2 = robot_sequence.index(j+1)
+                    robot_sequence[index1], robot_sequence[index2] = robot_sequence[index2], robot_sequence[index1]
+                    print('after:', robot_sequence)
+                    distance_count = 0
+for i in range(quantity_robots):
+    p01[i].terminate()
+
 supervisor.simulationReset()
 supervisor.step(time_step)
 supervisor.simulationSetMode(supervisor.SIMULATION_MODE_PAUSE)

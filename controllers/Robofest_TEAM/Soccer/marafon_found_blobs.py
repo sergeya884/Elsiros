@@ -57,7 +57,7 @@ class RectangleAnalyzer:
         mean_coordinates_list = []
         if self.draw:
             image_color = cv2.cvtColor(self.image, cv2.COLOR_GRAY2BGR)
-            colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)]  # Красный, зеленый, синий
+            colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)]
         B = (self.robot_coords[0], self.robot_coords[1])
         for i in range(3):
             rectangle_corners = self.get_rectangle_points(B)
@@ -86,9 +86,8 @@ class RectangleAnalyzer:
         return mean_coordinates_list
 
 
-# Пример использования
 # image_path = 'map_marathon.png'
-# analyzer = RectangleAnalyzer(image_path=image_path, width=100, height=200, draw=False)
+# analyzer = RectangleAnalyzer(image_path=image_path, width=100, height=200, draw=True)
 # analyzer.robot_coords = [6, 81, 0.07119096425944703]  # Начальная позиция и угол
 # mean_coordinates_list = analyzer.found_black_centers()
-# print("Средние координаты всех черных пикселей внутри прямоугольников:", mean_coordinates_list)
+# print("Res: ", mean_coordinates_list)

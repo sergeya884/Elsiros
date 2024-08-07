@@ -114,7 +114,7 @@ def main_procedure():
     global logger
     Port = sys.argv[1]
     logger.info('port = %s', Port)
-    logarg =  log.get_logger('communication_manager')
+    logarg = log.get_logger('communication_manager')
     robot = CommunicationManager(1, '127.0.0.1', int(Port), logarg, team_color=sys.argv[3].upper(), player_number = int(sys.argv[4]), time_step = 25)
 
     falling = Falling()
@@ -158,7 +158,7 @@ class RedirectText(object):
     def __init__(self,aWxTextCtrl):
         self.out = aWxTextCtrl
 
-    def write(self,string):
+    def write(self, string):
         self.out.WriteText(string)
 
 class Main_Panel(wx.Frame):

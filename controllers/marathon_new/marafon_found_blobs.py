@@ -6,7 +6,7 @@ class RectangleAnalyzer:
     def __init__(self, image_path, width, height, robot_coords, draw=False):
         self.width = width
         self.height = height
-        self.robot_coords = robot_coords  # Список из трех чисел: [B_x, B_y, angle_degrees]
+        self.robot_coords = robot_coords  # [B_x, B_y, angle_degrees]
         self.angle_radians = np.deg2rad(robot_coords[2])
         self.image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
         self.draw = draw
@@ -48,7 +48,7 @@ class RectangleAnalyzer:
         mean_coordinates_list = []
         if self.draw:
             image_color = cv2.cvtColor(self.image, cv2.COLOR_GRAY2BGR)
-            colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)]  # Красный, зеленый, синий
+            colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)]
 
         B = (self.robot_coords[0], self.robot_coords[1])
         for i in range(3):
@@ -59,7 +59,7 @@ class RectangleAnalyzer:
             if self.draw:
                 rectangle_corners_int = [(int(x), int(y)) for x, y in rectangle_corners]
                 cv2.polylines(image_color, [np.array(rectangle_corners_int)], isClosed=True, color=colors[i],
-                              thickness=40)
+                              thickness=20)
                 cv2.circle(image_color, B, 20, (0, 0, 255), thickness=-1)
 
             B = self.get_next_B(rectangle_corners)
@@ -78,9 +78,8 @@ class RectangleAnalyzer:
         return mean_coordinates_list
 
 
-# # Пример использования
-# image_path = 'map.png'
-# robot_coords = [1000, 1000, -45]  # Начальная позиция и угол
-# analyzer = RectangleAnalyzer(image_path=image_path, width=100, height=200, robot_coords=robot_coords, draw=True)
-# mean_coordinates_list = analyzer.analyze()
-# print("Средние координаты всех черных пикселей внутри прямоугольников:", mean_coordinates_list)
+image_path = 'images/map.png'
+robot_coords = [1000, 1500, -45]  # Начальная позиция и угол
+analyzer = RectangleAnalyzer(image_path=image_path, width=100, height=200, robot_coords=robot_coords, draw=True)
+mean_coordinates_list = analyzer.analyze()
+print("Res:", mean_coordinates_list)

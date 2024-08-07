@@ -62,6 +62,32 @@ DEF BLUE_PLAYER_1 Robokit1 {
     "192.168.123.24"
   ]
 }
+DEF RED_PLAYER_2 Robokit1 {
+  translation 0.2 0.2 0.3
+  name "red player 2"
+  controllerArgs [
+    "7002"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
+DEF GREEN_PLAYER_3 Robokit1 {
+  translation 0.2 0.5 0.3
+  name "green player 3"
+  controllerArgs [
+    "7003"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
 Robot {
   controller "marathon_new"
   supervisor TRUE
