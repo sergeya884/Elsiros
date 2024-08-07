@@ -13,7 +13,7 @@ time_step = int(supervisor.getBasicTimeStep())
 robot_translation = []
 robot_translation.append(supervisor.getFromDef('BLUE_PLAYER_1').getField('translation'))
 robot_translation.append(supervisor.getFromDef('RED_PLAYER_2').getField('translation'))
-robot_translation.append(supervisor.getFromDef('GREAN_PLAYER_3').getField('translation'))
+robot_translation.append(supervisor.getFromDef('GREEN_PLAYER_3').getField('translation'))
 
 current_working_directory = Path.cwd()
 
@@ -27,7 +27,7 @@ os.chdir(current_working_directory.parent/'Robofest_TEAM')
 role01 = 'sprint' 
 second_pressed_button = '4'
 initial_coord = ['[0.0, 0, 0]', '[0.0, 1.0, 0]', '[0.0, 2.0, 0]']
-robot_color = ['blue', 'red', 'grean']
+robot_color = ['blue', 'red', 'green']
 robot_number = ['1', '2', '3']
 team_id = '-1'          # value -1 means game will be playing without Game Controller
 port01 = ['7001', '7002', '7003']

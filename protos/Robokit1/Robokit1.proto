@@ -59,7 +59,7 @@ PROTO Robokit1 [
   field SFString{"", "1", "2", "3", "4", "5"}      playerNumber ""
   field SFColor     RED      1.0 0.0 0.0
   field SFColor     BLUE     0.0 0.0 1.0
-  field SFColor     GREAN    0.0 1.0 0.0
+  field SFColor     GREEN    0.0 1.0 0.0
 
 
 ]
@@ -109,8 +109,8 @@ PROTO Robokit1 [
             %{if jerseyColor == "blue" then}%
               color IS BLUE
             %{end}%
-            %{if jerseyColor == "grean" then}%
-              color IS GREAN
+            %{if jerseyColor == "green" then}%
+              color IS GREEN
             %{end}%
           }
           HingeJoint {
@@ -1258,8 +1258,8 @@ PROTO Robokit1 [
                 %{if jerseyColor == "blue" then}%
                   color IS BLUE
                 %{end}%
-                %{if jerseyColor == "grean" then}%
-                  color IS GREAN
+                %{if jerseyColor == "green" then}%
+                  color IS GREEN
                 %{end}%
               }
             ]

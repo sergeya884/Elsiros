@@ -67,7 +67,7 @@ with open('../referee/' + game_data['red']['config'], "r") as f:
 with open('../referee/' + game_data['blue']['config'], "r") as f:
     team_2_data = json.loads(f.read())
 
-with open('../referee/' + game_data['grean']['config'], "r") as f:
+with open('../referee/' + game_data['green']['config'], "r") as f:
     team_3_data = json.loads(f.read())
 
 class Log:
@@ -209,7 +209,7 @@ class Main_Panel(wx.Frame):
             x_position = width - 300 * (3 - int(robot_number))
         elif robot_color == 'blue':
             x_position = width - 300 * (4 - int(robot_number))
-        elif robot_color == 'grean':
+        elif robot_color == 'green':
             x_position = width - 300 * (5 - int(robot_number))
         self.SetPosition((x_position, height -225))
         #self.Centre()

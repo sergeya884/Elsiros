@@ -33,12 +33,12 @@ texture_points.append(supervisor.getFromDef('CUST_TEXTURE_3').getField('POINTS')
 robot_translation = []
 robot_translation.append(supervisor.getFromDef('BLUE_PLAYER_1').getField('translation'))
 robot_translation.append(supervisor.getFromDef('RED_PLAYER_2').getField('translation'))
-robot_translation.append(supervisor.getFromDef('GREAN_PLAYER_3').getField('translation'))
+robot_translation.append(supervisor.getFromDef('GREEN_PLAYER_3').getField('translation'))
 
 robot_rotation = []
 robot_rotation.append(supervisor.getFromDef('BLUE_PLAYER_1').getField('rotation'))
 robot_rotation.append(supervisor.getFromDef('RED_PLAYER_2').getField('rotation'))
-robot_rotation.append(supervisor.getFromDef('GREAN_PLAYER_3').getField('rotation'))
+robot_rotation.append(supervisor.getFromDef('GREEN_PLAYER_3').getField('rotation'))
 
 
 def out_text_red(text):
@@ -46,7 +46,7 @@ def out_text_red(text):
     end = "\033[0;0m"
     print(start + str(datetime.datetime.now()) + text + end)
 
-def out_text_grean(text):
+def out_text_green(text):
     start = "\033[1;32m"
     end = "\033[0;0m"
     print(start + str(datetime.datetime.now()) + text + end)
@@ -65,7 +65,7 @@ os.chdir(current_working_directory.parent/'Robofest_TEAM')
 role01 = 'sprint' 
 second_pressed_button = '4'
 initial_coord = ['[0.0, 0.0, 0.288354]', '[0.0, 1.05, 0.288354]', '[0.0, 2.1, 0.288354]']
-robot_color = ['blue', 'red', 'grean']
+robot_color = ['blue', 'red', 'green']
 robot_number = ['1', '2', '3']
 team_id = '-1'          # value -1 means game will be playing without Game Controller
 port01 = ['7001', '7002', '7003']
@@ -138,7 +138,7 @@ while supervisor.step(time_step) != -1:
             texture_points[i].setMFVec3f(1, (3.0, center_of_rows[i]-0.5, 0.001))
             texture_points[i].setMFVec3f(2, (3.0, center_of_rows[i]+0.5, 0.001))
             text = ' robot ' + str(i+1) + ' distance was finished within timesteps: ' + str(distance_count)
-            out_text_grean(text)
+            out_text_green(text)
             p01[i].terminate()
             p01_flag[i] = False  # чтобы не писать больше одного раза
 

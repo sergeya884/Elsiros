@@ -80,9 +80,9 @@ DEF RED_PLAYER_2 Robokit1 {
   ]
 }
 
-DEF GREAN_PLAYER_3 Robokit1 {
+DEF GREEN_PLAYER_3 Robokit1 {
   translation 0 2.1 0.288354
-  name "grean player 3"
+  name "green player 3"
   controllerArgs [
     "7003"
     "2"
