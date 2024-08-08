@@ -55,14 +55,20 @@ PROTO Robokit1 [
   field  SFBool      supervisor      TRUE       # Is `Robot.supervisor`.
   field  SFBool      synchronization TRUE        # Is `Robot.synchronization`.
   field  SFBool      selfCollision   TRUE       # Is `Robot.selfCollision`.
-  field SFString{"", "red", "blue"}      teamColor ""
-  field SFString{"", "1", "2", "3", "4", "5"}      playerNumber ""
-  field SFColor     RED      1.0 0.0 0.0
-  field SFColor     BLUE     0.0 0.0 1.0
-  field SFColor     GREEN    0.0 1.0 0.0
-
-
+  field SFString{"", "red", "blue", "green", "black", "purple", "orange", "brown", "grey", "pink", "turquoise"}   teamColor ""
+  field SFString{"", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"}   playerNumber ""
+  field SFColor     RED          1.0 0.0 0.0
+  field SFColor     BLUE         0.0 0.0 1.0
+  field SFColor     GREEN        0.0 0.8 0.0
+  field SFColor     BLACK        0.0 0.0 0.0
+  field SFColor     PURPLE       0.5 0.0 0.5
+  field SFColor     ORANGE       1.0 0.6 0.0
+  field SFColor     BROWN        0.5 0.2 0.0
+  field SFColor     GREY         0.5 0.5 0.5
+  field SFColor     PINK         1.0 0.0 1.0
+  field SFColor     TURQUOISE    0.2 0.8 0.8
 ]
+
 {
   %{
     jerseyColor = ""
@@ -70,8 +76,8 @@ PROTO Robokit1 [
     if fields.name.value ~= "Robokit1" then
       -- name is supposed to be something like "red player 2" or "blue player 1"
       local words = {}
-      for word in fields.name.value:gmatch("%w+") do 
-        table.insert(words, word) 
+      for word in fields.name.value:gmatch("%w+") do
+        table.insert(words, word)
       end
       jerseyColor = words[1]
       number = words[3]
@@ -93,9 +99,9 @@ PROTO Robokit1 [
     synchronization IS synchronization
     selfCollision IS selfCollision
     recognitionColors 1 0 0
-    
 
-    name IS name  
+
+    name IS name
     model IS name
     children [
       Solid {
@@ -111,6 +117,27 @@ PROTO Robokit1 [
             %{end}%
             %{if jerseyColor == "green" then}%
               color IS GREEN
+            %{end}%
+            %{if jerseyColor == "black" then}%
+              color IS BLACK
+            %{end}%
+            %{if jerseyColor == "purple" then}%
+              color IS PURPLE
+            %{end}%
+            %{if jerseyColor == "orange" then}%
+              color IS ORANGE
+            %{end}%
+            %{if jerseyColor == "brown" then}%
+              color IS BROWN
+            %{end}%
+            %{if jerseyColor == "grey" then}%
+              color IS GREY
+            %{end}%
+            %{if jerseyColor == "pink" then}%
+              color IS PINK
+            %{end}%
+            %{if jerseyColor == "turquoise" then}%
+              color IS TURQUOISE
             %{end}%
           }
           HingeJoint {
@@ -304,7 +331,7 @@ PROTO Robokit1 [
                                                       -1.655881e-10 -2.558492e-07 -1.854482e-10
                                                     ]
                                                   }
-                                                }                                                
+                                                }
                                               }
                                             ]
                                             name "Leg_Joint_Left03"
@@ -1188,12 +1215,12 @@ PROTO Robokit1 [
                           DEF Camera Solid {
                             translation 0.011643 -0.043608 0.000100
                             rotation 0.005819 -0.999966 0.005819 1.570830
-                        
+
                           children [
                             Robokit1_cameraMesh {
                             }
                           ]
-                        
+
                         name "camera"
                       }
                         ]
@@ -1261,6 +1288,27 @@ PROTO Robokit1 [
                 %{if jerseyColor == "green" then}%
                   color IS GREEN
                 %{end}%
+                %{if jerseyColor == "black" then}%
+                  color IS BLACK
+                %{end}%
+                %{if jerseyColor == "purple" then}%
+                  color IS PURPLE
+                %{end}%
+                %{if jerseyColor == "orange" then}%
+                  color IS ORANGE
+                %{end}%
+                %{if jerseyColor == "brown" then}%
+                  color IS BROWN
+                %{end}%
+                %{if jerseyColor == "grey" then}%
+                  color IS GREY
+                %{end}%
+                %{if jerseyColor == "pink" then}%
+                  color IS PINK
+                %{end}%
+                %{if jerseyColor == "turquoise" then}%
+                  color IS TURQUOISE
+                %{end}%
               }
             ]
             name "Backpack"
@@ -1303,7 +1351,7 @@ PROTO Robokit1 [
           }
           InertialUnit {
             translation 0 0.05 0
-            rotation 0 0 0 -1.5707
+            rotation 0 0 1 -1.5707960173459927
             name "imu_body"
           }
           %{ if number == "1" then }%
@@ -1328,7 +1376,7 @@ PROTO Robokit1 [
             name "num_02"
           }
           %{ end }%
-          %{ if number == "3" then }%          
+          %{ if number == "3" then }%
           Solid {
             translation -0.001371 -0.025000 0.005069
             rotation 1.000000 0.000000 0.000000 1.570796
@@ -1339,7 +1387,7 @@ PROTO Robokit1 [
             name "num_03"
           }
           %{ end }%
-          %{ if number == "4" then }%          
+          %{ if number == "4" then }%
           Solid {
             translation -0.000756 -0.025000 0.005069
             rotation 1.000000 0.000000 0.000000 1.570800
@@ -1350,7 +1398,7 @@ PROTO Robokit1 [
             name "num_04"
           }
           %{ end }%
-          %{ if number == "5" then }%          
+          %{ if number == "5" then }%
           Solid {
             translation 0.001808 -0.025000 0.005069
             rotation 1.000000 0.000000 0.000000 1.570796
@@ -1361,7 +1409,7 @@ PROTO Robokit1 [
             name "num_05"
           }
           %{ end }%
-          %{ if number == "1" then }%             
+          %{ if number == "1" then }%
           Solid {
             translation 0.005641 0.094000 0.003817
             rotation -0.000003 0.707108 0.707105 3.141598
@@ -1372,7 +1420,7 @@ PROTO Robokit1 [
             name "number_01"
           }
           %{ end }%
-          %{ if number == "2" then }%             
+          %{ if number == "2" then }%
           Solid {
             translation 0.004615 0.094000 0.003817
             rotation 0.000000 -0.707107 -0.707107 3.141593
@@ -1383,7 +1431,7 @@ PROTO Robokit1 [
             name "number_02"
           }
           %{ end }%
-          %{ if number == "3" then }%             
+          %{ if number == "3" then }%
           Solid {
             translation 0.005871 0.094000 0.004562
             rotation -0.000003 -0.707108 -0.707105 3.141598
@@ -1394,7 +1442,7 @@ PROTO Robokit1 [
             name "number_03"
           }
           %{ end }%
-          %{ if number == "4" then }%             
+          %{ if number == "4" then }%
           Solid {
             translation 0.005256 0.094000 0.003817
             rotation 0.000000 -0.707107 -0.707107 3.141593
@@ -1405,7 +1453,7 @@ PROTO Robokit1 [
             name "number_04"
           }
           %{ end }%
-          %{ if number == "5" then }%             
+          %{ if number == "5" then }%
           Solid {
             translation 0.004692 0.094000 0.004562
             rotation -0.000003 -0.707108 -0.707105 3.141598
@@ -1414,8 +1462,8 @@ PROTO Robokit1 [
               }
             ]
             name "number_05"
-          } 
-          %{ end }%         
+          }
+          %{ end }%
         ]
         boundingObject Transform {
           translation 0.000000 0.013250 0.029625
@@ -1457,6 +1505,6 @@ PROTO Robokit1 [
     physics Physics {
         density -1
         mass 0.001
-    }        
+    }
   }
 }

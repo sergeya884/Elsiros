@@ -1,5 +1,13 @@
 {
-  "proportional": 0.5,
-  "differential": 0.3,
-  "rotation_increment": 0
+  "proportional": 0.4,
+  "differential": 0.4,
+  "stepLength": 40,
+  "stepHeight": 32,
+  "gaitHeight": 180,
+  "amplitude": 50,
+  "fr1": 8,
+  "fr2": 12,
+  "firstAriaFactor": 0.5,
+  "secondAriaFactor":  0.5,
+  "thirdAriaFactor": 0.5
 }

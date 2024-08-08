@@ -4,16 +4,89 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d602b984-8fef-489f-8181-90db55ae02b4" name="Changes" comment="Rename 'grean' to 'green'). Add 3 robots to marathon.">
-      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7003.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_marathon7003.txt" afterDir="false" />
+    <list default="true" id="d602b984-8fef-489f-8181-90db55ae02b4" name="Changes" comment="ADD pd to marathon">
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Marathon_params4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Marathon_params5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Sprint_params10.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Sprint_params4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Sprint_params5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Sprint_params6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Sprint_params7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Sprint_params8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Sprint_params9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/explanation_of_sprint_parameters.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_sprint7001.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_sprint7002.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_sprint7003.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_sprint7004.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_sprint7005.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_sprint7006.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_sprint7007.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_sprint7008.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_sprint7009.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_sprint7010.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_empty/team0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_empty/team1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_empty/team10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_empty/team2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_empty/team3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_empty/team4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_empty/team5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_empty/team6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_empty/team7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_empty/team8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_empty/team9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_white/team0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_white/team1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_white/team10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_white/team2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_white/team3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_white/team4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_white/team5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_white/team6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_white/team7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_white/team8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/marathon_new/images/teams/teams_white/team9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worlds/textures/teams_empty/team0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worlds/textures/teams_empty/team1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worlds/textures/teams_empty/team10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worlds/textures/teams_empty/team2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worlds/textures/teams_empty/team3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worlds/textures/teams_empty/team4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worlds/textures/teams_empty/team5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worlds/textures/teams_empty/team6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worlds/textures/teams_empty/team7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worlds/textures/teams_empty/team8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worlds/textures/teams_empty/team9.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Marathon_params.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Marathon_params1.json" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Marathon_params1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Marathon_params2.json" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Marathon_params2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Marathon_params3.json" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Marathon_params3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Sprint_params.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Sprint_params1.json" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Sprint_params1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Sprint_params2.json" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Sprint_params2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Sprint_params3.json" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Init_params/Sprint_params3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/Motion/class_Motion.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/Motion/class_Motion.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/strategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/Soccer/strategy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7001.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7001.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7002.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7002.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/main_pb.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/main_pb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7001.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7002.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output7003.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_marathon7001.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_marathon7001.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_marathon7002.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_marathon7002.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_marathon7003.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Robofest_TEAM/output_marathon7003.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/marathon_new/images/make_map_webots.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/marathon_new/images/make_map_webots.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/marathon_new/marathon_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/marathon_new/marathon_new.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/sprint/Sprint_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/sprint/Sprint_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/sprint/sprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/sprint/sprint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/Robokit1/Robokit1.proto" beforeDir="false" afterPath="$PROJECT_DIR$/protos/Robokit1/Robokit1.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/SprintField.proto" beforeDir="false" afterPath="$PROJECT_DIR$/protos/SprintField.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worlds/.Robofest_2023_sprint.wbproj" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/.Robofest_2023_sprint.wbproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worlds/.marathon_new.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/.marathon_new.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worlds/.marathon_new.wbproj" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/.marathon_new.wbproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worlds/Robofest_2023_sprint.wbt" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/Robofest_2023_sprint.wbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worlds/marathon_new.wbt" beforeDir="false" afterPath="$PROJECT_DIR$/worlds/marathon_new.wbt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,41 +131,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.make_map.executor&quot;: &quot;Run&quot;,
-    &quot;Python.make_map2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.make_map_webots.executor&quot;: &quot;Run&quot;,
-    &quot;Python.marafon_found_blobs.executor&quot;: &quot;Run&quot;,
-    &quot;Python.marathon_found_blobs.executor&quot;: &quot;Run&quot;,
-    &quot;Python.marathon_new.executor&quot;: &quot;Run&quot;,
-    &quot;Python.referee_Robofest.executor&quot;: &quot;Run&quot;,
-    &quot;Python.strategy.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Elsiros_result/controllers/Robofest_TEAM/Init_params&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/Sergey/Downloads/marathon_new.py&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.make_map.executor": "Run",
+    "Python.make_map2.executor": "Run",
+    "Python.make_map_webots.executor": "Run",
+    "Python.marafon_found_blobs.executor": "Run",
+    "Python.marathon_found_blobs.executor": "Run",
+    "Python.marathon_new.executor": "Run",
+    "Python.referee_Robofest.executor": "Run",
+    "Python.strategy.executor": "Run",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Elsiros_result/controllers/Robofest_TEAM/Init_params",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "two.files.diff.last.used.file": "C:/Users/Sergey/Downloads/marathon_new.py"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Elsiros_result\controllers\Robofest_TEAM\Init_params" />
+      <recent name="C:\Elsiros_result\worlds\textures" />
       <recent name="C:\Elsiros_result\controllers\Robofest_TEAM" />
       <recent name="C:\Elsiros_result\controllers\marathon_new" />
       <recent name="C:\Elsiros_result\controllers\Robofest_TEAM\Soccer" />
-      <recent name="C:\Elsiros_result\worlds\textures" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Elsiros_result\controllers\marathon_new\images\teams\teams_white" />
+      <recent name="C:\Elsiros_result\controllers\marathon_new\images\teams" />
       <recent name="C:\Elsiros_result\controllers\Robofest_TEAM\Init_params" />
       <recent name="C:\Elsiros_result\controllers\marathon_new\images" />
       <recent name="C:\Elsiros_result\protos\textures" />
-      <recent name="C:\Elsiros_result\worlds\textures" />
-      <recent name="C:\Elsiros_result\protos" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -191,7 +264,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723053984969</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="ADD pd to marathon">
+      <option name="closed" value="true" />
+      <created>1723054807219</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1723054807219</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -227,7 +308,8 @@
     <MESSAGE value="New marathon with circle" />
     <MESSAGE value="Make F map to marathon. ADD 5 meters punish" />
     <MESSAGE value="Rename 'grean' to 'green'). Add 3 robots to marathon." />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename 'grean' to 'green'). Add 3 robots to marathon." />
+    <MESSAGE value="ADD pd to marathon" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD pd to marathon" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

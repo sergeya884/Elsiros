@@ -9,6 +9,13 @@ renderingMode: PLAIN
 orthographicViewHeight: 1
 textFiles: 1 "protos/SprintField.proto" "protos/custom_texture.proto"
 consoles: Console:All:All
+renderingDevicePerspectives: black player 4:camera;0;1;0;0
 renderingDevicePerspectives: blue player 1:camera;0;0.133333;0;0
+renderingDevicePerspectives: brown player 7:camera;0;1;0;0
 renderingDevicePerspectives: green player 3:camera;0;0.133333;0;0
+renderingDevicePerspectives: grey player 8:camera;0;1;0;0
+renderingDevicePerspectives: orange player 6:camera;0;1;0;0
+renderingDevicePerspectives: pink player 9:camera;0;1;0;0
+renderingDevicePerspectives: purple player 5:camera;0;1;0;0
 renderingDevicePerspectives: red player 2:camera;0;0.133333;0;0
+renderingDevicePerspectives: turquoise player 10:camera;0;1;0;0

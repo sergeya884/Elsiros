@@ -35,11 +35,15 @@ def main():
 
     robot_translation = [supervisor.getFromDef('BLUE_PLAYER_1').getField('translation'),
                          supervisor.getFromDef('RED_PLAYER_2').getField('translation'),
-                         supervisor.getFromDef('GREEN_PLAYER_3').getField('translation')]
+                         supervisor.getFromDef('GREEN_PLAYER_3').getField('translation'),
+                         supervisor.getFromDef('BLACK_PLAYER_4').getField('translation'),
+                         supervisor.getFromDef('PURPLE_PLAYER_5').getField('translation')]
 
     robot_rotation = [supervisor.getFromDef('BLUE_PLAYER_1').getField('rotation'),
                       supervisor.getFromDef('RED_PLAYER_2').getField('rotation'),
-                      supervisor.getFromDef('GREEN_PLAYER_3').getField('rotation')]
+                      supervisor.getFromDef('GREEN_PLAYER_3').getField('rotation'),
+                      supervisor.getFromDef('BLACK_PLAYER_4').getField('rotation'),
+                      supervisor.getFromDef('PURPLE_PLAYER_5').getField('rotation')]
 
 
     # robot_translation = supervisor.getFromDef('BLUE_PLAYER_1').getField('translation')
@@ -49,14 +53,14 @@ def main():
 
     os.chdir(current_working_directory.parent/'Robofest_TEAM')
 
-    quantity_robots = 3
+    quantity_robots = 5
     role01 = 'marathon'
     second_pressed_button = '4'
     initial_coord = '[0.0, 0.0, 0.0]'
-    robot_color = ['blue', 'red', 'green']
+    robot_color = ['blue', 'red', 'green', 'black', 'purple']
     ports, robot_number, parameter_names, filenames = [], [], [], []
     team_id = '-1'          # value -1 means game will be playing without Game Controller
-    p01 = [_ for _ in range(quantity_robots)]
+    p01 = [[]]*quantity_robots
     for i in range(1, quantity_robots + 1):
         robot_number.append(str(i))
 
@@ -74,15 +78,15 @@ def main():
     # params_name = "Marathon_params.json"
     # filename01 = "output" + f"{port01}"+ ".txt"
     robots_start_time = []
-    j = 0  # запускаем первого робота
+    running_robots = 0  # запускаем первого робота
     with open(filenames[0], "w") as f01:
-        p01[j] = subprocess.Popen(['python', 'main_pb.py', ports[j], team_id, robot_color[j], robot_number[j], role01,
-                                   second_pressed_button, initial_coord, parameter_names[j]], stderr=f01)
-        t0 = time.time()
+        p01[running_robots] = subprocess.Popen(['python', 'main_pb.py', ports[running_robots], team_id, robot_color[running_robots], robot_number[running_robots], role01,
+                                   second_pressed_button, initial_coord, parameter_names[running_robots]], stderr=f01)
+        t0 = 0
         robots_start_time.append(t0)
 
     distance_count = 0
-    robot_sequence = [j + 1]
+    robot_sequence = [running_robots + 1]
 
     start_coords = [5, 17.6, 0.3]
     start_rotation = [1, 0, 0, 0]
@@ -94,35 +98,36 @@ def main():
     delta = [0] * quantity_robots
     delta_result = delta
     respawn_points = [[[delta[0], robot_coords[0], robot_angle[0]]]] * quantity_robots
-    respawn_result = robot_coords
-    respawn_result_angle = robot_angle
+    respawn_result = [robot_translation[0].getSFVec3f()] * quantity_robots
+    respawn_result_angle = [robot_rotation[0].getSFRotation()] * quantity_robots
     out_flag = [201] * quantity_robots
     end_flag = [False] * quantity_robots
-
+    leaderboard = [_ for _ in range(quantity_robots)]
+    time_step_sec = time_step / 1000
     while supervisor.step(time_step) != -1:
         distance_count += 1
-        if j < quantity_robots - 1:
-            t1 = time.time()
-            if abs(t1 - t0) >= 20:  # запускаем остальных роботов
-                j += 1
-                robot_sequence.append(j + 1)
-                with open(filenames[j], "w") as f01:
-                    p01[j] = subprocess.Popen(
-                        ['python', 'main_pb.py', ports[j], team_id, robot_color[j], robot_number[j], role01,
-                         second_pressed_button, initial_coord, parameter_names[j]], stderr=f01)
-                    t0 = time.time()
-                    robot_translation[j].setSFVec3f(start_coords)  # в начало координат
-                    robot_rotation[j].setSFRotation(start_rotation)
+        if running_robots < quantity_robots - 1:
+            t1 = distance_count * time_step_sec
+            if abs(t1 - t0) >= 30:  # запускаем остальных роботов
+                running_robots += 1
+                robot_sequence.append(running_robots + 1)
+                with open(filenames[running_robots], "w") as f01:
+                    p01[running_robots] = subprocess.Popen(
+                        ['python', 'main_pb.py', ports[running_robots], team_id, robot_color[running_robots], robot_number[running_robots], role01,
+                         second_pressed_button, initial_coord, parameter_names[running_robots]], stderr=f01)
+                    t0 = distance_count * time_step_sec
+                    robot_translation[running_robots].setSFVec3f(start_coords)  # в начало координат
+                    robot_rotation[running_robots].setSFRotation(start_rotation)
                     robots_start_time.append(t0)
 
-        for robot in range(j+1):
+
+        for robot in range(running_robots+1):
             if not end_flag[robot]:
                 if out_flag[robot] < 200:
                     out_flag[robot] += 1
                     continue
                 elif out_flag[robot] == 200:
                     out_flag[robot] += 1
-                    print('delta0')
                     delta[robot] = delta_result[robot]
                     robot_translation[robot].setSFVec3f(respawn_result[robot])
                     robot_rotation[robot].setSFRotation(respawn_result_angle[robot])
@@ -134,9 +139,9 @@ def main():
                 robot_coords_np[robot] = np.array([robot_coords[robot][0], robot_coords[robot][1]])
                 if distance_count % 500 == 0:
                     delta[robot] += np.linalg.norm(robot_coords_np[robot] - robot_coords_old[robot])
-                    print(delta[robot])
+                    # print(respawn_points[robot])
                     robot_coords_old[robot] = robot_coords_np[robot]
-                    respawn_points[robot].append([[delta[robot], robot_coords[robot], robot_angle[robot]]])
+                    respawn_points[robot].append([delta[robot], robot_coords[robot], robot_angle[robot]])
                     for respawn_point in respawn_points[robot]:
                         if delta[robot] - respawn_point[0] >= 5:
                             respawn_result[robot] = respawn_point[1]
@@ -146,26 +151,50 @@ def main():
                         else:
                             break
 
-                # if is_out_of_distance(image, np.abs(np.round(100*(robot_coords_np[robot])))):
-                #     out_flag[robot] = 0
+                if is_out_of_distance(image, np.abs(np.round(100*(robot_coords_np[robot])))):
+                    out_flag[robot] = 0
 
-                # # Проверка на конец дистанции
-                # if np.linalg.norm(robot_coords_np - finish_coords) < 0.5 and delta > 50:
-                #     text = ' robot distance was finished within timesteps: ' + str(distance_count)
-                #     out_text_green(text)
-                #     p01.terminate()
-                #     robot_translation.setSFVec3f([1, 1, 0.3])
-                #     end_flag = True
+                # Проверка на конец дистанции
+                if np.linalg.norm(robot_coords_np[robot] - finish_coords) < 0.5 and delta[robot] > 50:
+                    text = f'robot distance was finished within time: {distance_count * time_step_sec - robots_start_time[robot]} sec'
+                    out_text_green(text)
+                    p01[robot].terminate()
+                    robot_translation[robot].setSFVec3f([1, 1, 0.3])
+                    end_flag[robot] = True
 
+                # Обгон
+                #for robot in range(running_robots + 1):
+                for robot_2 in range(running_robots + 1):
+                    #print(np.linalg.norm(robot_coords_np[robot] - robot_coords_np[robot_2]))
+                    if robot != robot_2 and np.linalg.norm(robot_coords_np[robot] - robot_coords_np[robot_2]) < 0.5:
+                        if leaderboard.index(robot) < leaderboard.index(robot_2):
+                            first_robot = robot
+                        else:
+                            first_robot = robot_2
 
+                        for respawn_point in respawn_points[first_robot]:
+                            # print(delta[first_robot], respawn_point[0])
+                            if delta[first_robot] - respawn_point[0] >= 2:
+                                respawn_result[first_robot] = respawn_point[1]
+                                respawn_result_angle[first_robot] = respawn_point[2]
+                                # respawn_points.remove(respawn_point)
+                                delta_result[first_robot] = respawn_point[0]
+                            else:
+                                break
 
+                        out_flag[first_robot] = 200
 
+                        leaderboard[robot], leaderboard[robot_2] = leaderboard[robot_2], leaderboard[robot]
+                        print(leaderboard)
+                        break
 
-    p01.terminate()
+    for i in range(quantity_robots):
+        p01[i].terminate()
     supervisor.simulationReset()
     supervisor.step(time_step)
     supervisor.simulationSetMode(supervisor.SIMULATION_MODE_PAUSE)
     #supervisor.worldReload()
+
 
 if __name__ == '__main__':
     main()

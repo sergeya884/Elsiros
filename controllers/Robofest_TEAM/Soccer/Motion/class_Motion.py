@@ -234,7 +234,12 @@ class Motion1:
             else:
                  self.send_angles_to_servos(angles)
 
-    def walk_Cycle(self, stepLength,sideLength, rotation,cycle, number_Of_Cycles):
+    def walk_Cycle(self, stepLength, sideLength, rotation, cycle, number_Of_Cycles, stepHeight, gaitHeight, amplitude, fr1, fr2):
+        self.amplitude = amplitude
+        self.fr1 = fr1
+        self.fr2 = fr2
+        self.stepHeight = stepHeight
+        self.gaitHeight = gaitHeight
         self.robot_In_0_Pose = False
         if not self.falling_Test() == 0:
             self.local.quality =0

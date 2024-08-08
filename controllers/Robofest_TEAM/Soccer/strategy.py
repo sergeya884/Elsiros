@@ -437,15 +437,23 @@ class Player():
             marathon_params = json.loads(f.read())
         proportional = marathon_params['proportional']
         differential = marathon_params['differential']
-        rotation_increment = marathon_params['rotation_increment']
+        stepLength = marathon_params['stepLength']
+        stepHeight = marathon_params['stepHeight']
+        gaitHeight = marathon_params['gaitHeight']
+        amplitude = marathon_params['amplitude']
+        fr1 = marathon_params['fr1']
+        fr2 = marathon_params['fr2']
+        firstAriaFactor = marathon_params['firstAriaFactor']
+        secondAriaFactor = marathon_params['secondAriaFactor']
+        thirdAriaFactor = marathon_params['thirdAriaFactor']
         window_x_size = 20
         window_y_size = 30
-        self.rectangle_anayzer = RectangleAnalyzer(image_path='Soccer/map_marathon.png', width=window_y_size, height=window_x_size, draw=False)
+        self.rectangle_anayzer = RectangleAnalyzer(image_path='Soccer/map_marathon.png', width=window_y_size,
+                                                   height=window_x_size, draw=False)
         thr = threading.Thread(target=self.marathon_thread, args=())
         thr.start()
         direction = 0
         last_heading = 0
-        stepLength = 40
         number_Of_Cycles = 500
         sideLength = 0
         self.motion.walk_Initial_Pose()
@@ -468,10 +476,12 @@ class Player():
                         k -= 1
                         self.mean_coordinates_line[i] = [0, 0]
                 if k != 0:
-                    mean_x = (self.mean_coordinates_line[0][0] + self.mean_coordinates_line[1][0] +
-                              self.mean_coordinates_line[2][0])/k
-                    mean_y = (self.mean_coordinates_line[0][1] + self.mean_coordinates_line[1][1] +
-                              self.mean_coordinates_line[2][1])/k
+                    mean_x = (firstAriaFactor*self.mean_coordinates_line[0][0] +
+                              secondAriaFactor*self.mean_coordinates_line[1][0] +
+                              thirdAriaFactor*self.mean_coordinates_line[2][0])/k
+                    mean_y = (firstAriaFactor*self.mean_coordinates_line[0][1] +
+                              secondAriaFactor*self.mean_coordinates_line[1][1] +
+                              thirdAriaFactor*self.mean_coordinates_line[2][1])/k
                     if mean_x != 0:
                         direction = math.atan(mean_y/mean_x)#/3.14
                     #print(rotation)
@@ -484,9 +494,8 @@ class Player():
                 heading = self.motion.imu_body_yaw()
                 rotation = direction + heading * proportional + (heading - last_heading) * differential
                 rotation = self.motion.normalize_rotation(rotation)
-
-                # print(stepLength1, sideLength, rotation)
-                self.motion.walk_Cycle(stepLength1, sideLength, rotation, cycle, number_Of_Cycles)
+                self.motion.walk_Cycle(stepLength1, sideLength, rotation, cycle, number_Of_Cycles, stepHeight,
+                                       gaitHeight, amplitude, fr1, fr2)
                 last_heading = heading
         self.motion.walk_Final_Pose()
 
@@ -497,22 +506,27 @@ class Player():
             sprint_params = json.loads(f.read())
         proportional = sprint_params['proportional']
         differential = sprint_params['differential']
+        stepLength = sprint_params['stepLength']
+        stepHeight = sprint_params['stepHeight']
+        gaitHeight = sprint_params['gaitHeight']
+        amplitude = sprint_params['amplitude']
+        fr1 = sprint_params['fr1']
+        fr2 = sprint_params['fr2']
         last_heading = 0
-        stepLength = 64
         number_Of_Cycles = 100
         sideLength = 0
         self.motion.walk_Initial_Pose()
         number_Of_Cycles += 1
         for cycle in range(number_Of_Cycles):
             stepLength1 = stepLength
-            if cycle ==0 : stepLength1 = stepLength/3
-            if cycle ==1 : stepLength1 = stepLength/3 * 2
+            if cycle == 0: stepLength1 = stepLength/3
+            if cycle == 1: stepLength1 = stepLength/3 * 2
             self.motion.refresh_Orientation()
             heading = self.motion.imu_body_yaw()
             rotation = 0 + heading * proportional + (heading - last_heading) * differential 
             rotation = self.motion.normalize_rotation(rotation)
-            #rotation = 0
-            self.motion.walk_Cycle(stepLength1, sideLength, rotation, cycle, number_Of_Cycles)
+            self.motion.walk_Cycle(stepLength1, sideLength, rotation, cycle, number_Of_Cycles, stepHeight,
+                                   gaitHeight, amplitude, fr1, fr2)
             last_heading = heading
         self.motion.walk_Final_Pose()
         print('finish')

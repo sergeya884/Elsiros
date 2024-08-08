@@ -1,0 +1,11 @@
+"proportional"      // PD regulator
+"differential"      // PD regulator
+"stepLength"        // stride length
+"stepHeight"        // elevation of sole over floor
+"gaitHeight"        // distance between Center of mass and floor in walk pose
+"amplitude"         // mm side amplitude (maximum distance between most right and most left position of Center of Mass)
+"fr1"               // frame number for 1-st phase of gait ( two legs on floor)
+"fr2"               // frame number for 2-nd phase of gait ( one leg in air)
+"firstAriaFactor"   // The multiplication factor of the first area vision on marathon
+"secondAriaFactor"  // The multiplication factor of the second area vision on marathon
+"thirdAriaFactor"   // The multiplication factor of the third area vision on marathon

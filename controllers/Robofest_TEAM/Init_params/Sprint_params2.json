@@ -1,4 +1,10 @@
 {
-  "proportional": 0.5,
-  "differential": 0.5
+  "proportional": 0,
+  "differential": 0,
+  "stepLength": 64,
+  "stepHeight": 32,
+  "gaitHeight": 180,
+  "amplitude": 50,
+  "fr1": 8,
+  "fr2": 12
 }

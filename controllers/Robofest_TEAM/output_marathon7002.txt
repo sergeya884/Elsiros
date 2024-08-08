@@ -1,5 +1,1 @@
 Exception in thread Thread-2:
-Traceback (most recent call last):
-  File "C:\Users\Sergey\AppData\Local\Programs\Python\Python39\lib\threading.py", line 950, in _bootstrap_inner
-    self.run()
-  File "C:\Users\Sergey\AppData\Local\Programs\Python\Python39\lib\threading.py", line 888, in run

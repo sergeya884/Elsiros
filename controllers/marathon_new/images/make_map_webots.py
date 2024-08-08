@@ -29,10 +29,11 @@ def replace_colors(image_path, output_path):
     # Замена черных и серых пикселей на белые
     image[black_mask == 255] = [255, 255, 255, 255]
     # Поворот изображения на 90 градусов по часовой стрелке
-    image_rotated = cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE)
+    #image_rotated = cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE)
 
     # Сохранение итогового изображения
-    cv2.imwrite(output_path, image_rotated)
+    cv2.imwrite(output_path, image)
 
 # Пример использования функции
-replace_colors('letter_F_circle.png', 'output_image.png')
+for i in range (11):
+    replace_colors(f'teams/teams_white/team{i}.png', f'teams/teams_empty/team{i}.png')

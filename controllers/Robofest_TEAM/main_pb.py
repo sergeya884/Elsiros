@@ -205,13 +205,15 @@ class Main_Panel(wx.Frame):
         title = 'Team ' + robot_color + ' player '+ robot_number
         self.SetTitle(title)
         width, height = wx.GetDisplaySize().Get()
-        if robot_color == 'red':
-            x_position = width - 300 * (3 - int(robot_number))
-        elif robot_color == 'blue':
-            x_position = width - 300 * (4 - int(robot_number))
-        elif robot_color == 'green':
-            x_position = width - 300 * (5 - int(robot_number))
-        self.SetPosition((x_position, height -225))
+        x_position, y_position = 0, 0
+        if int(robot_number) < 6:
+            x_position = width - 300 * int(robot_number)
+            y_position = height - 230
+        elif 5 < int(robot_number) < 11:
+            x_position = width - 300 * (int(robot_number) - 5)
+            y_position = height - 430
+        self.SetPosition((x_position, y_position))
+
         #self.Centre()
 
     def ShowMessage1(self, event):

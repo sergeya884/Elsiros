@@ -40,8 +40,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.228483328509067 -0.5422241472960685 -0.808571791916135 5.322335440422851
-  position 1.4668797651941685 -3.7473231315481086 4.3316273796294595
+  orientation 0.13718392902059356 -0.4020843759439427 -0.9052672115128454 5.562319598219645
+  position -5.132502737151619 3.5575673296415182 5.107269791639856
 }
 TexturedBackground {
   texture "stadium_dry"
@@ -63,7 +63,7 @@ DEF BLUE_PLAYER_1 Robokit1 {
   ]
 }
 DEF RED_PLAYER_2 Robokit1 {
-  translation 0.2 0.2 0.3
+  translation 5 16 0.3
   name "red player 2"
   controllerArgs [
     "7002"
@@ -76,10 +76,36 @@ DEF RED_PLAYER_2 Robokit1 {
   ]
 }
 DEF GREEN_PLAYER_3 Robokit1 {
-  translation 0.2 0.5 0.3
+  translation 5 15.5 0.3
   name "green player 3"
   controllerArgs [
     "7003"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
+DEF BLACK_PLAYER_4 Robokit1 {
+  translation 5 15 0.288354
+  name "black player 4"
+  controllerArgs [
+    "7004"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
+DEF PURPLE_PLAYER_5 Robokit1 {
+  translation 5 14.5 0.288354
+  name "purple player 5"
+  controllerArgs [
+    "7005"
     "2"
     "127.0.0.1"
     "192.168.123.21"

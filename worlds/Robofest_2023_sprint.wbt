@@ -94,14 +94,108 @@ DEF GREEN_PLAYER_3 Robokit1 {
   ]
 }
 
+DEF BLACK_PLAYER_4 Robokit1 {
+  translation 0 3.15 0.288354
+  name "black player 4"
+  controllerArgs [
+    "7004"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
+
+DEF PURPLE_PLAYER_5 Robokit1 {
+  translation 0 4.2 0.288354
+  name "purple player 5"
+  controllerArgs [
+    "7005"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
+
+DEF ORANGE_PLAYER_6 Robokit1 {
+  translation 0 5.25 0.288354
+  name "orange player 6"
+  controllerArgs [
+    "7006"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
+
+DEF BROWN_PLAYER_7 Robokit1 {
+  translation 0 6.3 0.288354
+  name "brown player 7"
+  controllerArgs [
+    "7007"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
+
+DEF GREY_PLAYER_8 Robokit1 {
+  translation 0 7.35 0.288354
+  name "grey player 8"
+  controllerArgs [
+    "7008"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
+
+DEF PINK_PLAYER_9 Robokit1 {
+  translation 0 8.4 0.288354
+  name "pink player 9"
+  controllerArgs [
+    "7009"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
+
+DEF TURQUOISE_PLAYER_10 Robokit1 {
+  translation 0 9.45 0.288354
+  name "turquoise player 10"
+  controllerArgs [
+    "7010"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
+
 Robot {
   controller "sprint"
   supervisor TRUE
   children [
-    DEF PEN_1 custom_Pen {
-      translation 0 0 0
-      name "pen"
-    }
     # Текстуры имен комманд и пути робота
     DEF COMMAND_TEXTURE_1 command_name_texture {
       textureUrl ["textures/empty_starkit.png"]
@@ -113,7 +207,7 @@ Robot {
             ]
     }
     DEF COMMAND_TEXTURE_2 command_name_texture {
-      textureUrl ["textures/empty_spl.png"]
+      textureUrl ["textures/teams_empty/team1.png"]
       POINTS[
              0 0.55 0.002
              3 0.55 0.002
@@ -122,7 +216,7 @@ Robot {
             ]
     }
     DEF COMMAND_TEXTURE_3 command_name_texture {
-      textureUrl ["textures/empty_hl.png"]
+      textureUrl ["textures/teams_empty/team2.png"]
       POINTS[
         0 1.6 0.002
         3 1.6 0.002
@@ -130,28 +224,147 @@ Robot {
         0 2.6 0.002
       ]
     }
+    DEF COMMAND_TEXTURE_4 command_name_texture {
+      textureUrl ["textures/teams_empty/team3.png"]
+      POINTS [
+              0 2.65 0.002
+              3 2.65 0.002
+              3 3.65 0.002
+              0 3.65 0.002
+            ]
+    }
+    DEF COMMAND_TEXTURE_5 command_name_texture {
+      textureUrl ["textures/teams_empty/team4.png"]
+      POINTS[
+             0 3.7 0.002
+             3 3.7 0.002
+             3 4.7 0.002
+             0 4.7 0.002
+            ]
+    }
+    DEF COMMAND_TEXTURE_6 command_name_texture {
+      textureUrl ["textures/teams_empty/team5.png"]
+      POINTS[
+        0 4.75 0.002
+        3 4.75 0.002
+        3 5.75 0.002
+        0 5.75 0.002
+      ]
+    }
+    DEF COMMAND_TEXTURE_7 command_name_texture {
+      textureUrl ["textures/teams_empty/team6.png"]
+      POINTS [
+              0 5.8 0.002
+              3 5.8 0.002
+              3 6.8 0.002
+              0 6.8 0.002
+            ]
+    }
+    DEF COMMAND_TEXTURE_8 command_name_texture {
+      textureUrl ["textures/teams_empty/team7.png"]
+      POINTS[
+             0 6.85 0.002
+             3 6.85 0.002
+             3 7.85 0.002
+             0 7.85 0.002
+            ]
+    }
+    DEF COMMAND_TEXTURE_9 command_name_texture {
+      textureUrl ["textures/teams_empty/team8.png"]
+      POINTS[
+        0 7.9 0.002
+        3 7.9 0.002
+        3 8.9 0.002
+        0 8.9 0.002
+      ]
+    }
+    DEF COMMAND_TEXTURE_10 command_name_texture {
+      textureUrl ["textures/teams_empty/team9.png"]
+      POINTS[
+        0 8.95 0.002
+        3 8.95 0.002
+        3 9.95 0.002
+        0 9.95 0.002
+      ]
+    }
     DEF CUST_TEXTURE_1 custom_texture {
       POINTS [
         0 -0.5 0.001,
-        0 -0.5 0.001,
+        0.001 -0.5 0.001,
         0.001 0.5 0.001,
-        0.001 0.5 0.001,
+        0.0 0.5 0.001,
       ]
     }
     DEF CUST_TEXTURE_2 custom_texture {
       POINTS[
         0 0.55 0.001,
-        0 0.55 0.001,
+        0.001 0.55 0.001,
         0.001 1.55 0.001,
-        0.001 1.55 0.001
+        0.0 1.55 0.001
       ]
     }
     DEF CUST_TEXTURE_3 custom_texture {
       POINTS[
         0 1.6 0.001
-        0 1.6 0.001
+        0.001 1.6 0.001
         0.001 2.6 0.001
-        0.001 2.6 0.001
+        0.0 2.6 0.001
+      ]
+    }
+    DEF CUST_TEXTURE_4 custom_texture {
+      POINTS [
+        0 2.65 0.001,
+        0.001 2.65 0.001,
+        0.001 3.65 0.001,
+        0.0 3.65 0.001,
+      ]
+    }
+    DEF CUST_TEXTURE_5 custom_texture {
+      POINTS[
+        0 3.7 0.001,
+        0.001 3.7 0.001,
+        0.001 4.7 0.001,
+        0.0 4.7 0.001
+      ]
+    }
+    DEF CUST_TEXTURE_6 custom_texture {
+      POINTS[
+        0 4.75 0.001
+        0.001 4.75 0.001
+        0.001 5.75 0.001
+        0.0 5.75 0.001
+      ]
+    }
+    DEF CUST_TEXTURE_7 custom_texture {
+      POINTS [
+        0 5.8 0.001,
+        0.001 5.8 0.001,
+        0.001 6.8 0.001,
+        0.0 6.8 0.001,
+      ]
+    }
+    DEF CUST_TEXTURE_8 custom_texture {
+      POINTS[
+        0 6.85 0.001,
+        0.001 6.85 0.001,
+        0.001 7.85 0.001,
+        0.0 7.85 0.001
+      ]
+    }
+    DEF CUST_TEXTURE_9 custom_texture {
+      POINTS[
+        0 7.9 0.001
+        0.001 7.9 0.001
+        0.001 8.9 0.001
+        0.0 8.9 0.001
+      ]
+    }
+    DEF CUST_TEXTURE_10 custom_texture {
+      POINTS[
+        0 8.95 0.001
+        0.001 8.95 0.001
+        0.001 9.95 0.001
+        0.0 9.95 0.001
       ]
     }
 
