@@ -1,0 +1,113 @@
+#VRML_SIM R2023b utf8
+
+PROTO BasketballCup [
+  field SFVec3f    translation 0 0 0
+  field SFRotation rotation    0 1 0 0
+  field SFString   name        "basketball_cup"
+  field SFColor    innerColor  1 0.2 0.2
+  field SFFloat    height      0.1
+  field SFFloat    radius      0.03
+  field SFFloat    thickness   0.005
+  field SFInt32    resolution  32
+]
+{
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    name IS name
+    children [
+      Shape {
+        appearance PBRAppearance {
+          baseColor IS innerColor
+          roughness 0.8
+          metalness 0.8
+          transparency 0
+        }
+        geometry IndexedFaceSet {
+          ccw FALSE
+          coord Coordinate {
+            point [
+              %{
+                local res = fields.resolution.value
+                local r_in = fields.radius.value
+                local r_out = r_in + fields.thickness.value
+                local h = fields.height.value
+                
+                -- Внутренняя окружность (верх)
+                for i = 0, res-1 do
+                  local angle = 2 * math.pi * i / res
+                  local x = r_in * math.cos(angle)
+                  local y = r_in * math.sin(angle)
+                  __liluat_output_function(x .. " " .. y .. " " .. h .. ",\n")
+                end
+                
+                -- Внутренняя окружность (дно)
+                for i = 0, res-1 do
+                  local angle = 2 * math.pi * i / res
+                  local x = r_in * math.cos(angle)
+                  local y = r_in * math.sin(angle)
+                  __liluat_output_function(x .. " " .. y .. " 0,\n")
+                end
+                
+                -- Внешняя окружность (верх)
+                for i = 0, res-1 do
+                  local angle = 2 * math.pi * i / res
+                  local x = r_out * math.cos(angle)
+                  local y = r_out * math.sin(angle)
+                  __liluat_output_function(x .. " " .. y .. " " .. h .. ",\n")
+                end
+                
+                -- Внешняя окружность (дно)
+                for i = 0, res-1 do
+                  local angle = 2 * math.pi * i / res
+                  local x = r_out * math.cos(angle)
+                  local y = r_out * math.sin(angle)
+                  __liluat_output_function(x .. " " .. y .. " 0,\n")
+                end
+              }%
+            ]
+          }
+          coordIndex [
+            %{
+              local res = fields.resolution.value
+              
+              -- Боковые грани (внутренние)
+              for i = 0, res-1 do
+                local j = (i + 1) % res
+                __liluat_output_function(i .. ", " .. (i + res) .. ", " .. (j + res) .. ", " .. j .. ", -1,\n")
+              end
+              
+              -- Боковые грани (внешние)
+              for i = 0, res-1 do
+                local j = (i + 1) % res
+                __liluat_output_function((i + 2*res) .. ", " .. (j + 2*res) .. ", " .. (j + 3*res) .. ", " .. (i + 3*res) .. ", -1,\n")
+              end
+              
+              -- Верхняя грань (между внутренней и внешней окружностью)
+              for i = 0, res-1 do
+                local j = (i + 1) % res
+                __liluat_output_function(i .. ", " .. j .. ", " .. (j + 2*res) .. ", " .. (i + 2*res) .. ", -1,\n")
+              end
+              
+              -- Нижняя грань (между внутренней и внешней окружностью)
+              for i = 0, res-1 do
+                local j = (i + 1) % res
+                __liluat_output_function((i + res) .. ", " .. (i + 3*res) .. ", " .. (j + 3*res) .. ", " .. (j + res) .. ", -1,\n")
+              end
+              
+              -- Дно (внутренняя часть - снаружи)
+              for i = 1, res-2 do
+                __liluat_output_function(res .. ", " .. (res + i) .. ", " .. (res + i + 1) .. ", -1,\n")
+              end
+
+              -- Дно (внутренняя часть - изнутри)
+              for i = 1, res-2 do
+                __liluat_output_function(res .. ", " .. (res + i + 1) .. ", " .. (res + i) .. ", -1,\n")
+              end            
+            }%
+          ]
+        }
+      }
+    ]
+  }
+}

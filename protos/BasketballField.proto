@@ -1,0 +1,103 @@
+#VRML_SIM R2023b utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# Basketball field with grass base and custom texture overlay.
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/CarpetFibers.proto"
+EXTERNPROTO "../protos/BasketballHoop.proto"
+
+PROTO BasketballField [
+  field SFVec3f    translation 0 0 0
+  field SFRotation rotation    0 1 0 0
+  field SFString   name        "basketball_field"
+  field SFBool     turfPhysics FALSE
+  field SFVec2f    field_size 4 4
+  field MFString   textureUrlRings "textures/rings.png"
+  field MFString   textureUrlFrame "textures/frame.png"
+  field SFFloat    texture_height 0.0005  # небольшое возвышение для текстуры
+  field SFVec2f    rings_offset  0 0      # смещение колец по X и Y
+  ]
+{
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    locked TRUE
+    children [
+      %{ if fields.turfPhysics.value then }%
+      DEF BLADES Solid {
+        contactMaterial "grass"
+        translation 0 0 0.01
+        rotation 1 0 0 0
+        boundingObject Plane {
+          size IS field_size
+        }
+      }
+      %{ end }%
+      
+      # Базовый слой - зеленое поле
+      Shape {
+        appearance DEF GREEN_APPEARANCE CarpetFibers {
+          colorOverride 0 1 0
+          type "synthetic"
+          textureTransform TextureTransform {
+            scale IS field_size
+          }
+          IBLStrength 1.0
+        }
+        geometry Plane {
+          size IS field_size
+        }
+      }
+      
+      # текстура колец(3 штуки)
+      Transform {
+        translation 0 0.96 %{= fields.texture_height.value }%
+        children [
+          Shape {
+            appearance Appearance {
+              texture ImageTexture {
+                url IS textureUrlRings
+                repeatS FALSE
+                repeatT FALSE
+              }
+              textureTransform TextureTransform {
+                scale 1 1
+              }
+            }
+            geometry Plane {
+              size 2 2
+            }
+          }
+        ]
+      }
+
+      # текстура рамки поля
+      Transform {
+        translation 0 0 %{= fields.texture_height.value }%
+        children [
+          Shape {
+            appearance Appearance {
+              texture ImageTexture {
+                url IS textureUrlFrame
+                repeatS FALSE
+                repeatT FALSE
+              }
+              textureTransform TextureTransform {
+                scale 1 1
+              }
+            }
+            geometry Plane {
+              size IS field_size
+            }
+          }
+        ]
+      }
+
+      BasketballHoop {
+        }
+    ]
+    boundingObject Plane {
+      size IS field_size
+    }
+  }
+}

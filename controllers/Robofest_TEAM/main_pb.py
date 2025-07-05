@@ -129,11 +129,15 @@ def main_procedure():
 
     second_pressed_button = int(sys.argv[6])
     initial_coord = eval(sys.argv[7])
+    #is_roki2 = bool(sys.argv[8])
+    print(sys.argv[9])
+    if sys.argv[9] == 'roki2': is_roki2 = True
+    else: is_roki2 = False
     logger.debug(initial_coord)
     logger.info('Player is going to play without Game Controller')
     glob = Glob(SIMULATION, current_work_directory)
     glob.pf_coord = initial_coord
-    motion = Motion_sim(glob, robot, None, pause, logger)
+    motion = Motion_sim(glob, robot, None, pause, logger, is_roki2)
     motion.sim_Start()
     motion.direction_To_Attack = -initial_coord[2]
     time.sleep(1)
@@ -147,8 +151,8 @@ def main_procedure():
     logger.debug( 'start time: %i',timer1)
     player.play_game(sys.argv[8])
 
-    x, _ = robot.get_localization()['position']
-    print('dist = ', "%.4f" % x )
+    #x, _ = robot.get_localization()['position']
+    # print('dist = ', "%.4f" % x )
 
     # player.play_game()
     logger.debug( 'total time: %i', robot.current_time - timer1)
@@ -205,15 +209,11 @@ class Main_Panel(wx.Frame):
         title = 'Team ' + robot_color + ' player '+ robot_number
         self.SetTitle(title)
         width, height = wx.GetDisplaySize().Get()
-        x_position, y_position = 0, 0
-        if int(robot_number) < 6:
-            x_position = width - 300 * int(robot_number)
-            y_position = height - 230
-        elif 5 < int(robot_number) < 11:
-            x_position = width - 300 * (int(robot_number) - 5)
-            y_position = height - 430
-        self.SetPosition((x_position, y_position))
-
+        if robot_color == 'red':
+            x_position = width - 300 * (5- int(robot_number))
+        else:
+            x_position = width - 300 * (3- int(robot_number))
+        self.SetPosition((x_position, height -225))
         #self.Centre()
 
     def ShowMessage1(self, event):
@@ -229,9 +229,7 @@ class Main_Panel(wx.Frame):
             pause.Flag = False
         else:
             pause.Flag = True
-        logger.info(pause.flag)
         logger.info('Pause button pressed')
-
 
 
 def main():

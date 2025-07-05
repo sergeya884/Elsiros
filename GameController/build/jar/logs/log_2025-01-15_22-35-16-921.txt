@@ -1,0 +1,15 @@
+1970.1.01-03.00.00: League = HL Simulation Junior
+1970.1.01-03.00.00: Game type = playoff
+1970.1.01-03.00.00: Auto color change = false
+1970.1.01-03.00.00: Using broadcast address /127.255.255.255
+1970.1.01-03.00.00: Listening on address 0.0.0.0
+1970.1.01-03.00.00: Red Team (red) vs Blue Team (blue)
+1970.1.01-03.00.00: Kickoff blue
+1970.1.01-03.00.04: Set
+1970.1.01-03.00.09: Playing
+1970.1.01-03.01.09: Finished
+1970.1.01-03.01.09: Set
+1970.1.01-03.01.14: Playing
+1970.1.01-03.02.15: Finished
+1970.1.01-03.02.15: Set
+1970.1.01-03.02.27: Playing

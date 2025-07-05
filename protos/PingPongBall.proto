@@ -1,0 +1,41 @@
+#VRML_SIM R2023b utf8
+PROTO PingPongBall [
+  field SFVec3f    translation 0 0 0
+  field SFRotation rotation    0 1 0 0
+  field SFString   name        "ping_pong_ball"
+  field SFFloat    radius      0.02          # Стандартный радиус мяча (40 мм в диаметре)
+  field SFColor    color       1 1 1         # Белый цвет по умолчанию
+  field SFFloat    mass        0.0027        # Масса ~2.7 грамма
+]
+{
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    children [
+      Shape {
+        appearance PBRAppearance {
+          baseColor IS color
+          roughness 0.3
+          metalness 0
+        }
+        geometry Sphere {
+          radius IS radius
+          subdivision 3
+        }
+      }
+    ]
+    name IS name
+    boundingObject Sphere {
+      radius IS radius
+    }
+    physics Physics {
+      density -1
+      mass IS mass
+      damping Damping {
+        linear 0.001
+        angular 0.001
+      }
+    }
+    contactMaterial "ping_pong_material"
+  }
+}

@@ -1,0 +1,193 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "../protos/BasketballCup.proto"
+
+PROTO BasketballHoop [
+  field SFString   name         "basketball_hoop"
+  field SFColor    postColor    0.3 0.3 0.3
+  field SFFloat    postHeight   0.4
+  field SFFloat    postWidth    0.03
+  field SFColor    shielColor   1 1 1
+  field SFFloat    shieldWidth  0.03
+  field SFFloat    shieldHeight 0.2
+  field SFFloat    cupHeight    0.1
+  field SFFloat    cupRadius    0.05
+  field SFFloat    cupThickness 0.005
+  field SFInt32    cupSubdiv    16
+]
+{
+  Solid {
+    name IS name
+    children [
+      ### Стойка ###
+      Transform {
+        translation 0 2 %{= fields.postHeight.value / 2 }%
+        rotation 1 0 0 1.5708
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor IS postColor
+              roughness 0
+              metalness 1
+            }
+            geometry Box {
+              size %{= fields.postWidth.value }% %{= fields.postHeight.value }% %{= fields.postWidth.value }%
+            }
+          }
+        ]
+      }
+
+      ### Щит ###
+      Transform {
+        translation 0 2 %{= fields.postHeight.value + fields.shieldHeight.value / 2 }%
+        rotation 1 0 0 1.5708
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor IS shielColor
+              roughness 1
+              metalness 0
+            }
+            geometry Box {
+              size %{= fields.shieldHeight.value }% %{= fields.shieldHeight.value }% %{= fields.shieldWidth.value }%
+            }
+          }
+        ]
+      }
+
+      ### Кольцо ###
+      Transform {
+        translation 0 %{= 2-0.015-0.055}% %{= fields.postHeight.value}%
+        children [
+          BasketballCup {
+            height IS cupHeight
+            radius IS cupRadius
+            thickness IS cupThickness
+          }
+        ]
+      }
+    ]
+    boundingObject Group {
+      children [
+        ### Коллизия стойки ###
+        Transform {
+          translation 0 2 %{= fields.postHeight.value / 2 }%
+          rotation 1 0 0 1.5708
+          children [
+            Box {
+              size %{= fields.postWidth.value }% %{= fields.postHeight.value }% %{= fields.postWidth.value }%
+            }
+          ]
+        },
+
+        ### Коллизия щита ###
+        Transform {
+          translation 0 2 %{= fields.postHeight.value + fields.shieldHeight.value / 2 }%
+          rotation 1 0 0 1.5708
+          children [
+            Box {
+              size %{= fields.shieldHeight.value }% %{= fields.shieldHeight.value }% %{= fields.shieldWidth.value }%
+            }
+          ]
+        },
+
+        ### Коллизия кольца (тонкостенный цилиндр) ###
+        Transform {
+          translation 0 %{= 2-0.015-0.055}% %{= fields.postHeight.value + fields.cupHeight.value/2}%
+          children [
+            IndexedFaceSet {
+              coord Coordinate {
+                point [
+                  %{
+                    local res = fields.cupSubdiv.value
+                    local r_in = fields.cupRadius.value
+                    local r_out = r_in + fields.cupThickness.value
+                    local h = fields.cupHeight.value
+
+                    -- Внешняя окружность (верх)
+                    for i = 0, res-1 do
+                      local angle = 2 * math.pi * i / res
+                      local x = r_out * math.cos(angle)
+                      local y = r_out * math.sin(angle)
+                      __liluat_output_function(x .. " " .. y .. " " .. h/2 .. ",\n")
+                    end
+
+                    -- Внешняя окружность (низ)
+                    for i = 0, res-1 do
+                      local angle = 2 * math.pi * i / res
+                      local x = r_out * math.cos(angle)
+                      local y = r_out * math.sin(angle)
+                      __liluat_output_function(x .. " " .. y .. " " .. -h/2 .. ",\n")
+                    end
+
+                    -- Внутренняя окружность (верх)
+                    for i = 0, res-1 do
+                      local angle = 2 * math.pi * i / res
+                      local x = r_in * math.cos(angle)
+                      local y = r_in * math.sin(angle)
+                      __liluat_output_function(x .. " " .. y .. " " .. h/2 .. ",\n")
+                    end
+
+                    -- Внутренняя окружность (низ)
+                    for i = 0, res-1 do
+                      local angle = 2 * math.pi * i / res
+                      local x = r_in * math.cos(angle)
+                      local y = r_in * math.sin(angle)
+                      __liluat_output_function(x .. " " .. y .. " " .. -h/2 .. ",\n")
+                    end
+                  }%
+                ]
+              }
+              coordIndex [
+                %{
+                  local res = fields.cupSubdiv.value
+
+                  -- Боковая внешняя поверхность
+                  for i = 0, res-1 do
+                    local j = (i + 1) % res
+                    __liluat_output_function(i .. ", " .. (i + res) .. ", " .. (j + res) .. ", " .. j .. ", -1,\n")
+                  end
+
+                  -- Боковая внутренняя поверхность (инвертированная)
+                  for i = 0, res-1 do
+                    local j = (i + 1) % res
+                    __liluat_output_function((i + 2*res) .. ", " .. (j + 2*res) .. ", " .. (j + 3*res) .. ", " .. (i + 3*res) .. ", -1,\n")
+                  end
+
+                  -- Верхнее кольцо (между внешней и внутренней окружностью)
+                  for i = 0, res-1 do
+                    local j = (i + 1) % res
+                    __liluat_output_function(i .. ", " .. j .. ", " .. (j + 2*res) .. ", " .. (i + 2*res) .. ", -1,\n")
+                  end
+
+                  -- Нижнее кольцо (между внешней и внутренней окружностью)
+                  for i = 0, res-1 do
+                    local j = (i + 1) % res
+                    __liluat_output_function((i + res) .. ", " .. (i + 3*res) .. ", " .. (j + 3*res) .. ", " .. (j + res) .. ", -1,\n")
+                  end
+                }%
+              ]
+              ccw FALSE
+            }
+          ]
+        },
+        ### Коллизия дна (тонкий цилиндр) ###
+        Transform {
+          translation 0 %{= 2-0.015-0.055}% %{= fields.postHeight.value}%
+          children [
+            Cylinder {
+              height 0.001  # Очень тонкий цилиндр
+              radius %{= fields.cupRadius.value + fields.cupThickness.value }%
+              subdivision IS cupSubdiv
+            }
+          ]
+        }
+      ]
+    }
+    physics Physics {
+      density -1
+      mass 10
+      centerOfMass [0 2 %{= fields.postHeight.value/2 }%]
+    }
+  }
+}

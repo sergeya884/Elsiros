@@ -15,7 +15,7 @@ from .compute_Alpha_v3 import Alpha
 
 class Motion1:
 
-    def __init__(self, glob):
+    def __init__(self, glob, is_roki2):
         self.glob = glob
         self.params = self.glob.params
         self.ACTIVESERVOS = [(10,2),(9,2),(8,2),(7,2),(6,2),(5,2),(4,2),
@@ -28,18 +28,33 @@ class Motion1:
 
         #FACTOR =  [ 1,-1,-1,1,-1,-1, 1,1,1,-1,1,-1,-1, 1,1,-1,-1, 1,1,1,-1,-1, 1]  # v2.3
         #self.FACTOR =  [ 1,1,1,-1,1,1, 1,1,1,1,1,1,1, 1,-1,1,1, 1,1,1,1, 1, 1]  # Surrogat 1
-        a5 = 21.5  # мм расстояние от оси симметрии до оси сервы 5
-        b5 = 18.5  # мм расстояние от оси сервы 5 до оси сервы 6 по горизонтали
-        c5 = 0     # мм расстояние от оси сервы 6 до нуля Z по вертикали
-        a6 = 42    # мм расстояние от оси сервы 6 до оси сервы 7
-        a7 = 65.5  # мм расстояние от оси сервы 7 до оси сервы 8
-        a8 = 63.8  # мм расстояние от оси сервы 8 до оси сервы 9
-        a9 = 35.5  # мм расстояние от оси сервы 9 до оси сервы 10
-        a10= 25.4  # мм расстояние от оси сервы 10 до центра стопы по горизонтали
-        b10= 16.4  # мм расстояние от оси сервы 10 до низа стопы
-        c10 = 12   # мм расстояние от оси сервы 6 до оси сервы 10 по горизонтали
-        self.SIZES = [ a5, b5, c5, a6, a7, a8, a9, a10, b10, c10 ]
-        self.d10 = 53.4 #53.4 # расстояние по Y от центра стопы до оси робота
+        if is_roki2:
+            a5 = 40.2  # мм расстояние от оси симметрии до оси сервы 5
+            b5 = 0     # мм расстояние от оси сервы 5 до оси сервы 6 по горизонтали
+            c5 = 0     # мм расстояние от оси сервы 6 до нуля Z по вертикали
+            a6 = 0    # мм расстояние от оси сервы 6 до оси сервы 7
+            a7 = 99    # мм расстояние от оси сервы 7 до оси сервы 8
+            a8 = 99    # мм расстояние от оси сервы 8 до оси сервы 9
+            a9 = 0     # мм расстояние от оси сервы 9 до оси сервы 10
+            a10= 13.7    # мм расстояние от оси сервы 10 до центра стопы по горизонтали
+            b10= 23.8  # мм расстояние от оси сервы 10 до низа стопы   26.4
+            c10 = 0    # мм расстояние от оси сервы 6 до оси сервы 10 по горизонтали
+            self.e10 = 55 # мм половина длины стопы
+            self.SIZES = [ a5, b5, c5, a6, a7, a8, a9, a10, b10, c10 ]
+            self.d10 = 62 #62 #53.4 # расстояние по Y от центра стопы до оси робота
+        else:
+            a5 = 21.5  # мм расстояние от оси симметрии до оси сервы 5
+            b5 = 18.5  # мм расстояние от оси сервы 5 до оси сервы 6 по горизонтали
+            c5 = 0  # мм расстояние от оси сервы 6 до нуля Z по вертикали
+            a6 = 42  # мм расстояние от оси сервы 6 до оси сервы 7
+            a7 = 65.5  # мм расстояние от оси сервы 7 до оси сервы 8
+            a8 = 63.8  # мм расстояние от оси сервы 8 до оси сервы 9
+            a9 = 35.5  # мм расстояние от оси сервы 9 до оси сервы 10
+            a10 = 25.4  # мм расстояние от оси сервы 10 до центра стопы по горизонтали
+            b10 = 16.4  # мм расстояние от оси сервы 10 до низа стопы
+            c10 = 12  # мм расстояние от оси сервы 6 до оси сервы 10 по горизонтали
+            self.SIZES = [a5, b5, c5, a6, a7, a8, a9, a10, b10, c10]
+            self.d10 = 53.4  # 53.4 # расстояние по Y от центра стопы до оси робота
         limAlpha5 = [-2667, 2667]
         limAlpha6 = [-3000,  740]
         limAlpha7 = [-3555, 3260]
@@ -212,6 +227,14 @@ class Motion1:
         self.direction_To_Attack += self.body_euler_angle['yaw']
         self.direction_To_Attack = self.norm_yaw(self.direction_To_Attack)
 
+    def throwing_the_ball(self):
+        # angles = []
+        # for j in range(self.initPoses):
+        #     angles.append(0.0)
+        #angles = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 2.8, -1.0, 0.0, 0.0]
+        angles = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 2.8, -1.0, 0.0, 0.0]
+        self.send_angles_to_servos(angles)
+
     def walk_Initial_Pose(self):
         self.robot_In_0_Pose = False
         # if not self.falling_Test() == 0:
@@ -223,8 +246,8 @@ class Motion1:
         framestep = self.simThreadCycleInMs//10
         for j in range (self.initPoses):
             if self.glob.SIMULATION == 2: start1 = self.pyb.millis()
-            self.ztr = -223.0 + j*(223.0-self.gaitHeight)/self.initPoses
-            self.ztl = -223.0 + j*(223.0-self.gaitHeight)/self.initPoses
+            self.ztr = -220.8 + j*(220.8-self.gaitHeight)/self.initPoses
+            self.ztl = -220.8 + j*(220.8-self.gaitHeight)/self.initPoses
             self.ytr = -self.d10 - j*self.amplitude/2 /self.initPoses
             self.ytl =  self.d10 - j*self.amplitude/2 /self.initPoses
             angles = self.computeAlphaForWalk(self.SIZES, self.limAlpha1 )
@@ -234,7 +257,7 @@ class Motion1:
             else:
                  self.send_angles_to_servos(angles)
 
-    def walk_Cycle(self, stepLength, sideLength, rotation, cycle, number_Of_Cycles, stepHeight, gaitHeight, amplitude, fr1, fr2):
+    def walk_Cycle(self, stepLength, sideLength, rotation, cycle, number_Of_Cycles, stepHeight=32.0, gaitHeight=180, amplitude=50, fr1=8, fr2=12):
         self.amplitude = amplitude
         self.fr1 = fr1
         self.fr2 = fr2
@@ -372,8 +395,8 @@ class Motion1:
         framestep = self.simThreadCycleInMs//10
         for j in range (self.initPoses):
             if self.glob.SIMULATION == 2: start1 = self.pyb.millis()
-            self.ztr = -self.gaitHeight - (j+1)*(223.0-self.gaitHeight)/self.initPoses
-            self.ztl = -self.gaitHeight - (j+1)*(223.0-self.gaitHeight)/self.initPoses
+            self.ztr = -self.gaitHeight - (j+1)*(220.8-self.gaitHeight)/self.initPoses
+            self.ztl = -self.gaitHeight - (j+1)*(220.8-self.gaitHeight)/self.initPoses
             self.ytr = -self.d10 - (self.initPoses-(j+1))*self.amplitude/2 /self.initPoses
             self.ytl =  self.d10 - (self.initPoses-(j+1))*self.amplitude/2 /self.initPoses
             if j == self.initPoses - 1:

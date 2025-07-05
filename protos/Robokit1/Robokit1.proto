@@ -1244,7 +1244,7 @@ PROTO Robokit1 [
                     physics Physics {
                       density -1
                       mass 0.266801
-                      centerOfMass [ -0.012220 -0.036201 0.000019 ]
+                      centerOfMass [ 0.034257 -0.000675 0.015493 ]
                       inertiaMatrix [
                         2.062869e-04 1.554560e-04 9.379114e-05
                         2.359363e-06 -3.288265e-08 1.497123e-06

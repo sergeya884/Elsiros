@@ -10,9 +10,14 @@ This module is used to store variables which are used in many classes
 import json, array, math
 
 class Glob:
-    def __init__(self, simulation, current_work_directory):
-        self.COLUMNS = 18
-        self.ROWS = 13
+    def __init__(self, simulation, current_work_directory, event_type = 'FIRA'):
+        self.event_type = event_type
+        if self.event_type == 'FIRA':
+            self.COLUMNS = 20
+            self.ROWS = 15
+        elif event_type == 'Robocup':
+            self.COLUMNS = 18
+            self.ROWS = 13
         self.current_work_directory = current_work_directory
         self.strategy_data = array.array('b',(0 for i in range(self.COLUMNS * self.ROWS * 2)))
         self.SIMULATION = simulation     # 0 - Simulation without physics, 1 - Simulation synchronous with physics, 3 - Simulation streaming with physics
@@ -40,7 +45,11 @@ class Glob:
         #self.imu_drift_last_correction_time = 0
 
     def import_strategy_data(self, current_work_directory):
-        with open(current_work_directory / "Init_params" / "strategy_data.json", "r") as f:
+        if self.event_type == 'FIRA':
+            strategy_data_file = "Init_params/strategy_data_FIRA.json"
+        else:
+            strategy_data_file = "Init_params/strategy_data.json"
+        with open(current_work_directory / strategy_data_file, "r") as f:
             loaded_Dict = json.loads(f.read())
         if loaded_Dict.get('strategy_data') != None:
             strategy_data = loaded_Dict['strategy_data']
@@ -51,6 +60,7 @@ class Glob:
                 yaw = int(strategy_data[index1][3] * 40)  # yaw in radians multiplied by 40
                 self.strategy_data[index1*2] = power
                 self.strategy_data[index1*2+1] = yaw
+        print('Strategy data is loaded for event type: ', self.event_type, ' ROWS: ', self.ROWS, ' COLUMNS: ', self.COLUMNS)
 
 
 

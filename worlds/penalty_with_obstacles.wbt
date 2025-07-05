@@ -1,0 +1,56 @@
+#VRML_SIM R2023b utf8
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+IMPORTABLE EXTERNPROTO "../protos/FIRA_Box_Obstacle.proto"
+IMPORTABLE EXTERNPROTO "../protos/robocup/FIRA_Goal.proto"
+IMPORTABLE EXTERNPROTO "../protos/FIRA_Soccer_Field.proto"
+IMPORTABLE EXTERNPROTO "../protos/robocup/Ball.proto"
+IMPORTABLE EXTERNPROTO "../protos/Robokit1/Robokit1.proto"
+
+WorldInfo {
+  info [
+    "Description: official soccer simulation for the 2023 Robocup Virtual Humanoid League (kid size)"
+    "Version 0.2"
+  ]
+  title "Elsiros game"
+  basicTimeStep 5
+  physicsDisableTime 0.1
+  physicsDisableLinearThreshold 0.1
+  physicsDisableAngularThreshold 0.1
+  contactProperties [
+    ContactProperties {
+      material1 "grass"
+      coulombFriction [
+        0.5
+      ]
+      softCFM 0.03
+    }
+    ContactProperties {
+      material1 "grass"
+      material2 "robocup soccer ball"
+      coulombFriction [
+        0.5
+      ]
+      bounce 0.76
+      softCFM 0.05
+    }
+    ContactProperties {
+      material2 "robocup soccer ball"
+      bounce 0.76
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.2752715220239359 -0.27527334822662464 -0.9211135505021785 4.630305678419168
+  position -0.02034193036636029 -11.149837483728911 7.580724804336203
+}
+TexturedBackground {
+  texture "stadium_dry"
+}
+TexturedBackgroundLight {
+  texture "stadium_dry"
+}
+Robot {
+  controller "referee_FIRA"
+  supervisor TRUE
+}

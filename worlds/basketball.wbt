@@ -1,0 +1,76 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "../protos/Roki/Roki.proto"
+EXTERNPROTO "../protos/BasketballField.proto"
+EXTERNPROTO "../protos/PingPongBall.proto"
+
+WorldInfo {
+  info [
+    "Description: official soccer simulation for the 2021 Robocup Virtual Humanoid League (kid size)"
+    "Version 1.0"
+  ]
+  title "ELSIROS training"
+  basicTimeStep 5
+  physicsDisableTime 0.1
+  physicsDisableLinearThreshold 0.1
+  physicsDisableAngularThreshold 0.1
+  contactProperties [
+    ContactProperties {
+      material1 "grass"
+      coulombFriction [
+        0.5
+      ]
+      softCFM 0.03
+    }
+    ContactProperties {
+      material1 "grass"
+      material2 "robocup soccer ball"
+      coulombFriction [
+        0.5
+      ]
+      bounce 0.76
+      softCFM 0.05
+    }
+    ContactProperties {
+      material2 "robocup soccer ball"
+      bounce 0.76
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.08406009524148737 0.7373473881673658 0.6702631793189568 0.33698400965352043
+  position -3.9035277081905067 -0.37414003910706695 1.0124052178385283
+}
+TexturedBackground {
+  texture "stadium_dry"
+}
+TexturedBackgroundLight {
+  texture "stadium_dry"
+  castShadows FALSE
+}
+DEF BLUE_PLAYER_1 Roki {
+  #translation 0 0.5 0.288354
+  translation 0.1 0.96 0.298354
+  rotation 0 0 1 1.62
+  name "blue player 1"
+  controllerArgs [
+    "7001"
+    "2"
+    "127.0.0.1"
+    "192.168.123.21"
+    "192.168.123.22"
+    "192.168.123.23"
+    "192.168.123.24"
+  ]
+}
+Robot {
+  controller "basketball"
+  supervisor TRUE
+}
+BasketballField {
+}
+DEF BALL PingPongBall {
+    translation 0.0 0.0 0.02
+}

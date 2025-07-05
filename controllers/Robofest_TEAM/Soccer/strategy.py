@@ -401,8 +401,8 @@ class Player():
         if self.role == 'sidestep_test': self.sidestep_test_main_cycle()
         if self.role == 'dance': self.dance_main_cycle()
         if self.role == 'sprint': self.sprint_main_cycle(params_name)
-        # if self.role == 'sprint': self.sprint_main_cycle()
         if self.role == 'marathon': self.marathon_main_cycle(params_name)
+        if self.role == 'basketball': self.basketball_main_cycle(params_name)
 
     def rotation_test_main_cycle(self, pressed_button):
         number_Of_Cycles = 20
@@ -425,7 +425,7 @@ class Player():
             cords_meters = self.motion.sim_Get_Robot_Position_without_sleep()
             # ВАЖНО. Тут координаты поменены местами, так как в cv и в webots зеркальные оси
             self.rectangle_anayzer.robot_coords = [abs(round(100*(cords_meters[1]))), abs(round(100*(cords_meters[0]))),
-                                                   - cords_meters[2]]
+                                                   - cords_meters[2]+np.pi]
             self.mean_coordinates_line = self.rectangle_anayzer.found_black_centers()
             # print(self.mean_coordinates_line)
             self.is_out_of_distance = self.rectangle_anayzer.is_out_of_distance()
@@ -448,8 +448,8 @@ class Player():
         thirdAriaFactor = marathon_params['thirdAriaFactor']
         window_x_size = 20
         window_y_size = 30
-        self.rectangle_anayzer = RectangleAnalyzer(image_path='Soccer/map_marathon.png', width=window_y_size,
-                                                   height=window_x_size, draw=False)
+        self.rectangle_anayzer = RectangleAnalyzer(img_for_cv_path='Soccer/map_rectangle.png', img_for_distance_path='Soccer/gradient.png',
+                                                   width=window_y_size, height=window_x_size, draw=False)
         thr = threading.Thread(target=self.marathon_thread, args=())
         thr.start()
         direction = 0
@@ -484,7 +484,6 @@ class Player():
                               thirdAriaFactor*self.mean_coordinates_line[2][1])/k
                     if mean_x != 0:
                         direction = math.atan(mean_y/mean_x)#/3.14
-                    #print(rotation)
                 else:
                     direction = np.sign(direction)# * 1.0
                     stepLength1 = 0
@@ -513,11 +512,13 @@ class Player():
         fr1 = sprint_params['fr1']
         fr2 = sprint_params['fr2']
         last_heading = 0
-        number_Of_Cycles = 100
+        number_Of_Cycles = 300
         sideLength = 0
         self.motion.walk_Initial_Pose()
         number_Of_Cycles += 1
-        for cycle in range(number_Of_Cycles):
+        cycle = 0
+        while True:
+            cycle += 1
             stepLength1 = stepLength
             if cycle == 0: stepLength1 = stepLength/3
             if cycle == 1: stepLength1 = stepLength/3 * 2
@@ -528,8 +529,26 @@ class Player():
             self.motion.walk_Cycle(stepLength1, sideLength, rotation, cycle, number_Of_Cycles, stepHeight,
                                    gaitHeight, amplitude, fr1, fr2)
             last_heading = heading
+
+            coordinate = self.motion.sim_Get_Robot_Position_without_sleep()
+            if coordinate[1] > 0.5 or coordinate[1] < -0.5 or coordinate[0] < -0.05:
+                self.motion.walk_Initial_Pose()
+                time.sleep(0.3)
         self.motion.walk_Final_Pose()
         print('finish')
+
+    def basketball_main_cycle(self, params_name):
+        # with open(self.glob.current_work_directory / "Init_params" / params_name, "r") as f:
+        #     marathon_params = json.loads(f.read())
+        # proportional = marathon_params['proportional']
+
+        #self.motion.walk_Initial_Pose()
+        #for i in range(5):
+        self.motion.simulateMotion(name='Roki_2_Basketball_4')
+        self.motion.throwing_the_ball()
+        #self.motion.
+        #while True:
+        #self.motion.walk_Final_Pose()
 
     def run_test_main_cycle(self, pressed_button):
         """

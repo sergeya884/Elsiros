@@ -9,15 +9,17 @@ import numpy as np
 
 
 class RectangleAnalyzer:
-    def __init__(self, image_path, width, height, draw=False):
+    def __init__(self, img_for_cv_path, img_for_distance_path, width, height, draw=False):
         self.width = width
         self.height = height
         #self.angle_radians = np.deg2rad(robot_coords[2])
-        self.image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+        self.image_for_cv = cv2.imread(img_for_cv_path, cv2.IMREAD_GRAYSCALE)
+        self.image_for_distance = cv2.imread(img_for_distance_path)
         self.draw = draw
         self.robot_coords = [0.0, 0.0, 0.0]
 
     def rotate_point(self, px, py, ox, oy, angle):
+
         cos_angle = np.cos(angle)
         sin_angle = np.sin(angle)
         qx = ox + cos_angle * (px - ox) - sin_angle * (py - oy)
@@ -48,12 +50,12 @@ class RectangleAnalyzer:
 
         # Проверяем, что координаты не выходят за границы изображения
         x_min = max(x_min, 0)
-        x_max = min(x_max, self.image.shape[1] - 1)
+        x_max = min(x_max, self.image_for_cv.shape[1] - 1)
         y_min = max(y_min, 0)
-        y_max = min(y_max, self.image.shape[0] - 1)
+        y_max = min(y_max, self.image_for_cv.shape[0] - 1)
 
         # Извлекаем подизображение, содержащее только область ограничивающего прямоугольника
-        sub_image = self.image[y_min:y_max + 1, x_min:x_max + 1]
+        sub_image = self.image_for_cv[y_min:y_max + 1, x_min:x_max + 1]
 
         # Создаем маску только для подизображения
         sub_corners = [(p[0] - x_min, p[1] - y_min) for p in corners]
@@ -76,9 +78,14 @@ class RectangleAnalyzer:
         else:
             return None
 
-    def is_out_of_distance(self, grey_range=(100, 200)):
-        pixel_value = self.image[self.robot_coords[1], self.robot_coords[0]]
-        return grey_range[0] <= pixel_value <= grey_range[1]
+    # def is_out_of_distance(self, grey_range=(100, 200)):
+    #     self.image_for_distance
+    #     pixel_value = self.image_for_cv[self.robot_coords[1], self.robot_coords[0]]
+    #     return grey_range[0] <= pixel_value <= grey_range[1]
+
+    def is_out_of_distance(self):
+        pixel_value = self.image_for_distance[self.robot_coords[1], self.robot_coords[0]]
+        return (pixel_value == [255, 0, 0]).all()
 
     def get_next_B(self, prev_corners):
         return (int((prev_corners[2][0] + prev_corners[3][0]) / 2), int((prev_corners[2][1] + prev_corners[3][1]) / 2))
@@ -87,7 +94,7 @@ class RectangleAnalyzer:
         mean_coordinates_list = []
         B = (self.robot_coords[0], self.robot_coords[1])
         if self.draw:
-            image_color = cv2.cvtColor(self.image, cv2.COLOR_GRAY2BGR)
+            image_color = cv2.cvtColor(self.image_for_cv, cv2.COLOR_GRAY2BGR)
             colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)]  # Красный, зеленый, синий
             cv2.circle(image_color, B, 10, (0, 0, 255), thickness=-1)
         for i in range(3):
@@ -110,17 +117,18 @@ class RectangleAnalyzer:
 
             resized_image = cv2.resize(image_color, (500, 500))
             cv2.imshow("Image with Rectangles and Point B", resized_image)
+
             cv2.waitKey(0)
             cv2.destroyAllWindows()
-
+        # print(mean_coordinates_list)
         return mean_coordinates_list
 
 
 # Пример использования
 def main():
-    image_path = 'map_marathon.png'
-    analyzer = RectangleAnalyzer(image_path=image_path, width=30, height=20, draw=True)
-    analyzer.robot_coords = [500, 1760, 3.14]  # Начальная позиция и угол
+    image_path = 'map_rectangle.png'
+    analyzer = RectangleAnalyzer(img_for_cv_path=image_path, img_for_distance_path='gradient.png', width=30, height=20, draw=True)
+    analyzer.robot_coords = [100, 750, -2.42]  # Начальная позиция и угол
     time1 = time.time()
     mean_coordinates_list = analyzer.found_black_centers()
     print(f'Время выполнения:{time.time()-time1}')

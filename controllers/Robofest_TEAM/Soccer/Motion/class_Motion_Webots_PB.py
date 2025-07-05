@@ -12,7 +12,7 @@ from .class_Motion_real import Motion_real
 from .compute_Alpha_v3 import Alpha
 
 class Motion_sim(Motion_real):
-    def __init__(self, glob, robot, gcreceiver, pause, logger):
+    def __init__(self, glob, robot, gcreceiver, pause, logger, is_roki2):
         self.logger = logger
         self.pause = pause
         self.FRAMELENGTH = 0.02
@@ -37,7 +37,7 @@ class Motion_sim(Motion_real):
         self.initial_time_for_chain = 0
         self.last_step_time = 0
         self.chain_step_number = 0
-        super().__init__(glob)
+        super().__init__(glob, is_roki2)
         with open(self.glob.current_work_directory / "Init_params" / "Sim_calibr.json", "r") as f:
             data1 = json.loads(f.read())
         self.neck_calibr = data1['neck_calibr']
@@ -52,10 +52,17 @@ class Motion_sim(Motion_real):
         self.ACTIVESERVOS = [(10,2),(9,2),(8,2),(7,2),(6,2),(5,2),(4,2),
                 (3,2),(2,2),(1,2),(0,2),(10,1),(9,1),(8,1),
                 (7,1),(6,1),(5,1),(4,1),(3,1),(2,1),(1,1)]
+        self.is_roki2 = is_roki2
         self.WBservosList = ["right_ankle_roll", "right_ankle_pitch", "right_knee", "right_hip_pitch",
                              "right_hip_roll", "right_hip_yaw", "right_elbow_pitch", "right_shoulder_twirl",
                              "right_shoulder_roll", "right_shoulder_pitch", "pelvis_yaw", "left_ankle_roll",
                              "left_ankle_pitch", "left_knee", "left_hip_pitch", "left_hip_roll", "left_hip_yaw",
+                             "left_elbow_pitch", "left_shoulder_twirl", "left_shoulder_roll",
+                             "left_shoulder_pitch", "head_yaw", "head_pitch"]
+        self.WBservosList_roki2 = ["right_ankle_roll", "right_ankle_pitch", "right_upper_knee", "right_bottom_knee", "right_hip_pitch",
+                             "right_hip_roll", "right_hip_yaw", "right_elbow_pitch", "right_shoulder_twirl",
+                             "right_shoulder_roll", "right_shoulder_pitch", "pelvis_yaw", "left_ankle_roll",
+                             "left_ankle_pitch", "left_upper_knee", "left_bottom_knee", "left_hip_pitch", "left_hip_roll", "left_hip_yaw",
                              "left_elbow_pitch", "left_shoulder_twirl", "left_shoulder_roll",
                              "left_shoulder_pitch", "head_yaw", "head_pitch"]
         self.trims = [ 0,0,0,0, 0, 0, 0, 0, -0.12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.12, 0, 0, 0]
@@ -76,7 +83,7 @@ class Motion_sim(Motion_real):
                     if self.gcreceiver.player_state.penalty != 0 or self.gcreceiver.state.game_state != 'STATE_PLAYING':
                         self.falling_Flag = 3
                         servo_data = {}
-                        for key in self.WBservosList:
+                        for key in self.WBservosList_roki2:
                             servo_data.update({key: 0})
                         self.robot.send_servos(servo_data)
             self.wait_for_step(time)
@@ -124,23 +131,27 @@ class Motion_sim(Motion_real):
                     return self.falling_Flag
         if (self.body_euler_angle['pitch']) > 0.785:
             self.falling_Flag = 1                   # on stomach
-            self.simulateMotion(name = 'Soccer_Get_UP_Stomach_N')
-            self.walk_Initial_Pose()
-        if (self.body_euler_angle['pitch']) <  -0.785:
+            if self.is_roki2:
+                self.simulateMotion(name = 'Roki_2_Get_UP_Stomach_N')
+            else:
+                self.simulateMotion(name = 'Soccer_Get_UP_Stomach_N')
+        elif (self.body_euler_angle['pitch']) <  -0.785:
             self.falling_Flag = -1                  # face up
-            self.simulateMotion(name = 'Soccer_Get_UP_Face_Up')
-            self.walk_Initial_Pose()
-        if (self.body_euler_angle['roll']) > 0.785:
+            if self.is_roki2:
+                self.simulateMotion(name = 'Roki_2_Get_UP_Face_Up')
+            else:
+                self.simulateMotion(name = 'Soccer_Get_UP_Face_Up')
+        elif (self.body_euler_angle['roll']) > 0.785:
             self.falling_Flag = -2                  # right
             self.simulateMotion(name='Get_Up_Right')
-            self.walk_Initial_Pose()
-        if -135 < (self.body_euler_angle['roll']) < - 0.785:
+        elif -135 < (self.body_euler_angle['roll']) < - 0.785:
             self.falling_Flag = 2                  # left
             self.simulateMotion(name='Get_Up_Left')
-            self.walk_Initial_Pose()
+        else: self.falling_Flag = 0
 
-        if self.falling_Flag != 0: self.logger.info('FALLING!!!'+ str(self.falling_Flag))
-        self.falling_Flag = 0
+        if self.falling_Flag != 0:
+            self.walk_Initial_Pose()
+            self.logger.info('FALLING!!!'+ str(self.falling_Flag))
         return self.falling_Flag
 
     def send_angles_to_servos(self, angles, use_step_correction = False):
@@ -157,8 +168,23 @@ class Motion_sim(Motion_real):
         servo_data = {}
         for i in range(len(angles)):
             key = self.WBservosList[i]
-            value = angles[i] + self.trims[i]
-            servo_data.update({key:value})
+            if self.is_roki2:
+                if key == "left_knee":
+                    value = (angles[i] + self.trims[i])/2
+                    servo_data.update({"left_upper_knee":value})
+                    servo_data.update({"left_bottom_knee":value})
+                elif key == "right_knee":
+                    value = (angles[i] + self.trims[i])/2
+                    servo_data.update({"right_upper_knee":value})
+                    servo_data.update({"right_bottom_knee":value})
+                else:
+                    value = angles[i] + self.trims[i]
+                    servo_data.update({key:value})
+
+            else:
+                 value = angles[i] + self.trims[i]
+                 servo_data.update({key:value})
+
         self.robot.send_servos(servo_data)
 
     def move_head(self, pan, tilt):
@@ -183,7 +209,7 @@ class Motion_sim(Motion_real):
         #   (35,'Get_Up_Right'), (36,'PenaltyDefenceR'), (37,'PenaltyDefenceL')]
         # start the simulation
         if number > 0 and name == '': name = self.MOTION_SLOT_DICT[number]
-        self.logger.info('simulate motion slot: '+ str(name))
+        self.logger.info('simulate motion slot:'+ str(name))
         self.chain_step_number = 0
         self.initial_time_for_chain = self.robot.current_time
         with open(self.glob.current_work_directory /"Soccer" / "Motion" / "motion_slots" / (name + ".json"), "r") as f:
@@ -207,6 +233,38 @@ class Motion_sim(Motion_real):
                     value = tempActivePose + self.trims[j]
                     angles.append(value)
                     servo_data.update({key:value})
+                self.send_angles_to_servos(angles, use_step_correction = True)
+                #self.sim_Trigger(self.timestep)
+        return
+       
+        for i in range(len(mot_list)):
+            if  self.falling_Flag ==3: return
+            activePoseOld = []
+            for ind in range(len(self.activePose)): activePoseOld.append(self.activePose[ind])
+            self.activePose =[]
+            for j in range(len(self.ACTIVEJOINTS) - 2):
+                    self.activePose.append(0.017*mot_list[i][j+1]*0.03375)
+            pulseNum = int(mot_list[i][0]*self.FRAMELENGTH * 1000 / self.simThreadCycleInMs)
+            for k in range (pulseNum):
+                servo_data = {}
+                angles = []
+                for j in range(len(self.ACTIVEJOINTS) - 2):
+                    tempActivePose = activePoseOld[j]+(self.activePose[j]-activePoseOld[j])*k/pulseNum
+                    key = self.WBservosList[j]
+                    value = tempActivePose + self.trims[j]
+                    angles.append(value)
+                    if self.is_roki2:
+                        if key == "left_knee":   
+                            servo_data.update({"left_upper_knee":value/2})
+                            servo_data.update({"left_bottom_knee":value/2})
+                      
+                        elif key == "right_knee":
+                            servo_data.update({"right_upper_knee":value/2})
+                            servo_data.update({"right_bottom_knee":value/2})
+                        else:
+                            servo_data.update({key:value})
+                    else:
+                        servo_data.update({key:value})
                 self.send_angles_to_servos(angles, use_step_correction = True)
                 #self.sim_Trigger(self.timestep)
         return
@@ -270,7 +328,7 @@ class Motion_sim(Motion_real):
         self.logger.debug('Position: '+ str(Position) + ' yaw :' + str(self.body_euler_angle['yaw']))
         self.body_euler_angle['yaw'] -= self.direction_To_Attack
         return x, y, self.body_euler_angle['yaw']
-    
+
     def sim_Start(self):
         for i in range(len(self.ACTIVEJOINTS)):
             position = 0

@@ -13,8 +13,8 @@ from .path_planning import PathPlan
 
 class Motion_real(Motion1):
 
-    def __init__(self, glob):
-        super().__init__(glob)
+    def __init__(self, glob, is_roki2):
+        super().__init__(glob, is_roki2)
         self.p = PathPlan(self.glob)
 
     def seek_Ball_In_Pose(self, fast_Reaction_On, penalty_Goalkeeper = False, with_Localization = True):

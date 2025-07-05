@@ -200,7 +200,7 @@ class MessageManager():
                             "width": sensor.width,
                             "height": sensor.height,
                             "quality": sensor.quality,
-                            "image": sensor.image,
+                            "image": sensor.image_for_cv,
                             "time": message.time
                         }
                 })

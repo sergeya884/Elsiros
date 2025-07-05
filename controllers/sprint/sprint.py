@@ -1,44 +1,29 @@
 import datetime
 import os
+import sys
 import subprocess
 from pathlib import Path
 import json
 from controller import Supervisor, AnsiCodes, Node
 
-quantity_robots = 10
+quantity_robots = 1
 
 supervisor = Supervisor()
 time_step = int(supervisor.getBasicTimeStep())
+
+arg1 = sys.argv[1] if len(sys.argv) > 1 else "Robokit1"
 
 texture_points = []
 for i in range(quantity_robots):
     texture_points.append(supervisor.getFromDef('CUST_TEXTURE_'+str(i+1)).getField('POINTS'))
 
-robot_translation = [supervisor.getFromDef('BLUE_PLAYER_1').getField('translation'),
-                     supervisor.getFromDef('RED_PLAYER_2').getField('translation'),
-                     supervisor.getFromDef('GREEN_PLAYER_3').getField('translation'),
-                     supervisor.getFromDef('BLACK_PLAYER_4').getField('translation'),
-                     supervisor.getFromDef('PURPLE_PLAYER_5').getField('translation'),
-                     supervisor.getFromDef('ORANGE_PLAYER_6').getField('translation'),
-                     supervisor.getFromDef('BROWN_PLAYER_7').getField('translation'),
-                     supervisor.getFromDef('GREY_PLAYER_8').getField('translation'),
-                     supervisor.getFromDef('PINK_PLAYER_9').getField('translation'),
-                     supervisor.getFromDef('TURQUOISE_PLAYER_10').getField('translation')]
+robot_translation = [supervisor.getFromDef('BLUE_PLAYER_1').getField('translation')]
 
-robot_rotation = [supervisor.getFromDef('BLUE_PLAYER_1').getField('rotation'),
-                  supervisor.getFromDef('RED_PLAYER_2').getField('rotation'),
-                  supervisor.getFromDef('GREEN_PLAYER_3').getField('rotation'),
-                  supervisor.getFromDef('BLACK_PLAYER_4').getField('rotation'),
-                  supervisor.getFromDef('PURPLE_PLAYER_5').getField('rotation'),
-                  supervisor.getFromDef('ORANGE_PLAYER_6').getField('rotation'),
-                  supervisor.getFromDef('BROWN_PLAYER_7').getField('rotation'),
-                  supervisor.getFromDef('GREY_PLAYER_8').getField('rotation'),
-                  supervisor.getFromDef('PINK_PLAYER_9').getField('rotation'),
-                  supervisor.getFromDef('TURQUOISE_PLAYER_10').getField('rotation')]
+robot_rotation = [supervisor.getFromDef('BLUE_PLAYER_1').getField('rotation')]
 
 
 def uprint(*text):
-    with open(str(current_working_directory) + "\Sprint_log.txt", 'a') as f:
+    with open(str(current_working_directory) + "/Sprint_log.txt", 'a') as f:
         print(*text, file=f)
     print(*text)
 
@@ -61,7 +46,7 @@ os.chdir(current_working_directory.parent/'Robofest_TEAM')
 
 role01 = 'sprint'
 second_pressed_button = '4'
-robot_color = ['blue', 'red', 'green', 'black', 'purple', 'orange', 'brown', 'grey', 'pink', 'turquoise']
+robot_color = ['blue', 'red', 'green', 'black', 'purple', 'orange', 'brown', 'grey', 'pink', 'turquoise','orange']
 team_id = '-1'          # value -1 means game will be playing without Game Controller
 robot_number, ports, parameter_names, initial_coords = [], [], [], []
 
@@ -74,7 +59,7 @@ for i in range(1, quantity_robots+1):
     coord = str([0.0, 1.05*(i-1), 0.288354])
     initial_coords.append(coord)
 
-    params_name = "Sprint_params" + str(i) + ".json"
+    params_name = "Sprint_params.json"
     parameter_names.append(params_name)
 
 p01 = [_ for _ in range(quantity_robots)]
@@ -85,42 +70,57 @@ for i in range(quantity_robots):
     with open(filename01, "w") as f01:
         print(datetime.datetime.now(), file=f01)
         p01[i] = subprocess.Popen(['python', 'main_pb.py', ports[i], team_id, robot_color[i], robot_number[i],
-                                   role01, second_pressed_button, initial_coords[0], parameter_names[i]], stderr=f01)
+                                   role01, second_pressed_button, initial_coords[0], parameter_names[i], arg1], stderr=f01)
 
 distance_count = 0
 
 print("\033[1;34m" + 'start_time: ' + str(datetime.datetime.now()) + "\033[0;0m")
-
+out_flag = 101
+max_time = 60 # sec
+result_time = 0
 while supervisor.step(time_step) != -1:
-
     distance_count += 1
+    if distance_count > (max_time//time_step*1000):
+        print("time is up")
+        break
+
     y_coordinate = []
     for i in range(quantity_robots):
         # Отрисовка дорожки за роботом
         robot_coord_x = robot_translation[i].getSFVec3f()[0] - 0.1
+
         if robot_coord_x <= 3.0 and p01_flag[i]:
             texture_points[i].setMFVec3f(1, (robot_coord_x, 1.05*i-0.5, 0.001))
             texture_points[i].setMFVec3f(2, (robot_coord_x, 1.05*i+0.5, 0.001))
 
+        # выход за границу
+        if out_flag < 101:
+            out_flag += 1
+        if out_flag == 100:
+            #print('out of distance')
+            text = ' robot ' + str(i + 1) + ':out of distance'
+            out_text_red(text)
+            robot_translation[i].setSFVec3f([0.0, 1.05 * i, 0.288354])  # в начало координат
+            robot_rotation[i].setSFRotation([1, 0, 0, 0])  # вектор напрпавления
         y_coordinate.append(robot_translation[i].getSFVec3f()[1])
         edge_1 = -0.5 + 1.05 * i
         edge_2 = 0.5 + 1.05 * i
-        if y_coordinate[i] > edge_2 or y_coordinate[i] < edge_1 or robot_translation[i].getSFVec3f()[0] < -0.05:
-            text = ' robot ' + str(i+1) + ': distance was NOT finished due to failure'
-            out_text_red(text)
-            robot_translation[i].setSFVec3f([0.0, 1.05*i, 0.288354])   # в начало координат
-            robot_rotation[i].setSFRotation([1, 0, 0, 0])       # вектор напрпавления
+        if (y_coordinate[i] > edge_2 or y_coordinate[i] < edge_1 or robot_translation[i].getSFVec3f()[0] < -0.05) and out_flag > 100:
+            out_flag = 0
 
         if robot_translation[i].getSFVec3f()[0] > 3.05 and p01_flag[i]:
             texture_points[i].setMFVec3f(1, (3.0, 1.05*i-0.5, 0.001))
             texture_points[i].setMFVec3f(2, (3.0, 1.05*i+0.5, 0.001))
             text = ' robot ' + str(i+1) + ' distance was finished within timesteps: ' + str(distance_count)
+            result_time = distance_count*time_step/1000
             out_text_green(text)
             p01[i].terminate()
             p01_flag[i] = False  # чтобы не писать больше одного раза
 
 for i in range(quantity_robots):
     p01[i].terminate()
+
+out_text_green('result time:' + str(result_time))
 
 supervisor.simulationReset()
 supervisor.step(time_step)
